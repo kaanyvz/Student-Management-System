@@ -63,6 +63,48 @@
     <Compile Include="Admin\AdminLogin.Designer.cs">
       <DependentUpon>AdminLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\CardCRUD\Add\AddCardSuccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\CardCRUD\Add\AddCardSuccess.Designer.cs">
+      <DependentUpon>AddCardSuccess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CardCRUD\Add\AddNewCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\CardCRUD\Add\AddNewCard.Designer.cs">
+      <DependentUpon>AddNewCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CardCRUD\Add\AddNewCardInformations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\CardCRUD\Add\AddNewCardInformations.Designer.cs">
+      <DependentUpon>AddNewCardInformations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CardCRUD\CardSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\CardCRUD\CardSettings.Designer.cs">
+      <DependentUpon>CardSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CardCRUD\Update\UpdateCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\CardCRUD\Update\UpdateCard.Designer.cs">
+      <DependentUpon>UpdateCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CardCRUD\Update\UpdateCardInformations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\CardCRUD\Update\UpdateCardInformations.Designer.cs">
+      <DependentUpon>UpdateCardInformations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CardCRUD\Update\UpdateCardSuccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\CardCRUD\Update\UpdateCardSuccess.Designer.cs">
+      <DependentUpon>UpdateCardSuccess.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\StudentCRUD\Add\AddNewStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,7 +171,14 @@
     <Compile Include="Admin\StudentCRUD\Update\UpdateStudentVariables.Designer.cs">
       <DependentUpon>UpdateStudentVariables.cs</DependentUpon>
     </Compile>
+    <Compile Include="cardTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cardTemplate.Designer.cs">
+      <DependentUpon>cardTemplate.cs</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseConnection.cs" />
+    <Compile Include="Model\Card.cs" />
     <Compile Include="Model\Parent.cs" />
     <Compile Include="Model\Student.cs" />
     <Compile Include="Program.cs" />
@@ -155,6 +204,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\AdminLogin.resx">
       <DependentUpon>AdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\CardCRUD\Add\AddCardSuccess.resx">
+      <DependentUpon>AddCardSuccess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\CardCRUD\Add\AddNewCard.resx">
+      <DependentUpon>AddNewCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\CardCRUD\Add\AddNewCardInformations.agq.resx">
+      <DependentUpon>AddNewCardInformations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\CardCRUD\Add\AddNewCardInformations.resx">
+      <DependentUpon>AddNewCardInformations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\CardCRUD\CardSettings.resx">
+      <DependentUpon>CardSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\CardCRUD\Update\UpdateCard.resx">
+      <DependentUpon>UpdateCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\CardCRUD\Update\UpdateCardInformations.resx">
+      <DependentUpon>UpdateCardInformations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\CardCRUD\Update\UpdateCardSuccess.resx">
+      <DependentUpon>UpdateCardSuccess.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\StudentCRUD\Add\AddNewStudent.resx">
       <DependentUpon>AddNewStudent.cs</DependentUpon>
@@ -189,6 +262,9 @@
     <EmbeddedResource Include="Admin\StudentCRUD\Update\UpdateStudentVariables.resx">
       <DependentUpon>UpdateStudentVariables.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="cardTemplate.resx">
+      <DependentUpon>cardTemplate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -222,10 +298,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Admin\CardCRUD\Add\" />
     <Folder Include="Admin\CardCRUD\Delete\" />
     <Folder Include="Admin\CardCRUD\Details\" />
-    <Folder Include="Admin\CardCRUD\Update\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

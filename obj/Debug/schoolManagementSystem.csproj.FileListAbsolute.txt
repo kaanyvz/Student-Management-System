@@ -23,3 +23,14 @@ C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSys
 C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.StudentCRUD.Delete.DeleteStudent.resources
 C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.StudentCRUD.Details.StudentDetails.resources
 C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.StudentCRUD.Details.StudentInformationsDetails.resources
+C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.CardCRUD.CardSettings.resources
+C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.cardTemplate.resources
+C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.CardCRUD.Add.AddNewCard.resources
+C:\Users\kaan_\source\repos\schoolManagementSystem\bin\Debug\agq\schoolManagementSystem.resources.dll
+C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.CardCRUD.Add.AddCardSuccess.resources
+C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.CardCRUD.Add.AddNewCardInformations.resources
+C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.CardCRUD.Add.AddNewCardInformations.agq.resources
+C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\agq\schoolManagementSystem.resources.dll
+C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.CardCRUD.Update.UpdateCard.resources
+C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.CardCRUD.Update.UpdateCardInformations.resources
+C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.CardCRUD.Update.UpdateCardSuccess.resources

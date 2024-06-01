@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using schoolManagementSystem.Admin.CardCRUD;
 using schoolManagementSystem.Admin.StudentCRUD;
 
 namespace schoolManagementSystem.Admin
@@ -126,6 +127,16 @@ namespace schoolManagementSystem.Admin
                 this.Close(); 
             }
             
+        }
+
+        private void cardSettingsBtn_Click(object sender, EventArgs e)
+        {
+            CardSettings cardSettings = new CardSettings(adminUsername, schoolName);
+            cardSettings.StartPosition = FormStartPosition.Manual;
+            cardSettings.Location = this.Location;
+            this.Hide();
+            cardSettings.ShowDialog();
+            this.Close();
         }
     }
 }

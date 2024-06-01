@@ -209,6 +209,7 @@ namespace schoolManagementSystem.Admin
             this.cardSettingsBtn.TabIndex = 2;
             this.cardSettingsBtn.Text = "CARD SETTINGS";
             this.cardSettingsBtn.UseVisualStyleBackColor = false;
+            this.cardSettingsBtn.Click += new System.EventHandler(this.cardSettingsBtn_Click);
             this.cardSettingsBtn.MouseEnter += new System.EventHandler(this.cardSettingsBtn_MouseEnter);
             this.cardSettingsBtn.MouseLeave += new System.EventHandler(this.cardSettingsBtn_MouseLeave);
             // 
