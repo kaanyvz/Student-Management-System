@@ -21,3 +21,5 @@ C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSys
 C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.StudentCRUD.Update.UpdateStudentVariables.resources
 C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.StudentCRUD.Update.UpdateStudentSuccess.resources
 C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.StudentCRUD.Delete.DeleteStudent.resources
+C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.StudentCRUD.Details.StudentDetails.resources
+C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.StudentCRUD.Details.StudentInformationsDetails.resources

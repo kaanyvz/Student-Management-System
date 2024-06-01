@@ -9,8 +9,8 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
     {
         // Student Informations
         private Student _student;
-        private string adminUsername;
-        private string schoolName;
+        private string _adminUsername;
+        private string _schoolName;
         
         private int _studentIdFromDatabase;
         private int _parentIdFromDatabase;
@@ -20,12 +20,10 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
         private int parentId;
       
         
-        public AddParentalInformations(
-            string adminUsername,
-            string schoolName,
-            Student student
-            )
+        public AddParentalInformations(string _adminUsername, string _schoolName, Student student)
         {
+            this._adminUsername = _adminUsername;
+            this._schoolName = _schoolName;
             InitializeComponent();
 
 
@@ -42,7 +40,6 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
 
         private void addParentalInformationsBtn_Click(object sender, EventArgs e)
         {
-            
             string password = System.IO.Path.GetRandomFileName().Replace(".", "").Substring(0, 8); 
             string parentName1Text = parentName1.Text;
             string parentSurname1Text = parentSurname1.Text;
@@ -85,7 +82,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
                     cmd.Parameters.AddWithValue("@ParentId", _parentIdFromDatabase);
                     cmd.ExecuteNonQuery();
                 }
-                AddStudentSuccess addStudentSuccess = new AddStudentSuccess(_studentIdFromDatabase, _parentIdFromDatabase, adminUsername, schoolName);
+                AddStudentSuccess addStudentSuccess = new AddStudentSuccess(_studentIdFromDatabase, _parentIdFromDatabase, _adminUsername, _schoolName);
                 addStudentSuccess.StartPosition = FormStartPosition.Manual;
                 addStudentSuccess.Location = this.Location;
                 this.Hide();
@@ -147,7 +144,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
 
         private void backIcon_Click(object sender, EventArgs e)
         {
-            AddNewStudent addNewStudent = new AddNewStudent(adminUsername, schoolName);
+            AddNewStudent addNewStudent = new AddNewStudent(_adminUsername, _schoolName);
             addNewStudent.StartPosition = FormStartPosition.Manual;
             addNewStudent.Location = this.Location;
             this.Hide();

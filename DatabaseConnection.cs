@@ -2,6 +2,6 @@
 {
     public static class DatabaseConnection
     {
-        public static string ConnectionString { get; } = "server=kypc\\SQLEXPRESS;database=StudentManagementSystem;integrated security=true;";
+        public static string ConnectionString { get; } = "server=kypc\\SQLEXPRESS;database=SchoolManagement;integrated security=true;";
     }
 }

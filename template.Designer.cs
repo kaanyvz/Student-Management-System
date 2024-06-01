@@ -47,7 +47,7 @@ namespace schoolManagementSystem
             this.panel10 = new System.Windows.Forms.Panel();
             this.deleteStudentButton = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.allStudentsButton = new System.Windows.Forms.Button();
+            this.studentDetailsBtn = new System.Windows.Forms.Button();
             this.studentManagementSystemPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDashboardTurnOffButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -222,25 +222,25 @@ namespace schoolManagementSystem
             // panel11
             // 
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel11.Controls.Add(this.allStudentsButton);
+            this.panel11.Controls.Add(this.studentDetailsBtn);
             this.panel11.Location = new System.Drawing.Point(3, 287);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(189, 60);
             this.panel11.TabIndex = 0;
             // 
-            // allStudentsButton
+            // studentDetailsBtn
             // 
-            this.allStudentsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(45)))));
-            this.allStudentsButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.allStudentsButton.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.allStudentsButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.allStudentsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.allStudentsButton.Location = new System.Drawing.Point(-26, -14);
-            this.allStudentsButton.Name = "allStudentsButton";
-            this.allStudentsButton.Size = new System.Drawing.Size(236, 83);
-            this.allStudentsButton.TabIndex = 2;
-            this.allStudentsButton.Text = "All Students";
-            this.allStudentsButton.UseVisualStyleBackColor = false;
+            this.studentDetailsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(45)))));
+            this.studentDetailsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.studentDetailsBtn.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.studentDetailsBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.studentDetailsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.studentDetailsBtn.Location = new System.Drawing.Point(-26, -14);
+            this.studentDetailsBtn.Name = "studentDetailsBtn";
+            this.studentDetailsBtn.Size = new System.Drawing.Size(236, 83);
+            this.studentDetailsBtn.TabIndex = 2;
+            this.studentDetailsBtn.Text = "Student Details";
+            this.studentDetailsBtn.UseVisualStyleBackColor = false;
             // 
             // template
             // 
@@ -284,7 +284,7 @@ namespace schoolManagementSystem
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Button deleteStudentButton;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Button allStudentsButton;
+        private System.Windows.Forms.Button studentDetailsBtn;
 
         #endregion
     }

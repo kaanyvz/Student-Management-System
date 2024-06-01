@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using schoolManagementSystem.Admin.StudentCRUD.Add;
 using schoolManagementSystem.Admin.StudentCRUD.Delete;
+using schoolManagementSystem.Admin.StudentCRUD.Details;
 using schoolManagementSystem.Admin.StudentCRUD.Update;
 
 namespace schoolManagementSystem.Admin.StudentCRUD
@@ -121,6 +122,16 @@ namespace schoolManagementSystem.Admin.StudentCRUD
             deleteStudent.Location = this.Location;
             this.Hide();
             deleteStudent.ShowDialog();
+            this.Close();
+        }
+
+        private void studentDetailsBtn_Click(object sender, EventArgs e)
+        {
+            StudentDetails studentDetails = new StudentDetails(adminUsername, schoolName);
+            studentDetails.StartPosition = FormStartPosition.Manual;
+            studentDetails.Location = this.Location;
+            this.Hide();
+            studentDetails.ShowDialog();
             this.Close();
         }
     }

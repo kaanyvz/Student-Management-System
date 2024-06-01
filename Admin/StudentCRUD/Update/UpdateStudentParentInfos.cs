@@ -122,7 +122,6 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
 
                             if (rowsAffected > 0)
                             {
-                                MessageBox.Show("Student and parent information updated successfully.");
 
                                 // Redirect to UpdateSuccess.cs
                                 UpdateStudentSuccess updateSuccess = new UpdateStudentSuccess(adminUsername, schoolName);

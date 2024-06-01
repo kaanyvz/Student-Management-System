@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 using schoolManagementSystem.Admin.StudentCRUD.Add;
+using schoolManagementSystem.Admin.StudentCRUD.Details;
 using schoolManagementSystem.Admin.StudentCRUD.Update;
 
 namespace schoolManagementSystem.Admin.StudentCRUD.Delete
@@ -115,7 +116,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Delete
         
         private void AddDeleteButtonColumn()
         {
-            // Add a button column to the DataGridView
+            if (this._dataGridView.Columns.Contains("deleteButtonColumn")) return;
             DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
             buttonColumn.Name = "deleteButtonColumn";
             buttonColumn.Text = "Delete";
@@ -279,7 +280,11 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Delete
             {
                 DataGridViewRow row = this._dataGridView.Rows[e.RowIndex];
                 int studentId = Convert.ToInt32(row.Cells["Id"].Value);
-                
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this student?", "Confirm Delete", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    DeleteStudentById(studentId);
+                }
 
             }
         }
@@ -295,6 +300,33 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Delete
                 TextRenderer.DrawText(e.Graphics, "Delete", e.CellStyle.Font, e.CellBounds, e.CellStyle.ForeColor, TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter);
 
                 e.Handled = true;
+            }
+        }
+        
+        private void DeleteStudentById(int studentId)
+        {
+            using (SqlConnection connection = new SqlConnection(DatabaseConnection.ConnectionString))
+            {
+                connection.Open();
+
+                string deleteQuery = "DELETE FROM Student WHERE id = @studentId";
+
+                using (SqlCommand deleteCommand = new SqlCommand(deleteQuery, connection))
+                {
+                    deleteCommand.Parameters.AddWithValue("@studentId", studentId);
+
+                    int rowsAffected = deleteCommand.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Student deleted successfully.");
+                        LoadStudentData(); // Refresh the data grid view after deletion
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to delete student.");
+                    }
+                }
             }
         }
 
@@ -412,7 +444,38 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Delete
                 button.BackColor = Color.FromArgb(35, 35, 45); 
             }
         }
+
+        private void clearFiltersBtn_Click(object sender, EventArgs e)
+        {
+       
+            nameFilter.Text = "";
+            surnameFilter.Text = "";
+            numberFilter.Text = "";
+
+            classFilter.SelectedIndex = -1;
+
+            FilterStudents();
+        
+        }
+
+        private void backIcon_Click_1(object sender, EventArgs e)
+        {
+            StudentSettings studentSettings = new StudentSettings(adminUsername, schoolName);
+            studentSettings.StartPosition = FormStartPosition.Manual;
+            studentSettings.Location = this.Location;
+            this.Hide();
+            studentSettings.ShowDialog();
+            this.Close();
+        }
+
+        private void studentDetailsBtn_Click(object sender, EventArgs e)
+        {
+            StudentDetails studentDetails = new StudentDetails(adminUsername, schoolName);
+            studentDetails.StartPosition = FormStartPosition.Manual;
+            studentDetails.Location = this.Location;
+            this.Hide();
+            studentDetails.ShowDialog();
+            this.Close();
+        }
     }
-    
-    
 }

@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 using schoolManagementSystem.Admin.StudentCRUD.Add;
+using schoolManagementSystem.Admin.StudentCRUD.Delete;
 
 namespace schoolManagementSystem.Admin.StudentCRUD.Update
 {
@@ -419,6 +420,26 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
             addNewStudent.ShowDialog();
             this.Close();
             
+        }
+
+        private void deleteStudentButton_Click(object sender, EventArgs e)
+        {
+            DeleteStudent deleteStudent = new DeleteStudent(adminUsername, schoolName);
+            deleteStudent.StartPosition = FormStartPosition.Manual;
+            deleteStudent.Location = this.Location;
+            this.Hide();
+            deleteStudent.ShowDialog();
+            this.Close();
+        }
+
+        private void studentDetailsBtn_Click(object sender, EventArgs e)
+        {
+            StudentSettings studentSettings = new StudentSettings(adminUsername, schoolName);
+            studentSettings.StartPosition = FormStartPosition.Manual;
+            studentSettings.Location = this.Location;
+            this.Hide();
+            studentSettings.ShowDialog();
+            this.Close();
         }
     }
 }

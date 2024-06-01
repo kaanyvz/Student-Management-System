@@ -47,7 +47,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
             this.panel10 = new System.Windows.Forms.Panel();
             this.deleteStudentButton = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.allStudentsButton = new System.Windows.Forms.Button();
+            this.studentDetailsBtn = new System.Windows.Forms.Button();
             this.backIcon = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,7 +56,6 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
             this.parentSurname1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.parentBirthdate1 = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.parentGender1 = new System.Windows.Forms.ComboBox();
             this.parentPhone1 = new System.Windows.Forms.TextBox();
@@ -81,6 +80,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.parentBirthdate1 = new System.Windows.Forms.DateTimePicker();
             this.studentManagementSystemPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDashboardTurnOffButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -123,9 +123,8 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
             this.label3.Font = new System.Drawing.Font("Cascadia Code", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.Location = new System.Drawing.Point(141, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(312, 28);
+            this.label3.Size = new System.Drawing.Size(0, 28);
             this.label3.TabIndex = 6;
-            this.label3.Text = "STUDENT MANAGEMENT SYSTEM";
             // 
             // pictureBox1
             // 
@@ -181,9 +180,8 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
             this.label1.Location = new System.Drawing.Point(75, 10);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
-            this.label1.Size = new System.Drawing.Size(77, 54);
+            this.label1.Size = new System.Drawing.Size(0, 33);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Add New\r\nStudent";
             // 
             // panel7
             // 
@@ -257,25 +255,25 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
             // panel11
             // 
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel11.Controls.Add(this.allStudentsButton);
+            this.panel11.Controls.Add(this.studentDetailsBtn);
             this.panel11.Location = new System.Drawing.Point(3, 287);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(189, 60);
             this.panel11.TabIndex = 0;
             // 
-            // allStudentsButton
+            // studentDetailsBtn
             // 
-            this.allStudentsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(45)))));
-            this.allStudentsButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.allStudentsButton.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.allStudentsButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.allStudentsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.allStudentsButton.Location = new System.Drawing.Point(-26, -14);
-            this.allStudentsButton.Name = "allStudentsButton";
-            this.allStudentsButton.Size = new System.Drawing.Size(236, 83);
-            this.allStudentsButton.TabIndex = 2;
-            this.allStudentsButton.Text = "All Students";
-            this.allStudentsButton.UseVisualStyleBackColor = false;
+            this.studentDetailsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(45)))));
+            this.studentDetailsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.studentDetailsBtn.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.studentDetailsBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.studentDetailsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.studentDetailsBtn.Location = new System.Drawing.Point(-26, -14);
+            this.studentDetailsBtn.Name = "studentDetailsBtn";
+            this.studentDetailsBtn.Size = new System.Drawing.Size(236, 83);
+            this.studentDetailsBtn.TabIndex = 2;
+            this.studentDetailsBtn.Text = "Student Details";
+            this.studentDetailsBtn.UseVisualStyleBackColor = false;
             // 
             // backIcon
             // 
@@ -356,15 +354,6 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
             this.label8.Size = new System.Drawing.Size(69, 15);
             this.label8.TabIndex = 27;
             this.label8.Text = "Birthdate:";
-            // 
-            // parentBirthdate1
-            // 
-            this.parentBirthdate1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.parentBirthdate1.Location = new System.Drawing.Point(351, 407);
-            this.parentBirthdate1.MinDate = new System.DateTime(2005, 1, 1, 0, 0, 0, 0);
-            this.parentBirthdate1.Name = "parentBirthdate1";
-            this.parentBirthdate1.Size = new System.Drawing.Size(260, 20);
-            this.parentBirthdate1.TabIndex = 6;
             // 
             // label5
             // 
@@ -585,12 +574,24 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
             this.textBox1.Size = new System.Drawing.Size(260, 20);
             this.textBox1.TabIndex = 9;
             // 
+            // parentBirthdate1
+            // 
+            this.parentBirthdate1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.parentBirthdate1.Location = new System.Drawing.Point(351, 407);
+            this.parentBirthdate1.MaxDate = new System.DateTime(2002, 12, 31, 0, 0, 0, 0);
+            this.parentBirthdate1.MinDate = new System.DateTime(1940, 1, 1, 0, 0, 0, 0);
+            this.parentBirthdate1.Name = "parentBirthdate1";
+            this.parentBirthdate1.Size = new System.Drawing.Size(260, 20);
+            this.parentBirthdate1.TabIndex = 64;
+            this.parentBirthdate1.Value = new System.DateTime(2002, 12, 31, 0, 0, 0, 0);
+            // 
             // AddParentalInformations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1264, 561);
+            this.Controls.Add(this.parentBirthdate1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -612,7 +613,6 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.parentBirthdate1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.parentGender1);
             this.Controls.Add(this.label7);
@@ -626,8 +626,8 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
             this.Controls.Add(this.studentManagementSystemPanel);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = new System.Drawing.Point(15, 15);
             this.Name = "AddParentalInformations";
-            this.Text = "Student Management System";
             this.studentManagementSystemPanel.ResumeLayout(false);
             this.studentManagementSystemPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDashboardTurnOffButton)).EndInit();
@@ -700,7 +700,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Button deleteStudentButton;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Button allStudentsButton;
+        private System.Windows.Forms.Button studentDetailsBtn;
 
         #endregion
     }

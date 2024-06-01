@@ -2,6 +2,8 @@
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
+using schoolManagementSystem.Admin.StudentCRUD.Delete;
+using schoolManagementSystem.Admin.StudentCRUD.Details;
 using schoolManagementSystem.Admin.StudentCRUD.Update;
 using schoolManagementSystem.Model;
 
@@ -71,7 +73,6 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
             };
             
 
-            MessageBox.Show(student.Firstname + " " + student.Lastname + " sent.");
             AddParentalInformations addParentalInformations = new AddParentalInformations(adminUsername, schoolName, student);
             addParentalInformations.StartPosition = FormStartPosition.Manual;
             addParentalInformations.Location = this.Location;
@@ -219,6 +220,26 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
             updateStudent.Location = this.Location;
             this.Hide();
             updateStudent.ShowDialog();
+            this.Close();
+        }
+
+        private void deleteStudentButton_Click(object sender, EventArgs e)
+        {
+            DeleteStudent deleteStudent = new DeleteStudent(adminUsername, schoolName);
+            deleteStudent.StartPosition = FormStartPosition.Manual;
+            deleteStudent.Location = this.Location;
+            this.Hide();
+            deleteStudent.ShowDialog();
+            this.Close();
+        }
+
+        private void studentDetailsBtn_Click(object sender, EventArgs e)
+        {
+            StudentDetails studentDetails = new StudentDetails(adminUsername, schoolName);
+            studentDetails.StartPosition = FormStartPosition.Manual;
+            studentDetails.Location = this.Location;
+            this.Hide();
+            studentDetails.ShowDialog();
             this.Close();
         }
     }
