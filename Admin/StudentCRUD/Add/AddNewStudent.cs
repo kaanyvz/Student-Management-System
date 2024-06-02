@@ -88,11 +88,13 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
             using (SqlConnection connection = new SqlConnection(DatabaseConnection.ConnectionString))
             {
                 connection.Open();
-                SqlCommand cmd = new SqlCommand("SELECT className FROM Class", connection);
+                SqlCommand cmd = new SqlCommand("SELECT className, capacity FROM Class", connection);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    studentGrade.Items.Add(reader["className"].ToString());
+                    string className = reader["className"].ToString();
+                    int capacity = Convert.ToInt32(reader["capacity"]);
+                    studentGrade.Items.Add($"{className} - {capacity}");
                 }
             }
         }

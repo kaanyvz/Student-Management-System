@@ -48,6 +48,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
             string parentGender1Text = parentGender1?.SelectedItem?.ToString();
             string parentTCNumber1Text = parentTC1.Text;
             DateTime birthdate1Text = parentBirthdate1.Value;
+  
             
             using (SqlConnection connection = new SqlConnection(DatabaseConnection.ConnectionString))
             {
@@ -100,12 +101,28 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
             using (SqlConnection connection = new SqlConnection(DatabaseConnection.ConnectionString))
             {
                 connection.Open();
+
+                string className = student.ClassName.Split('-')[0].Trim();
+
                 SqlCommand cmd = new SqlCommand(
+                    "SELECT id FROM Class WHERE className LIKE @ClassName",
+                    connection);
+                cmd.Parameters.AddWithValue("@ClassName", className + "%"); 
+                object classIdObj = cmd.ExecuteScalar();
+
+                if (classIdObj == null)
+                {
+                    throw new Exception("The class does not exist in the database.");
+                }
+
+                int classId = Convert.ToInt32(classIdObj);
+
+                cmd = new SqlCommand(
                     "INSERT INTO Student (classId, firstname, studentNumber, lastname, gender, email, birthDate, TCNumber, hasOwnCard) " +
-                    "VALUES ((SELECT id FROM Class WHERE className = @ClassName), @Firstname, @StudentNumber, @Lastname, @Gender, @Email, @BirthDate, @TCNumber, 0);" +
+                    "VALUES (@ClassId, @Firstname, @StudentNumber, @Lastname, @Gender, @Email, @BirthDate, @TCNumber, 0);" +
                     "SELECT SCOPE_IDENTITY();", // Retrieve the inserted student ID
                     connection);
-                cmd.Parameters.AddWithValue("@ClassName", student.ClassName);
+                cmd.Parameters.AddWithValue("@ClassId", classId);
                 cmd.Parameters.AddWithValue("@Firstname", student.Firstname);
                 cmd.Parameters.AddWithValue("@StudentNumber", student.StudentNumber);
                 cmd.Parameters.AddWithValue("@Lastname", student.Lastname);
@@ -113,7 +130,16 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
                 cmd.Parameters.AddWithValue("@Email", student.Email);
                 cmd.Parameters.AddWithValue("@BirthDate", student.BirthDate);
                 cmd.Parameters.AddWithValue("@TCNumber", student.TCNumber); // Add TCNumber parameter
-                return Convert.ToInt32(cmd.ExecuteScalar());
+                int studentId = Convert.ToInt32(cmd.ExecuteScalar());
+
+                // Decrease the class capacity by 1
+                cmd = new SqlCommand(
+                    "UPDATE Class SET capacity = capacity - 1 WHERE id = @ClassId",
+                    connection);
+                cmd.Parameters.AddWithValue("@ClassId", classId);
+                cmd.ExecuteNonQuery();
+
+                return studentId;
             }
         }
 

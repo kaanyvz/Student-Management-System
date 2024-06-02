@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace schoolManagementSystem.Admin.CardCRUD.Add
 {
@@ -15,6 +16,15 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             InitializeComponent();
             
         }
-       
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            CardSettings cardSettings = new CardSettings(adminUsername, schoolName);
+            cardSettings.StartPosition = FormStartPosition.Manual;
+            cardSettings.Location = this.Location;
+            this.Hide();
+            cardSettings.ShowDialog();
+            this.Close();
+        }
     }
 }

@@ -74,6 +74,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             this.backButton.TabIndex = 29;
             this.backButton.Text = "< Go Back";
             this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // richTextBoxInside
             // 
