@@ -197,6 +197,48 @@
     <Compile Include="Admin\StudentCRUD\Update\UpdateStudentVariables.Designer.cs">
       <DependentUpon>UpdateStudentVariables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\TeacherCRUD\Add\AddNewTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\TeacherCRUD\Add\AddNewTeacher.Designer.cs">
+      <DependentUpon>AddNewTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TeacherCRUD\Add\AddNewTeacherSuccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\TeacherCRUD\Add\AddNewTeacherSuccess.Designer.cs">
+      <DependentUpon>AddNewTeacherSuccess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TeacherCRUD\Delete\DeleteTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\TeacherCRUD\Delete\DeleteTeacher.Designer.cs">
+      <DependentUpon>DeleteTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TeacherCRUD\TeacherSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\TeacherCRUD\TeacherSettings.Designer.cs">
+      <DependentUpon>TeacherSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TeacherCRUD\Update\UpdateTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\TeacherCRUD\Update\UpdateTeacher.Designer.cs">
+      <DependentUpon>UpdateTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TeacherCRUD\Update\UpdateTeacherSuccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\TeacherCRUD\Update\UpdateTeacherSuccess.Designer.cs">
+      <DependentUpon>UpdateTeacherSuccess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TeacherCRUD\Update\UpdateTeacherVariables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\TeacherCRUD\Update\UpdateTeacherVariables.Designer.cs">
+      <DependentUpon>UpdateTeacherVariables.cs</DependentUpon>
+    </Compile>
     <Compile Include="cardTemplate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +249,7 @@
     <Compile Include="Model\Card.cs" />
     <Compile Include="Model\Parent.cs" />
     <Compile Include="Model\Student.cs" />
+    <Compile Include="Model\Teacher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SplashScreen.cs">
@@ -215,7 +258,15 @@
     <Compile Include="SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teacher\TeacherLogin.cs" />
+    <Compile Include="teacherTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="teacherTemplate.Designer.cs">
+      <DependentUpon>teacherTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\TeacherLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Teacher\TeacherLogin.Designer.cs">
       <DependentUpon>TeacherLogin.cs</DependentUpon>
     </Compile>
@@ -294,6 +345,27 @@
     <EmbeddedResource Include="Admin\StudentCRUD\Update\UpdateStudentVariables.resx">
       <DependentUpon>UpdateStudentVariables.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\TeacherCRUD\Add\AddNewTeacher.resx">
+      <DependentUpon>AddNewTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\TeacherCRUD\Add\AddNewTeacherSuccess.resx">
+      <DependentUpon>AddNewTeacherSuccess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\TeacherCRUD\Delete\DeleteTeacher.resx">
+      <DependentUpon>DeleteTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\TeacherCRUD\TeacherSettings.resx">
+      <DependentUpon>TeacherSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\TeacherCRUD\Update\UpdateTeacher.resx">
+      <DependentUpon>UpdateTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\TeacherCRUD\Update\UpdateTeacherSuccess.resx">
+      <DependentUpon>UpdateTeacherSuccess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\TeacherCRUD\Update\UpdateTeacherVariables.resx">
+      <DependentUpon>UpdateTeacherVariables.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cardTemplate.resx">
       <DependentUpon>cardTemplate.cs</DependentUpon>
     </EmbeddedResource>
@@ -308,6 +380,9 @@
     </Compile>
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="teacherTemplate.resx">
+      <DependentUpon>teacherTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher\TeacherLogin.resx">
       <DependentUpon>TeacherLogin.cs</DependentUpon>

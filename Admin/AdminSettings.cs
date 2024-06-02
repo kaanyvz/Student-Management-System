@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using schoolManagementSystem.Admin.CardCRUD;
 using schoolManagementSystem.Admin.StudentCRUD;
+using schoolManagementSystem.Admin.TeacherCRUD;
 
 namespace schoolManagementSystem.Admin
 {
@@ -136,6 +137,16 @@ namespace schoolManagementSystem.Admin
             cardSettings.Location = this.Location;
             this.Hide();
             cardSettings.ShowDialog();
+            this.Close();
+        }
+
+        private void teacherSettingsBtn_Click(object sender, EventArgs e)
+        {
+            TeacherSettings teacherSettings = new TeacherSettings(adminUsername, schoolName);
+            teacherSettings.StartPosition = FormStartPosition.Manual;
+            teacherSettings.Location = this.Location;
+            this.Hide();
+            teacherSettings.ShowDialog();
             this.Close();
         }
     }

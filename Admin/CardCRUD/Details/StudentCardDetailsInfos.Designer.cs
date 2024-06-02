@@ -80,6 +80,9 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             this.label16 = new System.Windows.Forms.Label();
             this.balanceBox = new System.Windows.Forms.TextBox();
             this.statusBox = new System.Windows.Forms.TextBox();
+            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
+            this.label19 = new System.Windows.Forms.Label();
+            this.periodDropdown = new System.Windows.Forms.ComboBox();
             this.studentManagementSystemPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDashboardTurnOffButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -278,7 +281,8 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label10.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label10.Location = new System.Drawing.Point(550, 89);
             this.label10.Name = "label10";
@@ -519,7 +523,8 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label20.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label20.Location = new System.Drawing.Point(1048, 94);
             this.label20.Name = "label20";
@@ -596,7 +601,8 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label16.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label16.Location = new System.Drawing.Point(1048, 264);
             this.label16.Name = "label16";
@@ -628,13 +634,45 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             this.statusBox.Size = new System.Drawing.Size(260, 22);
             this.statusBox.TabIndex = 107;
             // 
+            // cartesianChart1
+            // 
+            this.cartesianChart1.Location = new System.Drawing.Point(229, 463);
+            this.cartesianChart1.Name = "cartesianChart1";
+            this.cartesianChart1.Size = new System.Drawing.Size(1183, 276);
+            this.cartesianChart1.TabIndex = 126;
+            this.cartesianChart1.Text = "cartesianChart1";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label19.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label19.Location = new System.Drawing.Point(226, 432);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(153, 17);
+            this.label19.TabIndex = 124;
+            this.label19.Text = "Canteen Card Activities";
+            // 
+            // periodDropdown
+            // 
+            this.periodDropdown.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.periodDropdown.FormattingEnabled = true;
+            this.periodDropdown.Location = new System.Drawing.Point(406, 432);
+            this.periodDropdown.Name = "periodDropdown";
+            this.periodDropdown.Size = new System.Drawing.Size(164, 21);
+            this.periodDropdown.TabIndex = 127;
+            // 
             // StudentCardDetailsInfos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1464, 761);
+            this.Controls.Add(this.periodDropdown);
+            this.Controls.Add(this.cartesianChart1);
             this.Controls.Add(this.nameSurnameRichBox);
+            this.Controls.Add(this.label19);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label10);
@@ -687,6 +725,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.TextBox balanceBox;
@@ -744,5 +783,9 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
         private System.Windows.Forms.PictureBox backIcon;
 
         #endregion
+
+        private LiveCharts.WinForms.CartesianChart cartesianChart1;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ComboBox periodDropdown;
     }
 }

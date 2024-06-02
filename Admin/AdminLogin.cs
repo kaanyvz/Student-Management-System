@@ -13,7 +13,7 @@ namespace schoolManagementSystem.Admin
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.AcceptButton = loginBtn;
-            
+            this.StartPosition = FormStartPosition.CenterScreen; // Add this line
         }
         
         

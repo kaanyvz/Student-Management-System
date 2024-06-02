@@ -262,6 +262,7 @@ namespace schoolManagementSystem.Admin
             this.teacherSettingsBtn.TabIndex = 2;
             this.teacherSettingsBtn.Text = "TEACHER SETTINGS";
             this.teacherSettingsBtn.UseVisualStyleBackColor = false;
+            this.teacherSettingsBtn.Click += new System.EventHandler(this.teacherSettingsBtn_Click);
             this.teacherSettingsBtn.MouseEnter += new System.EventHandler(this.teacherSettingsBtn_MouseEnter);
             this.teacherSettingsBtn.MouseLeave += new System.EventHandler(this.teacherSettingsBtn_MouseLeave);
             // 

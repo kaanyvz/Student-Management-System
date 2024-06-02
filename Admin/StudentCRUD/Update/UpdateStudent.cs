@@ -40,6 +40,8 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
             this._dataGridView.ReadOnly = true;
             this._dataGridView.RowTemplate.Height = 40;
             this._dataGridView.AllowUserToResizeRows = false;
+            this._dataGridView.AllowUserToAddRows = false;
+
             
             
             PopulateClassFilterDropdown();

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             this.schoolName = schoolName;
             this.studentId = studentId;
             InitializeComponent();
+            InitializePeriodDropdown();
         }
 
         private void StudentCardDetailsInfos_Load(object sender, EventArgs e)
@@ -26,7 +28,19 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             FetchStudentCardDetails();
             FetchAndDisplayData();
         }
-        
+
+        private void InitializePeriodDropdown()
+        {
+            periodDropdown.Items.AddRange(new object[] { "Year", "Month", "Week", "Day" });
+            periodDropdown.SelectedIndex = 0; // Select the first item by default
+            periodDropdown.SelectedIndexChanged += PeriodDropdown_SelectedIndexChanged;
+        }
+
+        private void PeriodDropdown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FetchAndDisplayData();
+        }
+
         private void FetchStudentCardDetails()
         {
             using (SqlConnection connection = new SqlConnection(DatabaseConnection.ConnectionString))
@@ -136,56 +150,95 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
         {
             using (SqlConnection connection = new SqlConnection(DatabaseConnection.ConnectionString))
             {
-                connection.Open();
-
-                string query = "SELECT DAY(cp.purchaseDate) as Day, SUM(pr.price * cp.purchaseAmount) as TotalSpent " +
-                               "FROM CanteenPurchase cp " +
-                               "INNER JOIN CanteenProduct pr ON cp.canteenProductId = pr.id " +
-                               "WHERE cp.studentId = @studentId AND MONTH(cp.purchaseDate) = MONTH(GETDATE()) AND YEAR(cp.purchaseDate) = YEAR(GETDATE()) " +
-                               "GROUP BY DAY(cp.purchaseDate) " +
-                               "ORDER BY Day";
-
-                using (SqlCommand command = new SqlCommand(query, connection))
+                try
                 {
-                    command.Parameters.AddWithValue("@studentId", studentId);
+                    connection.Open();
 
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    // Clear previous chart data
+                    cartesianChart1.Series.Clear();
+                    cartesianChart1.AxisX.Clear();
+                    cartesianChart1.AxisY.Clear();
+
+                    string selectedPeriod = periodDropdown.SelectedItem.ToString();
+                    string timeConstraint = "";
+
+                    switch (selectedPeriod)
                     {
-                        var dayValues = new ChartValues<double>();
-                        var spentValues = new ChartValues<double>();
+                        case "Year":
+                            timeConstraint = "AND YEAR(cp.purchaseDate) = YEAR(GETDATE())";
+                            break;
+                        case "Month":
+                            timeConstraint = "AND MONTH(cp.purchaseDate) = MONTH(GETDATE()) AND YEAR(cp.purchaseDate) = YEAR(GETDATE())";
+                            break;
+                        case "Week":
+                            DateTime startDate = DateTime.Today.AddDays(-6);
+                            // Format the date to match SQL format (yyyy-MM-dd)
+                            string formattedStartDate = startDate.ToString("yyyy-MM-dd");
+                            // Construct the time constraint
+                            timeConstraint = $"AND cp.purchaseDate >= '{formattedStartDate}' AND cp.purchaseDate <= GETDATE()";
+                            break;
+                        case "Day":
+                            timeConstraint = "AND CAST(cp.purchaseDate AS DATE) = CAST(GETDATE() AS DATE)";
+                            break;
+                        default:
+                            break;
+                    }
 
-                        while (reader.Read())
-                        {
-                            dayValues.Add(Convert.ToDouble(reader["Day"]));
-                            spentValues.Add(Convert.ToDouble(reader["TotalSpent"]));
-                        }
+                    string query = "SELECT cp.purchaseDate as PurchaseDate, SUM(pr.price * cp.purchaseAmount) as TotalSpent " +
+                                   "FROM CanteenPurchase cp " +
+                                   "INNER JOIN CanteenProduct pr ON cp.canteenProductId = pr.id " +
+                                   $"WHERE cp.studentId = @studentId {timeConstraint} " +
+                                   "GROUP BY cp.purchaseDate " +
+                                   "ORDER BY PurchaseDate";
 
-                        /*cartesianChart1.Series = new SeriesCollection
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@studentId", studentId);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            new LineSeries
+                            var dateValues = new ChartValues<DateTime>();
+                            var spentValues = new ChartValues<double>();
+
+                            while (reader.Read())
+                            {
+                                dateValues.Add(Convert.ToDateTime(reader["PurchaseDate"]));
+                                spentValues.Add(Convert.ToDouble(reader["TotalSpent"]));
+                            }
+
+                            cartesianChart1.Series = new SeriesCollection
+                            {
+                                new LineSeries
+                                {
+                                    Values = spentValues
+                                }
+                            };
+
+                            cartesianChart1.AxisX.Add(new Axis
+                            {
+                                Title = "Date",
+                                Labels = dateValues.Select(date => date.ToString("yyyy-MM-dd")).ToList()
+                            });
+
+                            cartesianChart1.AxisY.Add(new Axis
                             {
                                 Title = "Spent",
-                                Values = spentValues
-                            }
-                        };
-
-                        cartesianChart1.AxisX.Add(new Axis
-                        {
-                            Title = "Day",
-                            Labels = dayValues.Select(d => d.ToString()).ToList()
-                        });
-
-                        cartesianChart1.AxisY.Add(new Axis
-                        {
-                            Title = "Spent",
-                            MinValue = 0,
-                            MaxValue = 200,
-                            Separator = new Separator { Step = 20 }
-                        });*/
+                                MinValue = 0,
+                                MaxValue = 200,
+                                Separator = new Separator { Step = 20 },
+                                LabelFormatter = value => $"{value} ₺"
+                            });
+                        }
                     }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message);
                 }
             }
         }
+
+
 
         private void backIcon_Click(object sender, EventArgs e)
         {

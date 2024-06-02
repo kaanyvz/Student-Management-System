@@ -93,7 +93,9 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(451, 50);
             this.richTextBox1.TabIndex = 113;
-            this.richTextBox1.Text = "⚫  You can select one of the students to be updated.\n⚫  The first 50 students add" + "ed to the system are listed.\n⚫  You can also filter students by first name, last" + " name, number or class.";
+            this.richTextBox1.Text = "⚫  You can select one of the students to be updated.\n⚫  The first 50 students add" +
+    "ed to the system are listed.\n⚫  You can also filter students by first name, last" +
+    " name, number or class.";
             // 
             // label2
             // 
@@ -393,6 +395,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             ((System.ComponentModel.ISupportInitialize)(this.backIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.Button clearFiltersBtn;
