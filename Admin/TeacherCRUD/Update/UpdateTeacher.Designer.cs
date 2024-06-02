@@ -185,6 +185,9 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
             this.addNewTeacherBtn.TabIndex = 2;
             this.addNewTeacherBtn.Text = "Add New Teacher";
             this.addNewTeacherBtn.UseVisualStyleBackColor = false;
+            this.addNewTeacherBtn.Click += new System.EventHandler(this.addNewTeacherBtn_Click);
+            this.addNewTeacherBtn.MouseEnter += new System.EventHandler(this.addNewTeacherBtn_MouseEnter);
+            this.addNewTeacherBtn.MouseLeave += new System.EventHandler(this.addNewTeacherBtn_MouseLeave);
             // 
             // panel9
             // 
@@ -231,6 +234,9 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
             this.deleteTeacherBtn.TabIndex = 2;
             this.deleteTeacherBtn.Text = "Delete Teacher";
             this.deleteTeacherBtn.UseVisualStyleBackColor = false;
+            this.deleteTeacherBtn.Click += new System.EventHandler(this.deleteTeacherBtn_Click);
+            this.deleteTeacherBtn.MouseEnter += new System.EventHandler(this.deleteTeacherBtn_MouseEnter);
+            this.deleteTeacherBtn.MouseLeave += new System.EventHandler(this.deleteTeacherBtn_MouseLeave);
             // 
             // panel1
             // 
@@ -254,6 +260,9 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
             this.teacherDetailsBtn.TabIndex = 2;
             this.teacherDetailsBtn.Text = "Teacher Details";
             this.teacherDetailsBtn.UseVisualStyleBackColor = false;
+            this.teacherDetailsBtn.Click += new System.EventHandler(this.teacherDetailsBtn_Click);
+            this.teacherDetailsBtn.MouseEnter += new System.EventHandler(this.teacherDetailsBtn_MouseEnter);
+            this.teacherDetailsBtn.MouseLeave += new System.EventHandler(this.teacherDetailsBtn_MouseLeave);
             // 
             // backIcon
             // 

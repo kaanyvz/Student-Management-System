@@ -136,6 +136,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Delete
             this.clearFiltersBtn.TabIndex = 97;
             this.clearFiltersBtn.Text = "Clear Filters";
             this.clearFiltersBtn.UseVisualStyleBackColor = false;
+            this.clearFiltersBtn.Click += new System.EventHandler(this.clearFiltersBtn_Click);
             // 
             // majorFilter
             // 
@@ -146,6 +147,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Delete
             this.majorFilter.Name = "majorFilter";
             this.majorFilter.Size = new System.Drawing.Size(179, 23);
             this.majorFilter.TabIndex = 95;
+            this.majorFilter.SelectedIndexChanged += new System.EventHandler(this.majorFilter_SelectedIndexChanged);
             // 
             // classFilter
             // 
@@ -156,6 +158,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Delete
             this.classFilter.Name = "classFilter";
             this.classFilter.Size = new System.Drawing.Size(179, 23);
             this.classFilter.TabIndex = 96;
+            this.classFilter.SelectedIndexChanged += new System.EventHandler(this.classFilter_SelectedIndexChanged);
             // 
             // nameFilter
             // 
@@ -167,6 +170,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Delete
             this.nameFilter.Name = "nameFilter";
             this.nameFilter.Size = new System.Drawing.Size(179, 22);
             this.nameFilter.TabIndex = 93;
+            this.nameFilter.TextChanged += new System.EventHandler(this.nameFilter_TextChanged);
             // 
             // surnameFilter
             // 
@@ -178,6 +182,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Delete
             this.surnameFilter.Name = "surnameFilter";
             this.surnameFilter.Size = new System.Drawing.Size(179, 22);
             this.surnameFilter.TabIndex = 94;
+            this.surnameFilter.TextChanged += new System.EventHandler(this.surnameFilter_TextChanged);
             // 
             // studentManagementSystemPanel
             // 
@@ -292,6 +297,9 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Delete
             this.addNewTeacherBtn.TabIndex = 2;
             this.addNewTeacherBtn.Text = "Add New Teacher";
             this.addNewTeacherBtn.UseVisualStyleBackColor = false;
+            this.addNewTeacherBtn.Click += new System.EventHandler(this.addNewTeacherBtn_Click);
+            this.addNewTeacherBtn.MouseEnter += new System.EventHandler(this.addNewTeacherBtn_MouseEnter);
+            this.addNewTeacherBtn.MouseLeave += new System.EventHandler(this.addNewTeacherBtn_MouseLeave);
             // 
             // panel9
             // 
@@ -315,6 +323,9 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Delete
             this.updateTeacherBtn.TabIndex = 2;
             this.updateTeacherBtn.Text = "Update Teacher";
             this.updateTeacherBtn.UseVisualStyleBackColor = false;
+            this.updateTeacherBtn.Click += new System.EventHandler(this.updateTeacherBtn_Click);
+            this.updateTeacherBtn.MouseEnter += new System.EventHandler(this.updateTeacherBtn_MouseEnter);
+            this.updateTeacherBtn.MouseLeave += new System.EventHandler(this.updateTeacherBtn_MouseLeave);
             // 
             // panel11
             // 
@@ -361,6 +372,9 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Delete
             this.teacherDetailsBtn.TabIndex = 2;
             this.teacherDetailsBtn.Text = "Teacher Details";
             this.teacherDetailsBtn.UseVisualStyleBackColor = false;
+            this.teacherDetailsBtn.Click += new System.EventHandler(this.teacherDetailsBtn_Click);
+            this.teacherDetailsBtn.MouseEnter += new System.EventHandler(this.teacherDetailsBtn_MouseEnter);
+            this.teacherDetailsBtn.MouseLeave += new System.EventHandler(this.teacherDetailsBtn_MouseLeave);
             // 
             // backIcon
             // 
