@@ -284,9 +284,6 @@
   <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
     <value>studentSettingsPanel</value>
   </data>
-  <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>799, 438</value>
-  </data>
   <data name="&gt;&gt;studentSettingsPanel.Parent" xml:space="preserve">
     <value>flowLayoutPanel1</value>
   </data>
@@ -410,6 +407,9 @@
   </data>
   <data name="&gt;&gt;updateStudentButton.Parent" xml:space="preserve">
     <value>panel9</value>
+  </data>
+  <data name="&gt;&gt;panel7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="studentDetailsBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 83</value>
@@ -580,9 +580,6 @@
   <data name="&gt;&gt;label5.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;studentMail.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;studentManagementSystemPanel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -624,6 +621,9 @@
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
+  </data>
+  <data name="addStudentButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 9.75pt, style=Bold, Italic</value>
   </data>
   <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
     <value>16</value>
@@ -1602,7 +1602,7 @@ Settings</value>
     <value>2</value>
   </data>
   <data name="&gt;&gt;backIcon.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="updateStudentButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>-26, -15</value>
@@ -1809,7 +1809,7 @@ Settings</value>
     <value>55, 15</value>
   </data>
   <data name="&gt;&gt;panel11.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="adminDashboardTurnOffButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2709,8 +2709,8 @@ Settings</value>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 15</value>
   </data>
-  <data name="addStudentButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Black, 9.75pt, style=Bold, Italic</value>
+  <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>799, 438</value>
   </data>
   <data name="usernameLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>243, 243</value>
@@ -2718,8 +2718,8 @@ Settings</value>
   <data name="&gt;&gt;studentSurname.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;studentMail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label4.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

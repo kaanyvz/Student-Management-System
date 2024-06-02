@@ -44,8 +44,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             this.addStudentButton = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.updateStudentButton = new System.Windows.Forms.Button();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.deleteStudentButton = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
             this.studentDetailsBtn = new System.Windows.Forms.Button();
             this.backIcon = new System.Windows.Forms.PictureBox();
@@ -67,7 +65,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.backIcon)).BeginInit();
             this.SuspendLayout();
@@ -121,7 +118,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             this.flowLayoutPanel1.Controls.Add(this.studentSettingsPanel);
             this.flowLayoutPanel1.Controls.Add(this.panel7);
             this.flowLayoutPanel1.Controls.Add(this.panel9);
-            this.flowLayoutPanel1.Controls.Add(this.panel10);
             this.flowLayoutPanel1.Controls.Add(this.panel11);
             this.flowLayoutPanel1.Controls.Add(this.backIcon);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -209,34 +205,11 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             this.updateStudentButton.Text = "Update Card";
             this.updateStudentButton.UseVisualStyleBackColor = false;
             // 
-            // panel10
-            // 
-            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel10.Controls.Add(this.deleteStudentButton);
-            this.panel10.Location = new System.Drawing.Point(3, 221);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(189, 60);
-            this.panel10.TabIndex = 0;
-            // 
-            // deleteStudentButton
-            // 
-            this.deleteStudentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(45)))));
-            this.deleteStudentButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.deleteStudentButton.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.deleteStudentButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.deleteStudentButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.deleteStudentButton.Location = new System.Drawing.Point(-26, -12);
-            this.deleteStudentButton.Name = "deleteStudentButton";
-            this.deleteStudentButton.Size = new System.Drawing.Size(236, 83);
-            this.deleteStudentButton.TabIndex = 2;
-            this.deleteStudentButton.Text = "Delete Card";
-            this.deleteStudentButton.UseVisualStyleBackColor = false;
-            // 
             // panel11
             // 
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel11.Controls.Add(this.studentDetailsBtn);
-            this.panel11.Location = new System.Drawing.Point(3, 287);
+            this.panel11.Location = new System.Drawing.Point(3, 221);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(189, 60);
             this.panel11.TabIndex = 0;
@@ -261,7 +234,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             this.backIcon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.backIcon.Image = ((System.Drawing.Image)(resources.GetObject("backIcon.Image")));
             this.backIcon.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.backIcon.Location = new System.Drawing.Point(3, 353);
+            this.backIcon.Location = new System.Drawing.Point(3, 287);
             this.backIcon.Name = "backIcon";
             this.backIcon.Size = new System.Drawing.Size(39, 37);
             this.backIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -411,7 +384,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.backIcon)).EndInit();
             this.ResumeLayout(false);
@@ -443,8 +415,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
         private System.Windows.Forms.Button addStudentButton;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button updateStudentButton;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Button deleteStudentButton;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Button studentDetailsBtn;
 

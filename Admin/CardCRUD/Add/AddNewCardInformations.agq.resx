@@ -2618,6 +2618,17 @@
         5pe4MQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 54</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Add New
+Card
+</value>
+  </data>
+  <data name="panel11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 221</value>
+  </data>
   <data name="backIcon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
@@ -2834,6 +2845,9 @@
         Gjfqtb+qf8P178N7XC1XtN87fIaw1z46elL7s4XP2GwewmF6QmLPyMj/BymqPTI7ieIgAAAAAElFTkSu
         QmCC
 </value>
+  </data>
+  <data name="backIcon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 287</value>
   </data>
   <data name="backIcon.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 37</value>

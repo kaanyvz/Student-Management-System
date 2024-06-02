@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using schoolManagementSystem.Admin.CardCRUD.Add;
+using schoolManagementSystem.Admin.CardCRUD.Details;
 using schoolManagementSystem.Admin.CardCRUD.Update;
 
 namespace schoolManagementSystem.Admin.CardCRUD
@@ -80,22 +81,6 @@ namespace schoolManagementSystem.Admin.CardCRUD
             }
         }
 
-        private void deleteStudentButton_MouseEnter(object sender, EventArgs e)
-        {
-            if (sender is Button button)
-            {
-                button.BackColor = Color.FromArgb(55, 55, 70);
-            }
-        }
-
-        private void deleteStudentButton_MouseLeave(object sender, EventArgs e)
-        {
-            if (sender is Button button)
-            {
-                button.BackColor = Color.FromArgb(35, 35, 45); 
-            }
-        }
-
         private void studentDetailsBtn_MouseEnter(object sender, EventArgs e)
         {
             if (sender is Button button)
@@ -110,6 +95,16 @@ namespace schoolManagementSystem.Admin.CardCRUD
             {
                 button.BackColor = Color.FromArgb(35, 35, 45); 
             }
+        }
+
+        private void studentDetailsBtn_Click(object sender, EventArgs e)
+        {
+            StudentCardDetails studentCardDetails = new StudentCardDetails(adminUsername, schoolName);
+            studentCardDetails.StartPosition = FormStartPosition.Manual;
+            studentCardDetails.Location = this.Location;
+            this.Hide();
+            studentCardDetails.ShowDialog();
+            this.Close();
         }
     }
 }

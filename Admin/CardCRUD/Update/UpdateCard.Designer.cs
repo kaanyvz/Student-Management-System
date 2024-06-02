@@ -51,8 +51,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.addNewCardButton = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.updateCardButton = new System.Windows.Forms.Button();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.deleteCardButton = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
             this.cardDetailsButton = new System.Windows.Forms.Button();
             this.backIcon = new System.Windows.Forms.PictureBox();
@@ -67,7 +65,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.backIcon)).BeginInit();
             this.SuspendLayout();
@@ -198,7 +195,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.flowLayoutPanel1.Controls.Add(this.studentSettingsPanel);
             this.flowLayoutPanel1.Controls.Add(this.panel7);
             this.flowLayoutPanel1.Controls.Add(this.panel9);
-            this.flowLayoutPanel1.Controls.Add(this.panel10);
             this.flowLayoutPanel1.Controls.Add(this.panel11);
             this.flowLayoutPanel1.Controls.Add(this.backIcon);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -236,9 +232,9 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.label1.Location = new System.Drawing.Point(75, 10);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
-            this.label1.Size = new System.Drawing.Size(70, 54);
+            this.label1.Size = new System.Drawing.Size(63, 54);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Card\r\nSettings";
+            this.label1.Text = "Update\r\nCard";
             // 
             // panel7
             // 
@@ -289,36 +285,11 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.updateCardButton.Text = "Update Card";
             this.updateCardButton.UseVisualStyleBackColor = false;
             // 
-            // panel10
-            // 
-            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel10.Controls.Add(this.deleteCardButton);
-            this.panel10.Location = new System.Drawing.Point(3, 221);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(189, 60);
-            this.panel10.TabIndex = 0;
-            // 
-            // deleteCardButton
-            // 
-            this.deleteCardButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(45)))));
-            this.deleteCardButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.deleteCardButton.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.deleteCardButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.deleteCardButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.deleteCardButton.Location = new System.Drawing.Point(-26, -12);
-            this.deleteCardButton.Name = "deleteCardButton";
-            this.deleteCardButton.Size = new System.Drawing.Size(236, 83);
-            this.deleteCardButton.TabIndex = 2;
-            this.deleteCardButton.Text = "Delete Card";
-            this.deleteCardButton.UseVisualStyleBackColor = false;
-            this.deleteCardButton.MouseEnter += new System.EventHandler(this.deleteCardButton_MouseEnter);
-            this.deleteCardButton.MouseLeave += new System.EventHandler(this.deleteCardButton_MouseLeave);
-            // 
             // panel11
             // 
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel11.Controls.Add(this.cardDetailsButton);
-            this.panel11.Location = new System.Drawing.Point(3, 287);
+            this.panel11.Location = new System.Drawing.Point(3, 221);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(189, 60);
             this.panel11.TabIndex = 0;
@@ -345,7 +316,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.backIcon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.backIcon.Image = ((System.Drawing.Image)(resources.GetObject("backIcon.Image")));
             this.backIcon.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.backIcon.Location = new System.Drawing.Point(3, 353);
+            this.backIcon.Location = new System.Drawing.Point(3, 287);
             this.backIcon.Name = "backIcon";
             this.backIcon.Size = new System.Drawing.Size(39, 37);
             this.backIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -420,7 +391,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.backIcon)).EndInit();
             this.ResumeLayout(false);
@@ -453,8 +423,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
         private System.Windows.Forms.Button addNewCardButton;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button updateCardButton;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Button deleteCardButton;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Button cardDetailsButton;
 

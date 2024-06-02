@@ -306,22 +306,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.Close(); 
         }
         
-        private void deleteCardButton_MouseEnter(object sender, EventArgs e)
-        {
-            if (sender is Button button)
-            {
-                button.BackColor = Color.FromArgb(55, 55, 70);
-            }
-        }
-
-        private void deleteCardButton_MouseLeave(object sender, EventArgs e)
-        {
-            if (sender is Button button)
-            {
-                button.BackColor = Color.FromArgb(35, 35, 45); 
-            }
-        }
-        
 
         private void cardDetailsButton_MouseEnter(object sender, EventArgs e)
         {

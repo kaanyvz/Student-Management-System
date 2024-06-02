@@ -95,6 +95,15 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             }
         }
 
-        
+
+        private void backIcon_Click(object sender, EventArgs e)
+        {
+            UpdateCard updateCard = new UpdateCard(adminUsername, schoolName);
+            updateCard.StartPosition = FormStartPosition.Manual;
+            updateCard.Location = this.Location;
+            this.Hide();
+            updateCard.ShowDialog();
+            this.Close();
+        }
     }
 }

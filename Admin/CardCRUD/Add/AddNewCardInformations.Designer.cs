@@ -44,8 +44,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             this.addStudentButton = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.updateStudentButton = new System.Windows.Forms.Button();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.deleteStudentButton = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
             this.studentDetailsBtn = new System.Windows.Forms.Button();
             this.backIcon = new System.Windows.Forms.PictureBox();
@@ -80,7 +78,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.backIcon)).BeginInit();
             this.SuspendLayout();
@@ -120,7 +117,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             this.flowLayoutPanel1.Controls.Add(this.studentSettingsPanel);
             this.flowLayoutPanel1.Controls.Add(this.panel7);
             this.flowLayoutPanel1.Controls.Add(this.panel9);
-            this.flowLayoutPanel1.Controls.Add(this.panel10);
             this.flowLayoutPanel1.Controls.Add(this.panel11);
             this.flowLayoutPanel1.Controls.Add(this.backIcon);
             this.flowLayoutPanel1.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -177,22 +173,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             this.updateStudentButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.updateStudentButton.Name = "updateStudentButton";
             this.updateStudentButton.UseVisualStyleBackColor = false;
-            // 
-            // panel10
-            // 
-            resources.ApplyResources(this.panel10, "panel10");
-            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel10.Controls.Add(this.deleteStudentButton);
-            this.panel10.Name = "panel10";
-            // 
-            // deleteStudentButton
-            // 
-            resources.ApplyResources(this.deleteStudentButton, "deleteStudentButton");
-            this.deleteStudentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(45)))));
-            this.deleteStudentButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.deleteStudentButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.deleteStudentButton.Name = "deleteStudentButton";
-            this.deleteStudentButton.UseVisualStyleBackColor = false;
             // 
             // panel11
             // 
@@ -408,7 +388,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.backIcon)).EndInit();
             this.ResumeLayout(false);
@@ -455,8 +434,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
         private System.Windows.Forms.Button addStudentButton;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button updateStudentButton;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Button deleteStudentButton;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Button studentDetailsBtn;
 

@@ -34,3 +34,5 @@ C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\agq\schoolManagemen
 C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.CardCRUD.Update.UpdateCard.resources
 C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.CardCRUD.Update.UpdateCardInformations.resources
 C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.CardCRUD.Update.UpdateCardSuccess.resources
+C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.CardCRUD.Details.StudentCardDetails.resources
+C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.CardCRUD.Details.StudentCardDetailsInfos.resources
