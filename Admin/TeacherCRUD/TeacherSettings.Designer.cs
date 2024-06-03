@@ -269,6 +269,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD
             this.backIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.backIcon.TabIndex = 41;
             this.backIcon.TabStop = false;
+            this.backIcon.Click += new System.EventHandler(this.backIcon_Click);
             // 
             // TeacherSettings
             // 

@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using schoolManagementSystem.Admin.TeacherCRUD.Add;
 using schoolManagementSystem.Admin.TeacherCRUD.Delete;
+using schoolManagementSystem.Admin.TeacherCRUD.Details;
 using schoolManagementSystem.Admin.TeacherCRUD.Update;
 
 namespace schoolManagementSystem.Admin.TeacherCRUD
@@ -114,7 +115,22 @@ namespace schoolManagementSystem.Admin.TeacherCRUD
 
         private void teacherDetailsBtn_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            TeacherDetails teacherDetails = new TeacherDetails(adminUsername, schoolName);
+            teacherDetails.StartPosition = FormStartPosition.Manual;
+            teacherDetails.Location = this.Location;
+            this.Hide();
+            teacherDetails.ShowDialog();
+            this.Close();
+        }
+
+        private void backIcon_Click(object sender, EventArgs e)
+        {
+            AdminSettings adminSettings = new AdminSettings(adminUsername, schoolName);
+            adminSettings.StartPosition = FormStartPosition.Manual;
+            adminSettings.Location = this.Location;
+            this.Hide();
+            adminSettings.ShowDialog();
+            this.Close();
         }
     }
 }

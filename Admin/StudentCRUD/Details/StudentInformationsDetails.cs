@@ -31,6 +31,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Details
             this._dataGridView.AllowUserToResizeColumns = false;
             this._dataGridView.AllowUserToResizeRows = false;
             this._dataGridView.RowHeadersVisible = false;
+            this._dataGridView.AllowUserToAddRows = false;
         }
 
 
@@ -180,7 +181,8 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Details
                 {
                     command.Parameters.AddWithValue("@studentId", studentId);
 
-                    int totalAbsenceHours = (int)command.ExecuteScalar();
+                    var result = command.ExecuteScalar();
+                    int totalAbsenceHours = result != DBNull.Value ? Convert.ToInt32(result) : 0;
 
                     int remainingHours = 240 - totalAbsenceHours;
 

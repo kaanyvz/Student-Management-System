@@ -125,8 +125,14 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Add
                         using (SqlCommand updateCommand = new SqlCommand(query, sqlConnection))
                         {
                             updateCommand.Parameters.AddWithValue("@headTeacherId", newTeacherId);
-                            updateCommand.Parameters.AddWithValue("@classname", headClass.SelectedItem.ToString());
-
+                            if (headClass.SelectedItem != null)
+                            {
+                                updateCommand.Parameters.AddWithValue("@classname", headClass.SelectedItem.ToString());
+                            }
+                            else
+                            {
+                                updateCommand.Parameters.AddWithValue("@classname", DBNull.Value);
+                            }
                             updateCommand.ExecuteNonQuery();
                         }
                     }

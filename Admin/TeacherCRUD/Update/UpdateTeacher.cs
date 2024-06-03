@@ -142,21 +142,21 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
                     int schoolId = Convert.ToInt32(result);
 
                     string query = @"
-                        SELECT
+                            SELECT
                             t.id as Id,
                             t.firstname as Name,
                             t.lastname as Surname,
                             t.email as Email,
                             t.major as Major,
                             YEAR(GETDATE()) - YEAR(t.birthDate) as Age,
-                            c.classname as ClassName,
+                            COALESCE(c.classname, '----') as ClassName,
                             s.schoolName as School
                         FROM
                             Teacher t
-                            INNER JOIN Class c ON t.id = c.headTeacherId
-                            INNER JOIN School s ON c.schoolId = s.id
+                            LEFT JOIN Class c ON t.id = c.headTeacherId
+                            INNER JOIN School s ON t.schoolId = s.id
                         WHERE
-                            c.schoolId = @schoolId
+                            t.schoolId = 1
                         ORDER BY t.id";
 
                     using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
@@ -239,15 +239,14 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
                     t.email as Email,
                     t.major as Major,
                     YEAR(GETDATE()) - YEAR(t.birthDate) as Age,
-                    c.classname as ClassName,
+                    COALESCE(c.classname, '----') as ClassName,
                     s.schoolName as School
                 FROM
                     Teacher t
-                    INNER JOIN ClassTeacher ct ON t.id = ct.teacherId
-                    INNER JOIN Class c ON ct.classId = c.id
-                    INNER JOIN School s ON c.schoolId = s.id
+                    LEFT JOIN Class c ON t.id = c.headTeacherId
+                    INNER JOIN School s ON t.schoolId = s.id
                 WHERE
-                    c.schoolId = @schoolId";
+                    t.schoolId = @schoolId";
 
             // Initialize parameters
             List<SqlParameter> parameters = new List<SqlParameter>();
@@ -266,7 +265,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
                 parameters.Add(new SqlParameter("@lastName", SqlDbType.NVarChar) { Value = "%" + surnameFilter.Text + "%" });
             }
 
-            if (majorFilter.SelectedItem != null)
+            if (majorFilter.SelectedItem!= null)
             {
                 query += " AND t.major = @major";
                 parameters.Add(new SqlParameter("@major", SqlDbType.NVarChar) { Value = majorFilter.SelectedItem.ToString() });
@@ -274,8 +273,15 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
 
             if (classFilter.SelectedItem != null)
             {
-                query += " AND c.classname = @className";
-                parameters.Add(new SqlParameter("@className", SqlDbType.NVarChar) { Value = classFilter.SelectedItem.ToString() });
+                if (classFilter.SelectedItem.ToString() == "NONE")
+                {
+                    query += " AND c.classname IS NULL";
+                }
+                else
+                {
+                    query += " AND c.classname = @className";
+                    parameters.Add(new SqlParameter("@className", SqlDbType.NVarChar) { Value = classFilter.SelectedItem.ToString() });
+                }
             }
 
             // Execute the query
@@ -302,6 +308,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
         private void PopulateClassFilterDropdown()
         {
             classFilter.Items.Clear();
+            classFilter.Items.Add("NONE"); // Add NONE option
 
             using (SqlConnection sqlConnection = new SqlConnection(DatabaseConnection.ConnectionString))
             {

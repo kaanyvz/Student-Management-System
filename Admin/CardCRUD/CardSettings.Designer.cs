@@ -47,6 +47,7 @@ namespace schoolManagementSystem.Admin.CardCRUD
             this.panel11 = new System.Windows.Forms.Panel();
             this.studentDetailsBtn = new System.Windows.Forms.Button();
             this.backIcon = new System.Windows.Forms.PictureBox();
+            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.studentManagementSystemPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDashboardTurnOffButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,7 +68,7 @@ namespace schoolManagementSystem.Admin.CardCRUD
             this.studentManagementSystemPanel.Controls.Add(this.pictureBox1);
             this.studentManagementSystemPanel.Location = new System.Drawing.Point(200, 0);
             this.studentManagementSystemPanel.Name = "studentManagementSystemPanel";
-            this.studentManagementSystemPanel.Size = new System.Drawing.Size(1064, 83);
+            this.studentManagementSystemPanel.Size = new System.Drawing.Size(1263, 83);
             this.studentManagementSystemPanel.TabIndex = 9;
             // 
             // adminDashboardTurnOffButton
@@ -75,7 +76,7 @@ namespace schoolManagementSystem.Admin.CardCRUD
             this.adminDashboardTurnOffButton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.adminDashboardTurnOffButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.adminDashboardTurnOffButton.Image = ((System.Drawing.Image)(resources.GetObject("adminDashboardTurnOffButton.Image")));
-            this.adminDashboardTurnOffButton.Location = new System.Drawing.Point(1001, 21);
+            this.adminDashboardTurnOffButton.Location = new System.Drawing.Point(1200, 21);
             this.adminDashboardTurnOffButton.Name = "adminDashboardTurnOffButton";
             this.adminDashboardTurnOffButton.Size = new System.Drawing.Size(52, 47);
             this.adminDashboardTurnOffButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -114,7 +115,7 @@ namespace schoolManagementSystem.Admin.CardCRUD
             this.flowLayoutPanel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(197, 561);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(197, 661);
             this.flowLayoutPanel1.TabIndex = 8;
             // 
             // studentSettingsPanel
@@ -241,11 +242,20 @@ namespace schoolManagementSystem.Admin.CardCRUD
             this.backIcon.TabStop = false;
             this.backIcon.Click += new System.EventHandler(this.backIcon_Click);
             // 
+            // cartesianChart1
+            // 
+            this.cartesianChart1.Location = new System.Drawing.Point(228, 155);
+            this.cartesianChart1.Name = "cartesianChart1";
+            this.cartesianChart1.Size = new System.Drawing.Size(1067, 208);
+            this.cartesianChart1.TabIndex = 10;
+            this.cartesianChart1.Text = "cartesianChart1";
+            // 
             // CardSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 561);
+            this.ClientSize = new System.Drawing.Size(1464, 661);
+            this.Controls.Add(this.cartesianChart1);
             this.Controls.Add(this.studentManagementSystemPanel);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "CardSettings";
@@ -283,5 +293,7 @@ namespace schoolManagementSystem.Admin.CardCRUD
         private System.Windows.Forms.Button studentDetailsBtn;
 
         #endregion
+
+        private LiveCharts.WinForms.CartesianChart cartesianChart1;
     }
 }

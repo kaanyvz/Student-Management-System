@@ -59,6 +59,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
                     command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@SchoolName", schoolName);
                     reader = command.ExecuteReader();
+                    teacherClass.Items.Add("NONE");
                     while (reader.Read())
                     {
                         teacherClass.Items.Add(reader["classname"].ToString());
@@ -89,11 +90,47 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
             {
                 connection.Open();
 
+                string query;
+                SqlCommand command;
+                object previousClassname;
+                
+                if (newSelectedClassname == "NONE")
+                {
+                    // Update the head teacher of the previous class to null
+                    // Fetch the current class of the teacher being updated
+                    query = "SELECT classname FROM Class WHERE headTeacherId = @TeacherId";
+                    command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@TeacherId", teacherId);
+                    previousClassname = command.ExecuteScalar();
+
+                    if (previousClassname!= null)
+                    {
+                        // Update the head teacher of the previous class to null
+                        query = "UPDATE Class SET headTeacherId = NULL WHERE classname = @PreviousClassname";
+                        command = new SqlCommand(query, connection);
+                        command.Parameters.AddWithValue("@PreviousClassname", previousClassname);
+                        command.ExecuteNonQuery();
+                    }
+
+                    // Update the teacher's details
+                    query = "UPDATE Teacher SET firstname = @Firstname, lastname = @Lastname, TCNumber = @TCNumber, phone = @Phone, email = @Email, major = @Major, birthDate = @BirthDate WHERE id = @TeacherId";
+                    command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@Firstname", teacherName.Text);
+                    command.Parameters.AddWithValue("@Lastname", teacherSurname.Text);
+                    command.Parameters.AddWithValue("@TCNumber", teacherTC.Text);
+                    command.Parameters.AddWithValue("@Phone", teacherPhone.Text);
+                    command.Parameters.AddWithValue("@Email", teacherMail.Text);
+                    command.Parameters.AddWithValue("@Major", teacherMajor.Text);
+                    command.Parameters.AddWithValue("@BirthDate", teacherBirthdate.Value);
+                    command.Parameters.AddWithValue("@TeacherId", teacherId);
+                    command.ExecuteNonQuery();
+                }
+
                 // Fetch the current class of the teacher being updated
-                string query = "SELECT classname FROM Class WHERE headTeacherId = @TeacherId";
-                SqlCommand command = new SqlCommand(query, connection);
+                query = "SELECT classname FROM Class WHERE headTeacherId = @TeacherId";
+                command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@TeacherId", teacherId);
-                object previousClassname = command.ExecuteScalar();
+                previousClassname = command.ExecuteScalar();
 
                 // Check if the selected class already has a head teacher
                 query = "SELECT headTeacherId FROM Class WHERE classname = @Classname";
@@ -101,7 +138,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
                 command.Parameters.AddWithValue("@Classname", newSelectedClassname);
                 object currentHeadTeacherId = command.ExecuteScalar();
 
-                if (currentHeadTeacherId != DBNull.Value && (int)currentHeadTeacherId != teacherId)
+                if (currentHeadTeacherId != null && currentHeadTeacherId != DBNull.Value && (int)currentHeadTeacherId != teacherId)
                 {
                     // Fetch the current head teacher's details
                     query = "SELECT firstname, lastname FROM Teacher WHERE id = @TeacherId";
@@ -160,11 +197,14 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
                 // Swap the head teacher of the class that the updated teacher was previously responsible for, only if there was a head teacher before
                 if (currentHeadTeacherId != DBNull.Value)
                 {
-                    query = "UPDATE Class SET headTeacherId = @CurrentHeadTeacherId WHERE classname = @PreviousClassname";
-                    command = new SqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@CurrentHeadTeacherId", currentHeadTeacherId);
-                    command.Parameters.AddWithValue("@PreviousClassname", previousClassname);
-                    command.ExecuteNonQuery();
+                    if (previousClassname != null)
+                    {
+                        query = "UPDATE Class SET headTeacherId = @CurrentHeadTeacherId WHERE classname = @PreviousClassname";
+                        command = new SqlCommand(query, connection);
+                        command.Parameters.AddWithValue("@CurrentHeadTeacherId", currentHeadTeacherId);
+                        command.Parameters.AddWithValue("@PreviousClassname", previousClassname);
+                        command.ExecuteNonQuery();
+                    }
                 }
                 UpdateTeacherSuccess updateTeacherSuccess = new UpdateTeacherSuccess(adminUsername, schoolName);
                 updateTeacherSuccess.StartPosition = FormStartPosition.Manual;

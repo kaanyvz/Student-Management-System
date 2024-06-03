@@ -106,5 +106,6 @@ namespace schoolManagementSystem.Admin.CardCRUD
             studentCardDetails.ShowDialog();
             this.Close();
         }
+        
     }
 }
