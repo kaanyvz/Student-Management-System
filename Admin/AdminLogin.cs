@@ -105,6 +105,8 @@ namespace schoolManagementSystem.Admin
         private void loginAsTeacherBtn_Click(object sender, EventArgs e)
         {
             TeacherLogin teacherLogin = new TeacherLogin();
+            teacherLogin.StartPosition = FormStartPosition.Manual;
+            teacherLogin.Location = this.Location;
             this.Hide();
             teacherLogin.ShowDialog();
             this.Close();

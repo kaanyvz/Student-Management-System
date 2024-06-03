@@ -282,6 +282,12 @@
     <Compile Include="Teacher\TeacherLogin.Designer.cs">
       <DependentUpon>TeacherLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teacher\TeacherLoginSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher\TeacherLoginSettings.Designer.cs">
+      <DependentUpon>TeacherLoginSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="template.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -404,6 +410,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher\TeacherLogin.resx">
       <DependentUpon>TeacherLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\TeacherLoginSettings.resx">
+      <DependentUpon>TeacherLoginSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="template.resx">
       <DependentUpon>template.cs</DependentUpon>

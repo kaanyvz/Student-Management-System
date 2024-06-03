@@ -47,7 +47,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD
                 totalTeacherCount += majorCount.Value;
             }
 
-            richTextBox1.AppendText($"In {schoolName}, there're {totalTeacherCount} teachers.\n");
+            richTextBox1.AppendText($"In {schoolName}, there're {totalTeacherCount} teachers.\n\n");
             foreach (var majorCount in teacherMajorsCount)
             {
                 seriesCollection.Add(new PieSeries
@@ -58,8 +58,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD
                 });
                 richTextBox1.AppendText($"{majorCount.Value} {majorCount.Key},\n");
             }
-            richTextBox1.AppendText("To make teacher operations, you can select one of the options in sidebar.");
-            richTextBox1.Font = new Font("Times New Roman", 12, FontStyle.Bold);
+            richTextBox1.AppendText("\nTo make teacher operations, you can select one of the options in sidebar.");
 
 
             pieChart1.Series = seriesCollection;

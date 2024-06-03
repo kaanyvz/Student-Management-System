@@ -15,6 +15,8 @@ namespace schoolManagementSystem.Teacher
         private void loginAsAdminBtn_Click(object sender, EventArgs e)
         {
             AdminLogin loginForm = new AdminLogin();
+            loginForm.StartPosition = FormStartPosition.Manual;
+            loginForm.Location = this.Location;
             this.Hide();
             loginForm.ShowDialog();
             this.Close();
@@ -22,41 +24,64 @@ namespace schoolManagementSystem.Teacher
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            if(emailBox.Text == "" || passwordBox.Text == "")
+            if (emailBox.Text == "" || passwordBox.Text == "")
             {
-                MessageBox.Show("Please provide UserName and Password");
+                MessageBox.Show("Please provide Email and Password");
             }
             else
             {
-                using (SqlConnection sqlConnection = new SqlConnection(DatabaseConnection.ConnectionString))
+                using (SqlConnection connection = new SqlConnection(DatabaseConnection.ConnectionString))
                 {
                     try
                     {
-                        sqlConnection.Open();
-                        SqlCommand sqlCommand = new SqlCommand(
-                            "SELECT COUNT(*) FROM SchoolManagementSystem.dbo.Teacher " +
+                        connection.Open();
+
+                        SqlCommand cmd = new SqlCommand(
+                            "SELECT schoolId FROM Teacher " +
                             "WHERE email = @Email AND password = @Password",
-                            sqlConnection);
-                        sqlCommand.Parameters.AddWithValue("@Email", emailBox.Text);
-                        sqlCommand.Parameters.AddWithValue("@Password", passwordBox.Text);
-                        int result = (int) sqlCommand.ExecuteScalar();
-                        
-                        if (result > 0)
+                            connection);
+
+                        cmd.Parameters.AddWithValue("@Email", emailBox.Text);
+                        cmd.Parameters.AddWithValue("@Password", passwordBox.Text);
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        if (reader.HasRows)
                         {
-                            //print success message
-                            MessageBox.Show("Login Successful");
+                            reader.Read();
+                            int schoolId = reader.GetInt32(0);
+                            string schoolName = GetSchoolName(schoolId);
+                            this.Hide();
+
+                            TeacherLoginSettings teacherSettings = new TeacherLoginSettings(schoolName, emailBox.Text);
+                            teacherSettings.ShowDialog();
+                            this.Close();
                         }
                         else
                         {
-                            MessageBox.Show("Login Failed");
+                            MessageBox.Show("Invalid Email or Password");
                         }
                     }
-                    catch (Exception exception)
+                    catch (Exception ex)
                     {
-                        Console.WriteLine(exception);
-                        throw;
+                        MessageBox.Show("Error: " + ex.Message);
                     }
                 }
+            }
+        }
+
+        private string GetSchoolName(int schoolId)
+        {
+            using (SqlConnection connection = new SqlConnection(DatabaseConnection.ConnectionString))
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT SchoolName " +
+                    "FROM School " +
+                    "WHERE id = @SchoolId", 
+                    connection);
+                
+                cmd.Parameters.AddWithValue("@SchoolId", schoolId);
+                return (string) cmd.ExecuteScalar();
             }
         }
     }
