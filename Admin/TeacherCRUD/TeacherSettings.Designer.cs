@@ -49,6 +49,8 @@ namespace schoolManagementSystem.Admin.TeacherCRUD
             this.panel1 = new System.Windows.Forms.Panel();
             this.teacherDetailsBtn = new System.Windows.Forms.Button();
             this.backIcon = new System.Windows.Forms.PictureBox();
+            this.pieChart1 = new LiveCharts.WinForms.PieChart();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.studentManagementSystemPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDashboardTurnOffButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -271,15 +273,36 @@ namespace schoolManagementSystem.Admin.TeacherCRUD
             this.backIcon.TabStop = false;
             this.backIcon.Click += new System.EventHandler(this.backIcon_Click);
             // 
+            // pieChart1
+            // 
+            this.pieChart1.Location = new System.Drawing.Point(228, 100);
+            this.pieChart1.Name = "pieChart1";
+            this.pieChart1.Size = new System.Drawing.Size(425, 430);
+            this.pieChart1.TabIndex = 45;
+            this.pieChart1.Text = "pieChart1";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.richTextBox1.Location = new System.Drawing.Point(668, 142);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(544, 290);
+            this.richTextBox1.TabIndex = 46;
+            this.richTextBox1.Text = "";
+            // 
             // TeacherSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1264, 561);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.pieChart1);
             this.Controls.Add(this.studentManagementSystemPanel);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "TeacherSettings";
             this.Text = "TeacherSettings";
+            this.Load += new System.EventHandler(this.TeacherSettings_Load_1);
             this.studentManagementSystemPanel.ResumeLayout(false);
             this.studentManagementSystemPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDashboardTurnOffButton)).EndInit();
@@ -294,6 +317,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.backIcon)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         private System.Windows.Forms.Panel studentManagementSystemPanel;
@@ -315,5 +339,8 @@ namespace schoolManagementSystem.Admin.TeacherCRUD
         private System.Windows.Forms.PictureBox backIcon;
 
         #endregion
+
+        private LiveCharts.WinForms.PieChart pieChart1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

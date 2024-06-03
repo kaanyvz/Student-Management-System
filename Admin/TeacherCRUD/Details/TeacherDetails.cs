@@ -91,7 +91,12 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Details
                 DataGridViewRow row = this._dataGridView.Rows[e.RowIndex];
                 int teacherId = Convert.ToInt32(row.Cells["Id"].Value);
 
-               
+                TeacherDetailsPage teacherDetailsPage = new TeacherDetailsPage(adminUsername, schoolName, teacherId);
+                teacherDetailsPage.StartPosition = FormStartPosition.Manual;
+                teacherDetailsPage.Location = this.Location;
+                this.Hide();
+                teacherDetailsPage.ShowDialog();
+                this.Close();
             }
         }
         

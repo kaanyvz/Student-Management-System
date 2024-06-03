@@ -369,6 +369,9 @@
     <EmbeddedResource Include="Admin\TeacherCRUD\Details\TeacherDetails.resx">
       <DependentUpon>TeacherDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\TeacherCRUD\Details\TeacherDetailsPage.resx">
+      <DependentUpon>TeacherDetailsPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\TeacherCRUD\TeacherSettings.resx">
       <DependentUpon>TeacherSettings.cs</DependentUpon>
     </EmbeddedResource>

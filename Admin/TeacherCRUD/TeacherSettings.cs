@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
+using LiveCharts.Wpf;
+using LiveCharts;
 using schoolManagementSystem.Admin.TeacherCRUD.Add;
 using schoolManagementSystem.Admin.TeacherCRUD.Delete;
 using schoolManagementSystem.Admin.TeacherCRUD.Details;
@@ -19,6 +23,80 @@ namespace schoolManagementSystem.Admin.TeacherCRUD
             InitializeComponent();
         }
 
+        private void TeacherSettings_Load_1(object sender, EventArgs e)
+        {
+            LoadTeacherMajors();
+        }
+
+        private void LoadTeacherMajors()
+        {
+            // Assuming you have a method to retrieve data from your database
+            Dictionary<string, int> teacherMajorsCount = GetTeacherMajorsCount();
+
+            // Clear previous data from the chart
+            pieChart1.Series.Clear();
+
+            // Add data to the chart
+            SeriesCollection seriesCollection = new SeriesCollection();
+            richTextBox1.Clear();
+
+            // Calculate total teacher count
+            int totalTeacherCount = 0;
+            foreach (var majorCount in teacherMajorsCount)
+            {
+                totalTeacherCount += majorCount.Value;
+            }
+
+            richTextBox1.AppendText($"In {schoolName}, there're {totalTeacherCount} teachers.\n");
+            foreach (var majorCount in teacherMajorsCount)
+            {
+                seriesCollection.Add(new PieSeries
+                {
+                    Title = majorCount.Key,
+                    Values = new ChartValues<int> { majorCount.Value },
+                    DataLabels = true
+                });
+                richTextBox1.AppendText($"{majorCount.Value} {majorCount.Key},\n");
+            }
+            richTextBox1.AppendText("To make teacher operations, you can select one of the options in sidebar.");
+            richTextBox1.Font = new Font("Times New Roman", 12, FontStyle.Bold);
+
+
+            pieChart1.Series = seriesCollection;
+        }
+
+        // Method to retrieve teacher majors count from the database
+        private Dictionary<string, int> GetTeacherMajorsCount()
+        {
+            Dictionary<string, int> teacherMajorsCount = new Dictionary<string, int>();
+
+            // Your database connection string
+
+            // Your SQL query to retrieve teacher majors count
+            string query = "SELECT Major, COUNT(*) FROM Teacher GROUP BY Major";
+
+            using (SqlConnection connection = new SqlConnection(DatabaseConnection.ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string major = reader.GetString(0);
+                    int count = reader.GetInt32(1);
+
+                    teacherMajorsCount.Add(major, count);
+                }
+
+                reader.Close();
+            }
+
+            return teacherMajorsCount;
+        }
+
+
         private void addNewTeacherBtn_MouseEnter(object sender, EventArgs e)
         {
             if (sender is Button button)
@@ -31,7 +109,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD
         {
             if (sender is Button button)
             {
-                button.BackColor = Color.FromArgb(35, 35, 45); 
+                button.BackColor = Color.FromArgb(35, 35, 45);
             }
         }
 
@@ -57,7 +135,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD
         {
             if (sender is Button button)
             {
-                button.BackColor = Color.FromArgb(35, 35, 45); 
+                button.BackColor = Color.FromArgb(35, 35, 45);
             }
         }
 
@@ -83,7 +161,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD
         {
             if (sender is Button button)
             {
-                button.BackColor = Color.FromArgb(35, 35, 45); 
+                button.BackColor = Color.FromArgb(35, 35, 45);
             }
         }
 
@@ -109,7 +187,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD
         {
             if (sender is Button button)
             {
-                button.BackColor = Color.FromArgb(35, 35, 45); 
+                button.BackColor = Color.FromArgb(35, 35, 45);
             }
         }
 
@@ -132,5 +210,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD
             adminSettings.ShowDialog();
             this.Close();
         }
-    }
+
+         
+    }   
 }

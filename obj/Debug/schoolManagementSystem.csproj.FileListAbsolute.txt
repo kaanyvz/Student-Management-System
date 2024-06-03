@@ -55,3 +55,4 @@ C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSys
 C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.TeacherCRUD.Update.UpdateTeacherVariables.resources
 C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.TeacherCRUD.Delete.DeleteTeacher.resources
 C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.TeacherCRUD.Details.TeacherDetails.resources
+C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.TeacherCRUD.Details.TeacherDetailsPage.resources
