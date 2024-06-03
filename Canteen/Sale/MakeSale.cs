@@ -131,9 +131,63 @@ namespace schoolManagementSystem.Canteen.Sale
                     return;
                 }
 
-                InsertPurchase(studentId, productId, productCount);
-                MessageBox.Show($"Successfully purchased.");
+                int productStock = GetProductStock(productId);
+                if (productStock < productCount)
+                {
+                    MessageBox.Show($"Cannot sell product {productName} as there is not that much stock.");
+                    return;
+                }
 
+                InsertPurchase(studentId, productId, productCount);
+                DecreaseProductStock(productId, productCount);
+                MessageBox.Show($"Successfully purchased.");
+            }
+        }
+
+        private int GetProductStock(int productId)
+        {
+            using (SqlConnection connection = new SqlConnection(DatabaseConnection.ConnectionString))
+            {
+                connection.Open();
+
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT CP.stockCount " +
+                    "FROM CanteenProduct CP " +
+                    "WHERE CP.id = @ProductId",
+                    connection);
+
+                cmd.Parameters.AddWithValue("@ProductId", productId);
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return reader.GetInt32(0);
+                    }
+                    else
+                    {
+                        throw new Exception($"Product with ID {productId} not found in the database.");
+                    }
+                }
+            }
+        }
+
+        private void DecreaseProductStock(int productId, int productCount)
+        {
+            using (SqlConnection connection = new SqlConnection(DatabaseConnection.ConnectionString))
+            {
+                connection.Open();
+
+                SqlCommand cmd = new SqlCommand(
+                    "UPDATE CanteenProduct " +
+                    "SET stockCount = stockCount - @ProductCount " +
+                    "WHERE id = @ProductId",
+                    connection);
+
+                cmd.Parameters.AddWithValue("@ProductId", productId);
+                cmd.Parameters.AddWithValue("@ProductCount", productCount);
+
+                cmd.ExecuteNonQuery();
             }
         }
 
