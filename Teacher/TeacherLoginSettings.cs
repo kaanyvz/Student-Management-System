@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Net;
+using System.Net.Mail;
 using System.Windows.Forms;
 using schoolManagementSystem.Admin.StudentCRUD;
 using schoolManagementSystem.Admin.StudentCRUD.Details;
@@ -315,7 +317,8 @@ namespace schoolManagementSystem.Teacher
 
                 foreach (int studentId in selectedStudentIds)
                 {
-                    string query = "INSERT INTO Absence (studentId, absenceDate, absenceHours) VALUES (@studentId, @absenceDate, @absenceHours)";
+                    string query = "INSERT INTO Absence (studentId, absenceDate, absenceHours) " +
+                                   "VALUES (@studentId, @absenceDate, @absenceHours)";
                     using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
                     {
                         sqlCommand.Parameters.AddWithValue("@studentId", studentId);
@@ -324,10 +327,57 @@ namespace schoolManagementSystem.Teacher
 
                         sqlCommand.ExecuteNonQuery();
                     }
+                    // Get parent's email
+                    string parentEmailQuery = "SELECT p.email FROM Parent p INNER JOIN StudentParents sp ON p.id = sp.parentId WHERE sp.studentId = @studentId";
+                    using (SqlCommand parentEmailCommand = new SqlCommand(parentEmailQuery, sqlConnection))
+                    {
+                        parentEmailCommand.Parameters.AddWithValue("@studentId", studentId);
+                        object result = parentEmailCommand.ExecuteScalar();
+                        if (result != null)
+                        {
+                            string parentEmail = result.ToString();
+                            // Send email to parent
+                            SendEmail(parentEmail);
+                        }
+                    }
+                    
                 }
             }
 
             MessageBox.Show("Absences have been recorded.");
+        }
+        
+        private void SendEmail(string parentMail)
+        {
+            try
+            {
+                MailMessage mail = new MailMessage();
+                SmtpClient client = new SmtpClient("smtp.gmail.com");
+
+                mail.From = new MailAddress("kaanyvvz@gmail.com");
+                mail.To.Add("kaanyvvz@gmail.com");
+                mail.Subject = "Absence Notification";
+                mail.Body = "Your child has been absent for " + lessonHour.SelectedItem + ". hours.";
+            
+                client.Port = 587;
+                client.Credentials = new NetworkCredential("kaanyvvz@gmail.com", "pdar mfdb rrhl voht");
+                client.EnableSsl = true;
+                client.Send(mail);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            
+        }
+
+        private void adminDashboardTurnOffButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to exit the application?", "Exit Confirmation", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

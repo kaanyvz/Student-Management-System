@@ -42,9 +42,6 @@ namespace schoolManagementSystem.Teacher
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.addNewTeacherBtn = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.teacherDetailsBtn = new System.Windows.Forms.Button();
-            this.backIcon = new System.Windows.Forms.PictureBox();
             this.teacherNameSurnameBox = new System.Windows.Forms.RichTextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
@@ -67,8 +64,6 @@ namespace schoolManagementSystem.Teacher
             this.studentSettingsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel7.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.backIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,6 +89,7 @@ namespace schoolManagementSystem.Teacher
             this.adminDashboardTurnOffButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.adminDashboardTurnOffButton.TabIndex = 6;
             this.adminDashboardTurnOffButton.TabStop = false;
+            this.adminDashboardTurnOffButton.Click += new System.EventHandler(this.adminDashboardTurnOffButton_Click);
             // 
             // label3
             // 
@@ -120,8 +116,6 @@ namespace schoolManagementSystem.Teacher
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.SandyBrown;
             this.flowLayoutPanel1.Controls.Add(this.studentSettingsPanel);
             this.flowLayoutPanel1.Controls.Add(this.panel7);
-            this.flowLayoutPanel1.Controls.Add(this.panel1);
-            this.flowLayoutPanel1.Controls.Add(this.backIcon);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.ForeColor = System.Drawing.Color.Orange;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -183,42 +177,6 @@ namespace schoolManagementSystem.Teacher
             this.addNewTeacherBtn.TabIndex = 2;
             this.addNewTeacherBtn.Text = "Take Attendence";
             this.addNewTeacherBtn.UseVisualStyleBackColor = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.teacherDetailsBtn);
-            this.panel1.Location = new System.Drawing.Point(3, 155);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(189, 60);
-            this.panel1.TabIndex = 0;
-            // 
-            // teacherDetailsBtn
-            // 
-            this.teacherDetailsBtn.BackColor = System.Drawing.Color.SandyBrown;
-            this.teacherDetailsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.teacherDetailsBtn.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.teacherDetailsBtn.ForeColor = System.Drawing.SystemColors.Window;
-            this.teacherDetailsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.teacherDetailsBtn.Location = new System.Drawing.Point(-26, -14);
-            this.teacherDetailsBtn.Name = "teacherDetailsBtn";
-            this.teacherDetailsBtn.Size = new System.Drawing.Size(236, 83);
-            this.teacherDetailsBtn.TabIndex = 2;
-            this.teacherDetailsBtn.Text = "Teacher Details";
-            this.teacherDetailsBtn.UseVisualStyleBackColor = false;
-            // 
-            // backIcon
-            // 
-            this.backIcon.BackColor = System.Drawing.Color.SandyBrown;
-            this.backIcon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.backIcon.Image = ((System.Drawing.Image)(resources.GetObject("backIcon.Image")));
-            this.backIcon.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.backIcon.Location = new System.Drawing.Point(3, 221);
-            this.backIcon.Name = "backIcon";
-            this.backIcon.Size = new System.Drawing.Size(39, 37);
-            this.backIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.backIcon.TabIndex = 41;
-            this.backIcon.TabStop = false;
             // 
             // teacherNameSurnameBox
             // 
@@ -425,8 +383,6 @@ namespace schoolManagementSystem.Teacher
             this.studentSettingsPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel7.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.backIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -464,9 +420,6 @@ namespace schoolManagementSystem.Teacher
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button addNewTeacherBtn;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button teacherDetailsBtn;
-        private System.Windows.Forms.PictureBox backIcon;
 
         #endregion
     }
