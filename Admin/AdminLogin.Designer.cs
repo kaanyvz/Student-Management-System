@@ -40,7 +40,8 @@
             this.adminDashboardTurnOffButton = new System.Windows.Forms.PictureBox();
             this.mainTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.loginAsTeacherBtn = new System.Windows.Forms.Button();
+            this.canteenOwnerBtn = new System.Windows.Forms.Button();
+            this.loginAsAdminBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDashboardTurnOffButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -163,18 +164,31 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // loginAsTeacherBtn
+            // canteenOwnerBtn
             // 
-            this.loginAsTeacherBtn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.loginAsTeacherBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.loginAsTeacherBtn.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.loginAsTeacherBtn.Location = new System.Drawing.Point(579, 351);
-            this.loginAsTeacherBtn.Name = "loginAsTeacherBtn";
-            this.loginAsTeacherBtn.Size = new System.Drawing.Size(163, 35);
-            this.loginAsTeacherBtn.TabIndex = 7;
-            this.loginAsTeacherBtn.Text = "Login As Teacher";
-            this.loginAsTeacherBtn.UseVisualStyleBackColor = false;
-            this.loginAsTeacherBtn.Click += new System.EventHandler(this.loginAsTeacherBtn_Click);
+            this.canteenOwnerBtn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.canteenOwnerBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.canteenOwnerBtn.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.canteenOwnerBtn.Location = new System.Drawing.Point(671, 341);
+            this.canteenOwnerBtn.Name = "canteenOwnerBtn";
+            this.canteenOwnerBtn.Size = new System.Drawing.Size(118, 44);
+            this.canteenOwnerBtn.TabIndex = 8;
+            this.canteenOwnerBtn.Text = "Login As \r\nCanteen Owner";
+            this.canteenOwnerBtn.UseVisualStyleBackColor = false;
+            this.canteenOwnerBtn.Click += new System.EventHandler(this.canteenOwnerBtn_Click);
+            // 
+            // loginAsAdminBtn
+            // 
+            this.loginAsAdminBtn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.loginAsAdminBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.loginAsAdminBtn.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.loginAsAdminBtn.Location = new System.Drawing.Point(535, 341);
+            this.loginAsAdminBtn.Name = "loginAsAdminBtn";
+            this.loginAsAdminBtn.Size = new System.Drawing.Size(118, 44);
+            this.loginAsAdminBtn.TabIndex = 7;
+            this.loginAsAdminBtn.Text = "Login As Teacher";
+            this.loginAsAdminBtn.UseVisualStyleBackColor = false;
+            this.loginAsAdminBtn.Click += new System.EventHandler(this.loginAsTeacherBtn_Click);
             // 
             // AdminLogin
             // 
@@ -182,7 +196,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1264, 561);
-            this.Controls.Add(this.loginAsTeacherBtn);
+            this.Controls.Add(this.canteenOwnerBtn);
+            this.Controls.Add(this.loginAsAdminBtn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelTime);
             this.Controls.Add(this.loginBtn);
@@ -204,7 +219,8 @@
             this.PerformLayout();
         }
 
-        private System.Windows.Forms.Button loginAsTeacherBtn;
+        private System.Windows.Forms.Button canteenOwnerBtn;
+        private System.Windows.Forms.Button loginAsAdminBtn;
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox adminDashboardTurnOffButton;

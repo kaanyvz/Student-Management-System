@@ -35,12 +35,12 @@
             this.passwordLabel = new System.Windows.Forms.Label();
             this.loginBtn = new System.Windows.Forms.Button();
             this.usernameLabel = new System.Windows.Forms.Label();
-            this.labelTime = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.adminDashboardTurnOffButton = new System.Windows.Forms.PictureBox();
             this.mainTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.loginAsAdminBtn = new System.Windows.Forms.Button();
+            this.canteenOwnerBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDashboardTurnOffButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -50,27 +50,27 @@
             // 
             this.emailBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.emailBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.emailBox.Location = new System.Drawing.Point(416, 211);
+            this.emailBox.Location = new System.Drawing.Point(527, 218);
             this.emailBox.Name = "emailBox";
             this.emailBox.Size = new System.Drawing.Size(254, 22);
-            this.emailBox.TabIndex = 0;
+            this.emailBox.TabIndex = 1;
             // 
             // passwordBox
             // 
             this.passwordBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.passwordBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.passwordBox.Location = new System.Drawing.Point(416, 285);
+            this.passwordBox.Location = new System.Drawing.Point(527, 292);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.PasswordChar = '*';
             this.passwordBox.Size = new System.Drawing.Size(254, 22);
-            this.passwordBox.TabIndex = 1;
+            this.passwordBox.TabIndex = 2;
             // 
             // teacherLoginTitle
             // 
             this.teacherLoginTitle.AutoSize = true;
             this.teacherLoginTitle.Font = new System.Drawing.Font("Cascadia Code", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.teacherLoginTitle.ForeColor = System.Drawing.Color.Firebrick;
-            this.teacherLoginTitle.Location = new System.Drawing.Point(460, 131);
+            this.teacherLoginTitle.Location = new System.Drawing.Point(571, 138);
             this.teacherLoginTitle.Name = "teacherLoginTitle";
             this.teacherLoginTitle.Size = new System.Drawing.Size(168, 28);
             this.teacherLoginTitle.TabIndex = 1;
@@ -80,7 +80,7 @@
             // 
             this.passwordLabel.AutoSize = true;
             this.passwordLabel.Font = new System.Drawing.Font("Segoe UI Black", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.passwordLabel.Location = new System.Drawing.Point(294, 288);
+            this.passwordLabel.Location = new System.Drawing.Point(405, 295);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(81, 15);
             this.passwordLabel.TabIndex = 1;
@@ -91,10 +91,10 @@
             this.loginBtn.BackColor = System.Drawing.SystemColors.Info;
             this.loginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.loginBtn.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.loginBtn.Location = new System.Drawing.Point(416, 416);
+            this.loginBtn.Location = new System.Drawing.Point(527, 423);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(254, 48);
-            this.loginBtn.TabIndex = 2;
+            this.loginBtn.TabIndex = 3;
             this.loginBtn.Text = "LOGIN";
             this.loginBtn.UseVisualStyleBackColor = false;
             this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
@@ -103,22 +103,11 @@
             // 
             this.usernameLabel.AutoSize = true;
             this.usernameLabel.Font = new System.Drawing.Font("Segoe UI Black", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.usernameLabel.Location = new System.Drawing.Point(326, 214);
+            this.usernameLabel.Location = new System.Drawing.Point(437, 221);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(49, 15);
             this.usernameLabel.TabIndex = 1;
             this.usernameLabel.Text = "EMAIL:";
-            // 
-            // labelTime
-            // 
-            this.labelTime.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.labelTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelTime.Location = new System.Drawing.Point(909, 475);
-            this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(163, 25);
-            this.labelTime.TabIndex = 5;
-            this.labelTime.Text = "TIME";
-            this.labelTime.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // panel1
             // 
@@ -128,7 +117,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(2, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1080, 83);
+            this.panel1.Size = new System.Drawing.Size(1260, 83);
             this.panel1.TabIndex = 6;
             // 
             // adminDashboardTurnOffButton
@@ -168,23 +157,36 @@
             this.loginAsAdminBtn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.loginAsAdminBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.loginAsAdminBtn.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.loginAsAdminBtn.Location = new System.Drawing.Point(460, 346);
+            this.loginAsAdminBtn.Location = new System.Drawing.Point(527, 349);
             this.loginAsAdminBtn.Name = "loginAsAdminBtn";
-            this.loginAsAdminBtn.Size = new System.Drawing.Size(163, 35);
-            this.loginAsAdminBtn.TabIndex = 7;
+            this.loginAsAdminBtn.Size = new System.Drawing.Size(118, 44);
+            this.loginAsAdminBtn.TabIndex = 4;
             this.loginAsAdminBtn.Text = "Login As Admin";
             this.loginAsAdminBtn.UseVisualStyleBackColor = false;
             this.loginAsAdminBtn.Click += new System.EventHandler(this.loginAsAdminBtn_Click);
+            // 
+            // canteenOwnerBtn
+            // 
+            this.canteenOwnerBtn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.canteenOwnerBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.canteenOwnerBtn.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.canteenOwnerBtn.Location = new System.Drawing.Point(663, 349);
+            this.canteenOwnerBtn.Name = "canteenOwnerBtn";
+            this.canteenOwnerBtn.Size = new System.Drawing.Size(118, 44);
+            this.canteenOwnerBtn.TabIndex = 5;
+            this.canteenOwnerBtn.Text = "Login As \r\nCanteen Owner";
+            this.canteenOwnerBtn.UseVisualStyleBackColor = false;
+            this.canteenOwnerBtn.Click += new System.EventHandler(this.canteenOwnerBtn_Click);
             // 
             // TeacherLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1084, 509);
+            this.ClientSize = new System.Drawing.Size(1264, 561);
+            this.Controls.Add(this.canteenOwnerBtn);
             this.Controls.Add(this.loginAsAdminBtn);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.labelTime);
             this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.usernameLabel);
@@ -203,14 +205,14 @@
             this.PerformLayout();
         }
 
+        private System.Windows.Forms.Button canteenOwnerBtn;
+
         private System.Windows.Forms.Button loginAsAdminBtn;
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox adminDashboardTurnOffButton;
         private System.Windows.Forms.Label mainTitle;
         private System.Windows.Forms.PictureBox pictureBox1;
-
-        private System.Windows.Forms.Label labelTime;
 
         #endregion
 

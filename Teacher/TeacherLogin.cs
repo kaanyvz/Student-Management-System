@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using schoolManagementSystem.Admin;
+using schoolManagementSystem.Canteen;
 
 namespace schoolManagementSystem.Teacher
 {
@@ -10,6 +11,9 @@ namespace schoolManagementSystem.Teacher
         public TeacherLogin()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.AcceptButton = loginBtn;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void loginAsAdminBtn_Click(object sender, EventArgs e)
@@ -83,6 +87,16 @@ namespace schoolManagementSystem.Teacher
                 cmd.Parameters.AddWithValue("@SchoolId", schoolId);
                 return (string) cmd.ExecuteScalar();
             }
+        }
+
+        private void canteenOwnerBtn_Click(object sender, EventArgs e)
+        {
+            CanteenLogin canteenLogin = new CanteenLogin();
+            canteenLogin.StartPosition = FormStartPosition.Manual;
+            canteenLogin.Location = this.Location;
+            this.Hide();
+            canteenLogin.ShowDialog();
+            this.Close();
         }
     }
 }

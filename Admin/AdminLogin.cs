@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using schoolManagementSystem.Canteen;
 using schoolManagementSystem.Teacher;
 
 namespace schoolManagementSystem.Admin
@@ -128,6 +129,16 @@ namespace schoolManagementSystem.Admin
                 cmd.Parameters.AddWithValue("@Username", adminUsername);
                 return (string) cmd.ExecuteScalar();
             }
+        }
+
+        private void canteenOwnerBtn_Click(object sender, EventArgs e)
+        {
+            CanteenLogin canteenLogin = new CanteenLogin();
+            canteenLogin.StartPosition = FormStartPosition.Manual;
+            canteenLogin.Location = this.Location;
+            this.Hide();
+            canteenLogin.ShowDialog();
+            this.Close();
         }
     }
 }

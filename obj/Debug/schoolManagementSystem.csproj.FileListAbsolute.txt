@@ -57,3 +57,8 @@ C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSys
 C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.TeacherCRUD.Details.TeacherDetails.resources
 C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Admin.TeacherCRUD.Details.TeacherDetailsPage.resources
 C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Teacher.TeacherLoginSettings.resources
+C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Canteen.CanteenLogin.resources
+C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Canteen.CanteenSettings.resources
+C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.canteenTemplate.resources
+C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Canteen.Add.AddProduct.resources
+C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Canteen.Sale.MakeSale.resources

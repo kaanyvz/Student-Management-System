@@ -251,6 +251,36 @@
     <Compile Include="Admin\TeacherCRUD\Update\UpdateTeacherVariables.Designer.cs">
       <DependentUpon>UpdateTeacherVariables.cs</DependentUpon>
     </Compile>
+    <Compile Include="canteenTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="canteenTemplate.Designer.cs">
+      <DependentUpon>canteenTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Canteen\Add\AddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Canteen\Add\AddProduct.Designer.cs">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Canteen\CanteenLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Canteen\CanteenLogin.Designer.cs">
+      <DependentUpon>CanteenLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Canteen\CanteenSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Canteen\CanteenSettings.Designer.cs">
+      <DependentUpon>CanteenSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Canteen\Sale\MakeSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Canteen\Sale\MakeSale.Designer.cs">
+      <DependentUpon>MakeSale.cs</DependentUpon>
+    </Compile>
     <Compile Include="cardTemplate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -390,6 +420,21 @@
     <EmbeddedResource Include="Admin\TeacherCRUD\Update\UpdateTeacherVariables.resx">
       <DependentUpon>UpdateTeacherVariables.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="canteenTemplate.resx">
+      <DependentUpon>canteenTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canteen\Add\AddProduct.resx">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canteen\CanteenLogin.resx">
+      <DependentUpon>CanteenLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canteen\CanteenSettings.resx">
+      <DependentUpon>CanteenSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canteen\Sale\MakeSale.resx">
+      <DependentUpon>MakeSale.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cardTemplate.resx">
       <DependentUpon>cardTemplate.cs</DependentUpon>
     </EmbeddedResource>
@@ -430,6 +475,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Canteen\Delete\" />
+    <Folder Include="Canteen\List\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

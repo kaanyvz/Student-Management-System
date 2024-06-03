@@ -17,6 +17,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD
         {
             InitializeComponent();
             this.adminUsername = adminUsername;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.schoolName = schoolName;
         }
 
