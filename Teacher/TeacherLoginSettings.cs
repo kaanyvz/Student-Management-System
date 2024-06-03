@@ -15,6 +15,7 @@ namespace schoolManagementSystem.Teacher
         private string teacherEmail;
         private DataGridView _dataGridView;
         private int selectedStudentCount = 0;
+        private List<int> selectedStudentIds = new List<int>();
         public TeacherLoginSettings(string schoolName, string teacherEmail)
         {
             InitializeComponent();
@@ -87,8 +88,22 @@ namespace schoolManagementSystem.Teacher
             {
                 DataGridViewRow row = this._dataGridView.Rows[e.RowIndex];
                 int studentId = Convert.ToInt32(row.Cells["Id"].Value);
-                
-                
+                DataGridViewCheckBoxCell checkBoxCell = (DataGridViewCheckBoxCell)row.Cells["checkBoxColumn"];
+
+                if ((bool)checkBoxCell.Value)
+                {
+                    if (!selectedStudentIds.Contains(studentId))
+                    {
+                        selectedStudentIds.Add(studentId);
+                    }
+                }
+                else
+                {
+                    if (selectedStudentIds.Contains(studentId))
+                    {
+                        selectedStudentIds.Remove(studentId);
+                    }
+                }
             }
         }
         /*
@@ -294,7 +309,25 @@ namespace schoolManagementSystem.Teacher
 
         private void sendAbsencesButton_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            using (SqlConnection sqlConnection = new SqlConnection(DatabaseConnection.ConnectionString))
+            {
+                sqlConnection.Open();
+
+                foreach (int studentId in selectedStudentIds)
+                {
+                    string query = "INSERT INTO Absence (studentId, absenceDate, absenceHours) VALUES (@studentId, @absenceDate, @absenceHours)";
+                    using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                    {
+                        sqlCommand.Parameters.AddWithValue("@studentId", studentId);
+                        sqlCommand.Parameters.AddWithValue("@absenceDate", DateTime.Now);
+                        sqlCommand.Parameters.AddWithValue("@absenceHours", lessonHour.SelectedItem);
+
+                        sqlCommand.ExecuteNonQuery();
+                    }
+                }
+            }
+
+            MessageBox.Show("Absences have been recorded.");
         }
     }
 }

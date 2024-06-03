@@ -175,7 +175,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Details
                     }
                 }
 
-                string totalAbsenceQuery = "SELECT SUM(absenceHours) as TotalAbsenceHours FROM Absence WHERE studentId = @studentId";
+                string totalAbsenceQuery = "SELECT COUNT(*) as TotalAbsenceHours FROM Absence WHERE studentId = @studentId";
 
                 using (SqlCommand command = new SqlCommand(totalAbsenceQuery, connection))
                 {
