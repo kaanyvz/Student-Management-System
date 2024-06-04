@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
+using LiveCharts;
+using LiveCharts.Wpf;
 using schoolManagementSystem.Admin.StudentCRUD.Add;
 using schoolManagementSystem.Admin.StudentCRUD.Delete;
 using schoolManagementSystem.Admin.StudentCRUD.Details;
@@ -144,5 +148,78 @@ namespace schoolManagementSystem.Admin.StudentCRUD
                 Application.Exit();
             }
         }
+
+        private void StudentSettings_Load(object sender, EventArgs e)
+        {
+            LoadStudentClasses();
+        }
+        
+        
+        private void LoadStudentClasses()
+        {
+            // Assuming you have a method to retrieve data from your database
+            Dictionary<string, int> studentClassesCount = GetStudentClassesCount();
+
+            // Clear previous data from the chart
+            pieChart1.Series.Clear();
+
+            // Add data to the chart
+            SeriesCollection seriesCollection = new SeriesCollection();
+            richTextBox1.Clear();
+
+            // Calculate total student count
+            int totalStudentCount = 0;
+            foreach (var classCount in studentClassesCount)
+            {
+                totalStudentCount += classCount.Value;
+            }
+
+            richTextBox1.AppendText($"In {schoolName}, there're {totalStudentCount} students.\n\n");
+            foreach (var classCount in studentClassesCount)
+            {
+                seriesCollection.Add(new PieSeries
+                {
+                    Title = classCount.Key,
+                    Values = new ChartValues<int> { classCount.Value },
+                    DataLabels = true
+                });
+                richTextBox1.AppendText($"{classCount.Value} students in {classCount.Key} class,\n");
+            }
+            richTextBox1.AppendText("\nTo make student operations, you can select one of the options in sidebar.");
+
+            pieChart1.Series = seriesCollection;
+        }
+
+        // Method to retrieve student classes count from the database
+        private Dictionary<string, int> GetStudentClassesCount()
+        {
+            Dictionary<string, int> studentClassesCount = new Dictionary<string, int>();
+
+            // Your database connection string
+
+            // Your SQL query to retrieve student classes count
+            string query = "SELECT c.className, COUNT(*) FROM Student s INNER JOIN Class c ON s.classId = c.id GROUP BY c.className";
+
+            using (SqlConnection connection = new SqlConnection(DatabaseConnection.ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string className = reader.GetString(0);
+                    int count = reader.GetInt32(1);
+
+                    studentClassesCount.Add(className, count);
+                }
+
+                reader.Close();
+            }
+
+            return studentClassesCount;
+        }
+
     }
 }

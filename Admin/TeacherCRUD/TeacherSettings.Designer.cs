@@ -51,6 +51,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD
             this.backIcon = new System.Windows.Forms.PictureBox();
             this.pieChart1 = new LiveCharts.WinForms.PieChart();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.studentManagementSystemPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDashboardTurnOffButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -291,12 +292,23 @@ namespace schoolManagementSystem.Admin.TeacherCRUD
             this.richTextBox1.TabIndex = 46;
             this.richTextBox1.Text = "";
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox1.Location = new System.Drawing.Point(668, 100);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(178, 29);
+            this.textBox1.TabIndex = 50;
+            this.textBox1.Text = "Teacher Statistics";
+            // 
             // TeacherSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1264, 561);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.pieChart1);
             this.Controls.Add(this.studentManagementSystemPanel);
@@ -318,6 +330,8 @@ namespace schoolManagementSystem.Admin.TeacherCRUD
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.backIcon)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         private System.Windows.Forms.Panel studentManagementSystemPanel;
@@ -342,5 +356,6 @@ namespace schoolManagementSystem.Admin.TeacherCRUD
 
         private LiveCharts.WinForms.PieChart pieChart1;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

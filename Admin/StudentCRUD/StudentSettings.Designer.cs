@@ -50,6 +50,9 @@ namespace schoolManagementSystem.Admin.StudentCRUD
             this.label3 = new System.Windows.Forms.Label();
             this.adminDashboardTurnOffButton = new System.Windows.Forms.PictureBox();
             this.studentManagementSystemPanel = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.pieChart1 = new LiveCharts.WinForms.PieChart();
             this.flowLayoutPanel1.SuspendLayout();
             this.studentSettingsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -272,12 +275,43 @@ namespace schoolManagementSystem.Admin.StudentCRUD
             this.studentManagementSystemPanel.Size = new System.Drawing.Size(1064, 83);
             this.studentManagementSystemPanel.TabIndex = 5;
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox1.Location = new System.Drawing.Point(666, 100);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(178, 29);
+            this.textBox1.TabIndex = 53;
+            this.textBox1.Text = "Student Statistics:";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.richTextBox1.Location = new System.Drawing.Point(666, 142);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(544, 290);
+            this.richTextBox1.TabIndex = 52;
+            this.richTextBox1.Text = "";
+            // 
+            // pieChart1
+            // 
+            this.pieChart1.Location = new System.Drawing.Point(226, 100);
+            this.pieChart1.Name = "pieChart1";
+            this.pieChart1.Size = new System.Drawing.Size(425, 430);
+            this.pieChart1.TabIndex = 51;
+            this.pieChart1.Text = "pieChart1";
+            // 
             // StudentSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1264, 561);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.pieChart1);
             this.Controls.Add(this.studentManagementSystemPanel);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -285,6 +319,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD
             this.MaximizeBox = false;
             this.Name = "StudentSettings";
             this.Text = "Student Management System";
+            this.Load += new System.EventHandler(this.StudentSettings_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.studentSettingsPanel.ResumeLayout(false);
             this.studentSettingsPanel.PerformLayout();
@@ -299,6 +334,8 @@ namespace schoolManagementSystem.Admin.StudentCRUD
             this.studentManagementSystemPanel.ResumeLayout(false);
             this.studentManagementSystemPanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         private System.Windows.Forms.PictureBox backIcon;
@@ -327,5 +364,9 @@ namespace schoolManagementSystem.Admin.StudentCRUD
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
 
         #endregion
+
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private LiveCharts.WinForms.PieChart pieChart1;
     }
 }
