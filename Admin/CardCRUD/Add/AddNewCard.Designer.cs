@@ -46,6 +46,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             this.updateCardBtn = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
             this.cardActivityDetailsBtn = new System.Windows.Forms.Button();
+            this.backIcon = new System.Windows.Forms.PictureBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -65,6 +66,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             this.panel7.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.backIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // studentManagementSystemPanel
@@ -118,6 +120,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             this.flowLayoutPanel1.Controls.Add(this.panel7);
             this.flowLayoutPanel1.Controls.Add(this.panel9);
             this.flowLayoutPanel1.Controls.Add(this.panel11);
+            this.flowLayoutPanel1.Controls.Add(this.backIcon);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -231,6 +234,19 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             this.cardActivityDetailsBtn.Click += new System.EventHandler(this.studentDetailsBtn_Click);
             this.cardActivityDetailsBtn.MouseEnter += new System.EventHandler(this.studentDetailsBtn_MouseEnter);
             this.cardActivityDetailsBtn.MouseLeave += new System.EventHandler(this.studentDetailsBtn_MouseLeave);
+            // 
+            // backIcon
+            // 
+            this.backIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
+            this.backIcon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.backIcon.Image = ((System.Drawing.Image)(resources.GetObject("backIcon.Image")));
+            this.backIcon.Location = new System.Drawing.Point(3, 287);
+            this.backIcon.Name = "backIcon";
+            this.backIcon.Size = new System.Drawing.Size(39, 37);
+            this.backIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.backIcon.TabIndex = 91;
+            this.backIcon.TabStop = false;
+            this.backIcon.Click += new System.EventHandler(this.backIcon_Click_2);
             // 
             // richTextBox1
             // 
@@ -379,9 +395,12 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             this.panel7.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.backIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.PictureBox backIcon;
 
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label2;

@@ -33,6 +33,7 @@ namespace schoolManagementSystem.Admin
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminSettings));
             this.studentManagementSystemPanel = new System.Windows.Forms.Panel();
+            this.mainTitle = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.adminDashboardTurnOffButton = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@ namespace schoolManagementSystem.Admin
             this.deleteStudentButton = new System.Windows.Forms.Button();
             this.backIcon = new System.Windows.Forms.PictureBox();
             this.informationRichText = new System.Windows.Forms.RichTextBox();
-            this.mainTitle = new System.Windows.Forms.Label();
             this.studentManagementSystemPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDashboardTurnOffButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -77,6 +77,16 @@ namespace schoolManagementSystem.Admin
             this.studentManagementSystemPanel.Name = "studentManagementSystemPanel";
             this.studentManagementSystemPanel.Size = new System.Drawing.Size(1066, 83);
             this.studentManagementSystemPanel.TabIndex = 7;
+            // 
+            // mainTitle
+            // 
+            this.mainTitle.AutoSize = true;
+            this.mainTitle.Font = new System.Drawing.Font("Cascadia Code", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.mainTitle.Location = new System.Drawing.Point(141, 29);
+            this.mainTitle.Name = "mainTitle";
+            this.mainTitle.Size = new System.Drawing.Size(312, 28);
+            this.mainTitle.TabIndex = 9;
+            this.mainTitle.Text = "STUDENT MANAGEMENT SYSTEM";
             // 
             // label2
             // 
@@ -308,16 +318,6 @@ namespace schoolManagementSystem.Admin
             this.informationRichText.Size = new System.Drawing.Size(1031, 339);
             this.informationRichText.TabIndex = 8;
             this.informationRichText.Text = "";
-            // 
-            // mainTitle
-            // 
-            this.mainTitle.AutoSize = true;
-            this.mainTitle.Font = new System.Drawing.Font("Cascadia Code", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.mainTitle.Location = new System.Drawing.Point(141, 29);
-            this.mainTitle.Name = "mainTitle";
-            this.mainTitle.Size = new System.Drawing.Size(312, 28);
-            this.mainTitle.TabIndex = 9;
-            this.mainTitle.Text = "STUDENT MANAGEMENT SYSTEM";
             // 
             // AdminSettings
             // 

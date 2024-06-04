@@ -56,6 +56,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             this.updateCardButton = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
             this.cardDetailsButton = new System.Windows.Forms.Button();
+            this.backIcon = new System.Windows.Forms.PictureBox();
             this.studentManagementSystemPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDashboardTurnOffButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -65,6 +66,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             this.panel7.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.backIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // clearFiltersBtn
@@ -234,6 +236,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             this.flowLayoutPanel1.Controls.Add(this.panel7);
             this.flowLayoutPanel1.Controls.Add(this.panel9);
             this.flowLayoutPanel1.Controls.Add(this.panel11);
+            this.flowLayoutPanel1.Controls.Add(this.backIcon);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -348,6 +351,19 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             this.cardDetailsButton.Text = "Card Activity Details";
             this.cardDetailsButton.UseVisualStyleBackColor = false;
             // 
+            // backIcon
+            // 
+            this.backIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
+            this.backIcon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.backIcon.Image = ((System.Drawing.Image)(resources.GetObject("backIcon.Image")));
+            this.backIcon.Location = new System.Drawing.Point(3, 287);
+            this.backIcon.Name = "backIcon";
+            this.backIcon.Size = new System.Drawing.Size(39, 37);
+            this.backIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.backIcon.TabIndex = 114;
+            this.backIcon.TabStop = false;
+            this.backIcon.Click += new System.EventHandler(this.backIcon_Click);
+            // 
             // StudentCardDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -380,9 +396,12 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             this.panel7.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.backIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.PictureBox backIcon;
 
         private System.Windows.Forms.Button clearFiltersBtn;
         private System.Windows.Forms.TextBox cardNumberFilter;

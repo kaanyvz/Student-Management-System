@@ -482,13 +482,13 @@ namespace schoolManagementSystem.Canteen.Sale
                 MailMessage mail = new MailMessage();
                 SmtpClient client = new SmtpClient("smtp.gmail.com");
 
-                mail.From = new MailAddress("kaanyvvz@gmail.com");
-                mail.To.Add("kaanyvvz@gmail.com");
+                mail.From = new MailAddress("");
+                mail.To.Add("");
                 mail.Subject = "Canteen Purchase";
                 mail.Body = "Your child shopped at our school cafeteria. Here are the items purchased:\n\n" + receiptContent + "\n\nThank you for choosing us!";
             
                 client.Port = 587;
-                client.Credentials = new NetworkCredential("kaanyvvz@gmail.com", "pdar mfdb rrhl voht");
+                client.Credentials = new NetworkCredential("", "");
                 client.EnableSsl = true;
                 client.Send(mail);
                 MessageBox.Show("Mail Sent to Parent!");

@@ -354,13 +354,13 @@ namespace schoolManagementSystem.Teacher
                 MailMessage mail = new MailMessage();
                 SmtpClient client = new SmtpClient("smtp.gmail.com");
 
-                mail.From = new MailAddress("kaanyvvz@gmail.com");
-                mail.To.Add("kaanyvvz@gmail.com");
+                mail.From = new MailAddress("");
+                mail.To.Add("");
                 mail.Subject = "Absence Notification";
                 mail.Body = "Your child has been absent for " + lessonHour.SelectedItem + ". hours.";
             
                 client.Port = 587;
-                client.Credentials = new NetworkCredential("kaanyvvz@gmail.com", "pdar mfdb rrhl voht");
+                client.Credentials = new NetworkCredential("", "");
                 client.EnableSsl = true;
                 client.Send(mail);
             }

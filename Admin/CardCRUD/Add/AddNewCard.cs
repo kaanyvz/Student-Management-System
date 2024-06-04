@@ -428,5 +428,15 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
 
             FilterStudents();
         }
+
+        private void backIcon_Click_2(object sender, EventArgs e)
+        {
+            AdminSettings adminSettings = new AdminSettings(adminUsername, schoolName);
+            adminSettings.StartPosition = FormStartPosition.Manual;
+            adminSettings.Location = this.Location;
+            this.Hide();
+            adminSettings.ShowDialog();
+            this.Close();
+        }
     }
 }
