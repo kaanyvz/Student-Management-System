@@ -2626,6 +2626,42 @@
 Card
 </value>
   </data>
+  <data name="addNewCardBtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 9.75pt, style=Bold, Italic</value>
+  </data>
+  <data name="addNewCardBtn.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="addNewCardBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 93</value>
+  </data>
+  <data name="addNewCardBtn.Text" xml:space="preserve">
+    <value>Add New Card</value>
+  </data>
+  <data name="updateCardBtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 9.75pt, style=Bold, Italic</value>
+  </data>
+  <data name="updateCardBtn.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="updateCardBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 83</value>
+  </data>
+  <data name="updateCardBtn.Text" xml:space="preserve">
+    <value>Update Card</value>
+  </data>
+  <data name="cardActivityDetailsBtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 9.75pt, style=Bold, Italic</value>
+  </data>
+  <data name="cardActivityDetailsBtn.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="cardActivityDetailsBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 83</value>
+  </data>
+  <data name="cardActivityDetailsBtn.Text" xml:space="preserve">
+    <value>Card Activity Details</value>
+  </data>
   <data name="panel11.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 221</value>
   </data>

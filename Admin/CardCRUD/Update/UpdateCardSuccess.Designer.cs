@@ -153,9 +153,9 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.label1.Location = new System.Drawing.Point(75, 10);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
-            this.label1.Size = new System.Drawing.Size(70, 54);
+            this.label1.Size = new System.Drawing.Size(63, 54);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Card\r\nSettings";
+            this.label1.Text = "Update\r\nCard";
             // 
             // panel7
             // 
@@ -179,7 +179,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.addNewCardButton.TabIndex = 2;
             this.addNewCardButton.Text = "Add New Card";
             this.addNewCardButton.UseVisualStyleBackColor = false;
-            this.addNewCardButton.Click += new System.EventHandler(this.addNewCardButton_Click);
             this.addNewCardButton.MouseEnter += new System.EventHandler(this.addNewCardButton_MouseEnter);
             this.addNewCardButton.MouseLeave += new System.EventHandler(this.addNewCardButton_MouseLeave);
             // 
@@ -272,9 +271,11 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             // richTextBoxInside
             // 
             this.richTextBoxInside.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.richTextBoxInside.Enabled = false;
             this.richTextBoxInside.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.richTextBoxInside.Location = new System.Drawing.Point(544, 346);
             this.richTextBoxInside.Name = "richTextBoxInside";
+            this.richTextBoxInside.ReadOnly = true;
             this.richTextBoxInside.Size = new System.Drawing.Size(381, 60);
             this.richTextBoxInside.TabIndex = 35;
             this.richTextBoxInside.Text = "  * Card has assigned to student successfully. \n  * You can go back to main menu." + "";
@@ -282,10 +283,12 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             // successTextBox
             // 
             this.successTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.successTextBox.Enabled = false;
             this.successTextBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.successTextBox.ForeColor = System.Drawing.Color.ForestGreen;
             this.successTextBox.Location = new System.Drawing.Point(656, 275);
             this.successTextBox.Name = "successTextBox";
+            this.successTextBox.ReadOnly = true;
             this.successTextBox.Size = new System.Drawing.Size(145, 35);
             this.successTextBox.TabIndex = 34;
             this.successTextBox.Text = "  SUCCESS!";

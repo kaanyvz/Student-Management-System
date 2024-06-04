@@ -41,12 +41,11 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.addStudentButton = new System.Windows.Forms.Button();
+            this.addNewCardBtn = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.updateStudentButton = new System.Windows.Forms.Button();
+            this.updateCardBtn = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.studentDetailsBtn = new System.Windows.Forms.Button();
-            this.backIcon = new System.Windows.Forms.PictureBox();
+            this.cardActivityDetailsBtn = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -66,7 +65,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             this.panel7.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.backIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // studentManagementSystemPanel
@@ -120,7 +118,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             this.flowLayoutPanel1.Controls.Add(this.panel7);
             this.flowLayoutPanel1.Controls.Add(this.panel9);
             this.flowLayoutPanel1.Controls.Add(this.panel11);
-            this.flowLayoutPanel1.Controls.Add(this.backIcon);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -156,103 +153,97 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             this.label1.Location = new System.Drawing.Point(75, 10);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
-            this.label1.Size = new System.Drawing.Size(70, 54);
+            this.label1.Size = new System.Drawing.Size(77, 54);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Card\r\nSettings";
+            this.label1.Text = "Add New\r\nCard";
             // 
             // panel7
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel7.Controls.Add(this.addStudentButton);
+            this.panel7.Controls.Add(this.addNewCardBtn);
             this.panel7.Location = new System.Drawing.Point(3, 89);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(189, 60);
             this.panel7.TabIndex = 0;
             // 
-            // addStudentButton
+            // addNewCardBtn
             // 
-            this.addStudentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            this.addStudentButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addStudentButton.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.addStudentButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.addStudentButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addStudentButton.Location = new System.Drawing.Point(-26, -20);
-            this.addStudentButton.Name = "addStudentButton";
-            this.addStudentButton.Size = new System.Drawing.Size(236, 93);
-            this.addStudentButton.TabIndex = 2;
-            this.addStudentButton.Text = "Add New Card";
-            this.addStudentButton.UseVisualStyleBackColor = false;
+            this.addNewCardBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
+            this.addNewCardBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addNewCardBtn.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.addNewCardBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.addNewCardBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addNewCardBtn.Location = new System.Drawing.Point(-26, -20);
+            this.addNewCardBtn.Name = "addNewCardBtn";
+            this.addNewCardBtn.Size = new System.Drawing.Size(236, 93);
+            this.addNewCardBtn.TabIndex = 2;
+            this.addNewCardBtn.Text = "Add New Card";
+            this.addNewCardBtn.UseVisualStyleBackColor = false;
             // 
             // panel9
             // 
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel9.Controls.Add(this.updateStudentButton);
+            this.panel9.Controls.Add(this.updateCardBtn);
             this.panel9.Location = new System.Drawing.Point(3, 155);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(189, 60);
             this.panel9.TabIndex = 0;
             // 
-            // updateStudentButton
+            // updateCardBtn
             // 
-            this.updateStudentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(45)))));
-            this.updateStudentButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.updateStudentButton.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.updateStudentButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.updateStudentButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.updateStudentButton.Location = new System.Drawing.Point(-26, -15);
-            this.updateStudentButton.Name = "updateStudentButton";
-            this.updateStudentButton.Size = new System.Drawing.Size(236, 83);
-            this.updateStudentButton.TabIndex = 2;
-            this.updateStudentButton.Text = "Update Card";
-            this.updateStudentButton.UseVisualStyleBackColor = false;
+            this.updateCardBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(45)))));
+            this.updateCardBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.updateCardBtn.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.updateCardBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.updateCardBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.updateCardBtn.Location = new System.Drawing.Point(-26, -15);
+            this.updateCardBtn.Name = "updateCardBtn";
+            this.updateCardBtn.Size = new System.Drawing.Size(236, 83);
+            this.updateCardBtn.TabIndex = 2;
+            this.updateCardBtn.Text = "Update Card";
+            this.updateCardBtn.UseVisualStyleBackColor = false;
+            this.updateCardBtn.Click += new System.EventHandler(this.updateStudentButton_Click);
+            this.updateCardBtn.MouseEnter += new System.EventHandler(this.updateStudentButton_MouseEnter);
+            this.updateCardBtn.MouseLeave += new System.EventHandler(this.updateStudentButton_MouseLeave);
             // 
             // panel11
             // 
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel11.Controls.Add(this.studentDetailsBtn);
+            this.panel11.Controls.Add(this.cardActivityDetailsBtn);
             this.panel11.Location = new System.Drawing.Point(3, 221);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(189, 60);
             this.panel11.TabIndex = 0;
             // 
-            // studentDetailsBtn
+            // cardActivityDetailsBtn
             // 
-            this.studentDetailsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(45)))));
-            this.studentDetailsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.studentDetailsBtn.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.studentDetailsBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.studentDetailsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.studentDetailsBtn.Location = new System.Drawing.Point(-26, -14);
-            this.studentDetailsBtn.Name = "studentDetailsBtn";
-            this.studentDetailsBtn.Size = new System.Drawing.Size(236, 83);
-            this.studentDetailsBtn.TabIndex = 2;
-            this.studentDetailsBtn.Text = "Card Activity Details";
-            this.studentDetailsBtn.UseVisualStyleBackColor = false;
-            // 
-            // backIcon
-            // 
-            this.backIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
-            this.backIcon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.backIcon.Image = ((System.Drawing.Image)(resources.GetObject("backIcon.Image")));
-            this.backIcon.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.backIcon.Location = new System.Drawing.Point(3, 287);
-            this.backIcon.Name = "backIcon";
-            this.backIcon.Size = new System.Drawing.Size(39, 37);
-            this.backIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.backIcon.TabIndex = 10;
-            this.backIcon.TabStop = false;
-            this.backIcon.Click += new System.EventHandler(this.backIcon_Click_1);
+            this.cardActivityDetailsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(45)))));
+            this.cardActivityDetailsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cardActivityDetailsBtn.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cardActivityDetailsBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.cardActivityDetailsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cardActivityDetailsBtn.Location = new System.Drawing.Point(-26, -14);
+            this.cardActivityDetailsBtn.Name = "cardActivityDetailsBtn";
+            this.cardActivityDetailsBtn.Size = new System.Drawing.Size(236, 83);
+            this.cardActivityDetailsBtn.TabIndex = 2;
+            this.cardActivityDetailsBtn.Text = "Card Activity Details";
+            this.cardActivityDetailsBtn.UseVisualStyleBackColor = false;
+            this.cardActivityDetailsBtn.Click += new System.EventHandler(this.studentDetailsBtn_Click);
+            this.cardActivityDetailsBtn.MouseEnter += new System.EventHandler(this.studentDetailsBtn_MouseEnter);
+            this.cardActivityDetailsBtn.MouseLeave += new System.EventHandler(this.studentDetailsBtn_MouseLeave);
             // 
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.richTextBox1.Enabled = false;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.richTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.richTextBox1.Location = new System.Drawing.Point(277, 89);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(451, 50);
             this.richTextBox1.TabIndex = 90;
-            this.richTextBox1.Text = "⚫  You can select one of the students to be updated.\n⚫  The first 50 students add" + "ed to the system are listed.\n⚫  You can also filter students by first name, last" + " name, number or class.";
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
             // label2
             // 
@@ -304,9 +295,10 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             this.clearFiltersBtn.Location = new System.Drawing.Point(1347, 114);
             this.clearFiltersBtn.Name = "clearFiltersBtn";
             this.clearFiltersBtn.Size = new System.Drawing.Size(111, 25);
-            this.clearFiltersBtn.TabIndex = 85;
+            this.clearFiltersBtn.TabIndex = 5;
             this.clearFiltersBtn.Text = "Clear Filters";
             this.clearFiltersBtn.UseVisualStyleBackColor = false;
+            this.clearFiltersBtn.Click += new System.EventHandler(this.clearFiltersBtn_Click);
             // 
             // classFilter
             // 
@@ -316,7 +308,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             this.classFilter.Location = new System.Drawing.Point(1151, 116);
             this.classFilter.Name = "classFilter";
             this.classFilter.Size = new System.Drawing.Size(179, 23);
-            this.classFilter.TabIndex = 84;
+            this.classFilter.TabIndex = 4;
             this.classFilter.SelectedIndexChanged += new System.EventHandler(this.classFilter_SelectedIndexChanged);
             // 
             // numberFilter
@@ -328,7 +320,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             this.numberFilter.Location = new System.Drawing.Point(1151, 89);
             this.numberFilter.Name = "numberFilter";
             this.numberFilter.Size = new System.Drawing.Size(179, 22);
-            this.numberFilter.TabIndex = 83;
+            this.numberFilter.TabIndex = 3;
             this.numberFilter.TextChanged += new System.EventHandler(this.numberFilter_TextChanged);
             // 
             // surnameFilter
@@ -340,7 +332,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             this.surnameFilter.Location = new System.Drawing.Point(889, 117);
             this.surnameFilter.Name = "surnameFilter";
             this.surnameFilter.Size = new System.Drawing.Size(179, 22);
-            this.surnameFilter.TabIndex = 82;
+            this.surnameFilter.TabIndex = 2;
             this.surnameFilter.TextChanged += new System.EventHandler(this.surnameFilter_TextChanged);
             // 
             // nameFilter
@@ -352,7 +344,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             this.nameFilter.Location = new System.Drawing.Point(889, 88);
             this.nameFilter.Name = "nameFilter";
             this.nameFilter.Size = new System.Drawing.Size(179, 22);
-            this.nameFilter.TabIndex = 81;
+            this.nameFilter.TabIndex = 1;
             this.nameFilter.TextChanged += new System.EventHandler(this.nameFilter_TextChanged);
             // 
             // AddNewCard
@@ -387,12 +379,9 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             this.panel7.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.backIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
-
-        private System.Windows.Forms.PictureBox backIcon;
 
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label2;
@@ -414,11 +403,11 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Button addStudentButton;
+        private System.Windows.Forms.Button addNewCardBtn;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Button updateStudentButton;
+        private System.Windows.Forms.Button updateCardBtn;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Button studentDetailsBtn;
+        private System.Windows.Forms.Button cardActivityDetailsBtn;
 
         #endregion
     }

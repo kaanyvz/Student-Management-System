@@ -32,7 +32,6 @@ namespace schoolManagementSystem.Admin
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminSettings));
-            this.labelTime = new System.Windows.Forms.Label();
             this.studentManagementSystemPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.adminDashboardTurnOffButton = new System.Windows.Forms.PictureBox();
@@ -40,6 +39,7 @@ namespace schoolManagementSystem.Admin
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.studentSettingsPanel = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,6 +52,7 @@ namespace schoolManagementSystem.Admin
             this.deleteStudentButton = new System.Windows.Forms.Button();
             this.backIcon = new System.Windows.Forms.PictureBox();
             this.informationRichText = new System.Windows.Forms.RichTextBox();
+            this.mainTitle = new System.Windows.Forms.Label();
             this.studentManagementSystemPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDashboardTurnOffButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -64,20 +65,10 @@ namespace schoolManagementSystem.Admin
             ((System.ComponentModel.ISupportInitialize)(this.backIcon)).BeginInit();
             this.SuspendLayout();
             // 
-            // labelTime
-            // 
-            this.labelTime.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.labelTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelTime.Location = new System.Drawing.Point(1089, 527);
-            this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(163, 25);
-            this.labelTime.TabIndex = 4;
-            this.labelTime.Text = "TIME";
-            this.labelTime.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            // 
             // studentManagementSystemPanel
             // 
             this.studentManagementSystemPanel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.studentManagementSystemPanel.Controls.Add(this.mainTitle);
             this.studentManagementSystemPanel.Controls.Add(this.label2);
             this.studentManagementSystemPanel.Controls.Add(this.adminDashboardTurnOffButton);
             this.studentManagementSystemPanel.Controls.Add(this.label3);
@@ -93,9 +84,8 @@ namespace schoolManagementSystem.Admin
             this.label2.Font = new System.Drawing.Font("Cascadia Code", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.Location = new System.Drawing.Point(141, 29);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(312, 28);
+            this.label2.Size = new System.Drawing.Size(0, 28);
             this.label2.TabIndex = 8;
-            this.label2.Text = "STUDENT MANAGEMENT SYSTEM";
             // 
             // adminDashboardTurnOffButton
             // 
@@ -147,6 +137,7 @@ namespace schoolManagementSystem.Admin
             // studentSettingsPanel
             // 
             this.studentSettingsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.studentSettingsPanel.Controls.Add(this.label5);
             this.studentSettingsPanel.Controls.Add(this.label4);
             this.studentSettingsPanel.Controls.Add(this.pictureBox2);
             this.studentSettingsPanel.Controls.Add(this.label1);
@@ -154,6 +145,18 @@ namespace schoolManagementSystem.Admin
             this.studentSettingsPanel.Name = "studentSettingsPanel";
             this.studentSettingsPanel.Size = new System.Drawing.Size(189, 80);
             this.studentSettingsPanel.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(81, 16);
+            this.label5.Name = "label5";
+            this.label5.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
+            this.label5.Size = new System.Drawing.Size(70, 54);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Teacher\r\nSettings";
             // 
             // label4
             // 
@@ -163,9 +166,8 @@ namespace schoolManagementSystem.Admin
             this.label4.Location = new System.Drawing.Point(75, 10);
             this.label4.Name = "label4";
             this.label4.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
-            this.label4.Size = new System.Drawing.Size(70, 54);
+            this.label4.Size = new System.Drawing.Size(0, 33);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Admin\r\nSettings";
             // 
             // pictureBox2
             // 
@@ -307,6 +309,16 @@ namespace schoolManagementSystem.Admin
             this.informationRichText.TabIndex = 8;
             this.informationRichText.Text = "";
             // 
+            // mainTitle
+            // 
+            this.mainTitle.AutoSize = true;
+            this.mainTitle.Font = new System.Drawing.Font("Cascadia Code", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.mainTitle.Location = new System.Drawing.Point(141, 29);
+            this.mainTitle.Name = "mainTitle";
+            this.mainTitle.Size = new System.Drawing.Size(312, 28);
+            this.mainTitle.TabIndex = 9;
+            this.mainTitle.Text = "STUDENT MANAGEMENT SYSTEM";
+            // 
             // AdminSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,12 +328,10 @@ namespace schoolManagementSystem.Admin
             this.Controls.Add(this.informationRichText);
             this.Controls.Add(this.studentManagementSystemPanel);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.labelTime);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(15, 15);
             this.MaximizeBox = false;
             this.Name = "AdminSettings";
-            this.Text = "Student Management System";
             this.Load += new System.EventHandler(this.AdminDashboardForm_Load);
             this.studentManagementSystemPanel.ResumeLayout(false);
             this.studentManagementSystemPanel.PerformLayout();
@@ -337,6 +347,10 @@ namespace schoolManagementSystem.Admin
             ((System.ComponentModel.ISupportInitialize)(this.backIcon)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Label mainTitle;
+
+        private System.Windows.Forms.Label label5;
 
         private System.Windows.Forms.PictureBox backIcon;
 
@@ -364,8 +378,6 @@ namespace schoolManagementSystem.Admin
         private System.Windows.Forms.Label label3;
 
         private System.Windows.Forms.PictureBox pictureBox1;
-
-        private System.Windows.Forms.Label labelTime;
 
         #endregion
     }

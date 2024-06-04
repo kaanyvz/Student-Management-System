@@ -53,7 +53,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.updateCardButton = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
             this.cardDetailsButton = new System.Windows.Forms.Button();
-            this.backIcon = new System.Windows.Forms.PictureBox();
             this.clearFiltersBtn = new System.Windows.Forms.Button();
             this.cardNumberFilter = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -66,16 +65,17 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.panel7.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.backIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.richTextBox1.Enabled = false;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.richTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.richTextBox1.Location = new System.Drawing.Point(278, 89);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(451, 50);
             this.richTextBox1.TabIndex = 101;
             this.richTextBox1.Text = "⚫  You can select one of the students to be updated.\n⚫  The first 50 students add" + "ed to the system are listed.\n⚫  You can also filter students by first name, last" + " name, number or class.";
@@ -197,7 +197,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.flowLayoutPanel1.Controls.Add(this.panel7);
             this.flowLayoutPanel1.Controls.Add(this.panel9);
             this.flowLayoutPanel1.Controls.Add(this.panel11);
-            this.flowLayoutPanel1.Controls.Add(this.backIcon);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -308,22 +307,9 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.cardDetailsButton.TabIndex = 2;
             this.cardDetailsButton.Text = "Card Activity Details";
             this.cardDetailsButton.UseVisualStyleBackColor = false;
+            this.cardDetailsButton.Click += new System.EventHandler(this.cardDetailsButton_Click);
             this.cardDetailsButton.MouseEnter += new System.EventHandler(this.cardDetailsButton_MouseEnter);
             this.cardDetailsButton.MouseLeave += new System.EventHandler(this.cardDetailsButton_MouseLeave);
-            // 
-            // backIcon
-            // 
-            this.backIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
-            this.backIcon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.backIcon.Image = ((System.Drawing.Image)(resources.GetObject("backIcon.Image")));
-            this.backIcon.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.backIcon.Location = new System.Drawing.Point(3, 287);
-            this.backIcon.Name = "backIcon";
-            this.backIcon.Size = new System.Drawing.Size(39, 37);
-            this.backIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.backIcon.TabIndex = 10;
-            this.backIcon.TabStop = false;
-            this.backIcon.Click += new System.EventHandler(this.backIcon_Click_1);
             // 
             // clearFiltersBtn
             // 
@@ -393,7 +379,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.panel7.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.backIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
@@ -410,7 +395,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
         private System.Windows.Forms.TextBox numberFilter;
         private System.Windows.Forms.TextBox surnameFilter;
         private System.Windows.Forms.TextBox nameFilter;
-        private System.Windows.Forms.PictureBox backIcon;
 
         private System.Windows.Forms.Panel studentManagementSystemPanel;
         private System.Windows.Forms.PictureBox adminDashboardTurnOffButton;

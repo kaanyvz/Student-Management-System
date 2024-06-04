@@ -75,10 +75,12 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Details
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.richTextBox1.Enabled = false;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.richTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.richTextBox1.Location = new System.Drawing.Point(227, 89);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(451, 50);
             this.richTextBox1.TabIndex = 102;
             this.richTextBox1.Text = "⚫  You can select one of the students to be updated.\n⚫  The first 50 students add" + "ed to the system are listed.\n⚫  You can also filter students by first name, last" + " name, number or class.";
@@ -274,7 +276,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Details
             this.label1.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
             this.label1.Size = new System.Drawing.Size(67, 54);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Update\r\nTeacher";
+            this.label1.Text = "Teacher\r\nDetails";
             // 
             // panel7
             // 
@@ -298,6 +300,9 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Details
             this.addNewTeacherBtn.TabIndex = 2;
             this.addNewTeacherBtn.Text = "Add New Teacher";
             this.addNewTeacherBtn.UseVisualStyleBackColor = false;
+            this.addNewTeacherBtn.Click += new System.EventHandler(this.addNewTeacherBtn_Click_1);
+            this.addNewTeacherBtn.MouseEnter += new System.EventHandler(this.addNewTeacherBtn_MouseEnter_1);
+            this.addNewTeacherBtn.MouseLeave += new System.EventHandler(this.addNewTeacherBtn_MouseLeave_1);
             // 
             // panel9
             // 
@@ -321,6 +326,9 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Details
             this.updateTeacherBtn.TabIndex = 2;
             this.updateTeacherBtn.Text = "Update Teacher";
             this.updateTeacherBtn.UseVisualStyleBackColor = false;
+            this.updateTeacherBtn.Click += new System.EventHandler(this.updateTeacherBtn_Click);
+            this.updateTeacherBtn.MouseEnter += new System.EventHandler(this.updateTeacherBtn_MouseEnter);
+            this.updateTeacherBtn.MouseLeave += new System.EventHandler(this.updateTeacherBtn_MouseLeave);
             // 
             // panel11
             // 
@@ -344,6 +352,9 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Details
             this.deleteTeacherBtn.TabIndex = 2;
             this.deleteTeacherBtn.Text = "Delete Teacher";
             this.deleteTeacherBtn.UseVisualStyleBackColor = false;
+            this.deleteTeacherBtn.Click += new System.EventHandler(this.deleteTeacherBtn_Click_1);
+            this.deleteTeacherBtn.MouseEnter += new System.EventHandler(this.deleteTeacherBtn_MouseEnter_1);
+            this.deleteTeacherBtn.MouseLeave += new System.EventHandler(this.deleteTeacherBtn_MouseLeave_1);
             // 
             // panel1
             // 
@@ -400,8 +411,9 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Details
             this.Controls.Add(this.surnameFilter);
             this.Controls.Add(this.studentManagementSystemPanel);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TeacherDetails";
-            this.Text = "TeacherDetails";
+            this.Text = "Student Management Sytem";
             this.studentManagementSystemPanel.ResumeLayout(false);
             this.studentManagementSystemPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDashboardTurnOffButton)).EndInit();

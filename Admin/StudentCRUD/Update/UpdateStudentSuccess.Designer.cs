@@ -82,9 +82,11 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
             // richTextBoxInside
             // 
             this.richTextBoxInside.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.richTextBoxInside.Enabled = false;
             this.richTextBoxInside.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.richTextBoxInside.Location = new System.Drawing.Point(543, 346);
             this.richTextBoxInside.Name = "richTextBoxInside";
+            this.richTextBoxInside.ReadOnly = true;
             this.richTextBoxInside.Size = new System.Drawing.Size(381, 60);
             this.richTextBoxInside.TabIndex = 21;
             this.richTextBoxInside.Text = "  * Student has updated successfully. \n  * You can go back to main menu.";
@@ -92,10 +94,12 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
             // successTextBox
             // 
             this.successTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.successTextBox.Enabled = false;
             this.successTextBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.successTextBox.ForeColor = System.Drawing.Color.ForestGreen;
             this.successTextBox.Location = new System.Drawing.Point(655, 275);
             this.successTextBox.Name = "successTextBox";
+            this.successTextBox.ReadOnly = true;
             this.successTextBox.Size = new System.Drawing.Size(145, 35);
             this.successTextBox.TabIndex = 20;
             this.successTextBox.Text = "  SUCCESS!";
@@ -222,7 +226,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
             // 
             // addStudentButton
             // 
-            this.addStudentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
+            this.addStudentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
             this.addStudentButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addStudentButton.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.addStudentButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -245,7 +249,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
             // 
             // updateStudentButton
             // 
-            this.updateStudentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(45)))));
+            this.updateStudentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
             this.updateStudentButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.updateStudentButton.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.updateStudentButton.ForeColor = System.Drawing.SystemColors.ButtonFace;

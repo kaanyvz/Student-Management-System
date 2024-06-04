@@ -395,6 +395,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Delete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1464, 661);
             this.Controls.Add(this.clearFiltersBtn);
             this.Controls.Add(this.richTextBox1);
@@ -408,8 +409,9 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Delete
             this.Controls.Add(this.nameFilter);
             this.Controls.Add(this.studentManagementSystemPanel);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DeleteStudent";
-            this.Text = "DeleteStudent";
+            this.Text = "Student Management System";
             this.studentManagementSystemPanel.ResumeLayout(false);
             this.studentManagementSystemPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDashboardTurnOffButton)).EndInit();

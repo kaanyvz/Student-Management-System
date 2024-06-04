@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using schoolManagementSystem.Admin.StudentCRUD;
 using schoolManagementSystem.Admin.TeacherCRUD.Add;
 using schoolManagementSystem.Admin.TeacherCRUD.Delete;
+using schoolManagementSystem.Admin.TeacherCRUD.Update;
 
 namespace schoolManagementSystem.Admin.TeacherCRUD.Details
 {
@@ -156,7 +157,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Details
                             LEFT JOIN Class c ON t.id = c.headTeacherId
                             INNER JOIN School s ON t.schoolId = s.id
                         WHERE
-                            t.schoolId = 1
+                            t.schoolId = @schoolId
                         ORDER BY t.id";
 
                     using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
@@ -457,6 +458,84 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Details
             {
                 Application.Exit();
             }
+        }
+
+        private void deleteTeacherBtn_MouseEnter_1(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+            {
+                button.BackColor = Color.FromArgb(55, 55, 70);
+            }
+        }
+
+        private void deleteTeacherBtn_MouseLeave_1(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+            {
+                button.BackColor = Color.FromArgb(35, 35, 45); 
+            }
+        }
+
+        private void deleteTeacherBtn_Click_1(object sender, EventArgs e)
+        {
+            DeleteTeacher deleteTeacher = new DeleteTeacher(adminUsername, schoolName);
+            deleteTeacher.StartPosition = FormStartPosition.Manual;
+            deleteTeacher.Location = this.Location;
+            this.Hide();
+            deleteTeacher.ShowDialog();
+            this.Close();
+        }
+
+        private void updateTeacherBtn_MouseEnter(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+            {
+                button.BackColor = Color.FromArgb(55, 55, 70);
+            }
+        }
+
+        private void updateTeacherBtn_MouseLeave(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+            {
+                button.BackColor = Color.FromArgb(35, 35, 45); 
+            }
+        }
+
+        private void updateTeacherBtn_Click(object sender, EventArgs e)
+        {
+            UpdateTeacher updateTeacher = new UpdateTeacher(adminUsername, schoolName);
+            updateTeacher.StartPosition = FormStartPosition.Manual;
+            updateTeacher.Location = this.Location;
+            this.Hide();
+            updateTeacher.ShowDialog();
+            this.Close();
+        }
+
+        private void addNewTeacherBtn_MouseEnter_1(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+            {
+                button.BackColor = Color.FromArgb(55, 55, 70);
+            }
+        }
+
+        private void addNewTeacherBtn_MouseLeave_1(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+            {
+                button.BackColor = Color.FromArgb(35, 35, 45); 
+            }
+        }
+
+        private void addNewTeacherBtn_Click_1(object sender, EventArgs e)
+        {
+            AddNewTeacher addNewTeacher = new AddNewTeacher(adminUsername, schoolName);
+            addNewTeacher.StartPosition = FormStartPosition.Manual;
+            addNewTeacher.Location = this.Location;
+            this.Hide();
+            addNewTeacher.ShowDialog();
+            this.Close();
         }
     }
 }

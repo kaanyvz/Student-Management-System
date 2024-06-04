@@ -42,6 +42,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Delete
             this._dataGridView.RowTemplate.Height = 40;
             this._dataGridView.AllowUserToResizeRows = false;
             this._dataGridView.AllowUserToResizeColumns = false;
+            this._dataGridView.AllowUserToAddRows = false;
             
             
             PopulateClassFilterDropdown();

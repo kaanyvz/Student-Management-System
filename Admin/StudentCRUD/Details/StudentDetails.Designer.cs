@@ -287,7 +287,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Details
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(451, 50);
             this.richTextBox1.TabIndex = 90;
-            this.richTextBox1.Text = "⚫  You can select one of the students to be updated.\n⚫  The first 50 students add" + "ed to the system are listed.\n⚫  You can also filter students by first name, last" + " name, number or class.";
+            this.richTextBox1.Text = "⚫  You can access student details here.\n⚫  The first 50 students added to the sys" + "tem are listed.\n⚫  You can also filter students by first name, last name, number" + " or class.";
             // 
             // label2
             // 
@@ -395,6 +395,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1464, 661);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label2);

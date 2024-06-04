@@ -288,9 +288,11 @@ namespace schoolManagementSystem.Admin.StudentCRUD
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.richTextBox1.Enabled = false;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.richTextBox1.Location = new System.Drawing.Point(666, 142);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(544, 290);
             this.richTextBox1.TabIndex = 52;
             this.richTextBox1.Text = "";
@@ -335,7 +337,6 @@ namespace schoolManagementSystem.Admin.StudentCRUD
             this.studentManagementSystemPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         private System.Windows.Forms.PictureBox backIcon;

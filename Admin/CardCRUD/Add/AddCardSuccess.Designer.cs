@@ -79,9 +79,11 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             // richTextBoxInside
             // 
             this.richTextBoxInside.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.richTextBoxInside.Enabled = false;
             this.richTextBoxInside.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.richTextBoxInside.Location = new System.Drawing.Point(544, 346);
             this.richTextBoxInside.Name = "richTextBoxInside";
+            this.richTextBoxInside.ReadOnly = true;
             this.richTextBoxInside.Size = new System.Drawing.Size(381, 60);
             this.richTextBoxInside.TabIndex = 28;
             this.richTextBoxInside.Text = "  * Card has assigned to student successfully. \n  * You can go back to main menu." + "";
@@ -89,10 +91,12 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             // successTextBox
             // 
             this.successTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.successTextBox.Enabled = false;
             this.successTextBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.successTextBox.ForeColor = System.Drawing.Color.ForestGreen;
             this.successTextBox.Location = new System.Drawing.Point(656, 275);
             this.successTextBox.Name = "successTextBox";
+            this.successTextBox.ReadOnly = true;
             this.successTextBox.Size = new System.Drawing.Size(145, 35);
             this.successTextBox.TabIndex = 27;
             this.successTextBox.Text = "  SUCCESS!";
@@ -111,8 +115,10 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             // richTextBoxOutside
             // 
             this.richTextBoxOutside.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.richTextBoxOutside.Enabled = false;
             this.richTextBoxOutside.Location = new System.Drawing.Point(261, 123);
             this.richTextBoxOutside.Name = "richTextBoxOutside";
+            this.richTextBoxOutside.ReadOnly = true;
             this.richTextBoxOutside.Size = new System.Drawing.Size(949, 324);
             this.richTextBoxOutside.TabIndex = 25;
             this.richTextBoxOutside.Text = "\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                    " + "                ";
@@ -288,8 +294,9 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             this.Controls.Add(this.successTextBox);
             this.Controls.Add(this.successPictureBox);
             this.Controls.Add(this.richTextBoxOutside);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddCardSuccess";
-            this.Text = "AddCardSuccess";
+            this.Text = "Student Management System";
             ((System.ComponentModel.ISupportInitialize)(this.successPictureBox)).EndInit();
             this.studentManagementSystemPanel.ResumeLayout(false);
             this.studentManagementSystemPanel.PerformLayout();

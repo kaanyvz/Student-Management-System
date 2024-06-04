@@ -660,9 +660,11 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Details
             // 
             this.nameSurnameRichBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.nameSurnameRichBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nameSurnameRichBox.Enabled = false;
             this.nameSurnameRichBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.nameSurnameRichBox.Location = new System.Drawing.Point(221, 362);
             this.nameSurnameRichBox.Name = "nameSurnameRichBox";
+            this.nameSurnameRichBox.ReadOnly = true;
             this.nameSurnameRichBox.Size = new System.Drawing.Size(224, 38);
             this.nameSurnameRichBox.TabIndex = 98;
             this.nameSurnameRichBox.Text = "";

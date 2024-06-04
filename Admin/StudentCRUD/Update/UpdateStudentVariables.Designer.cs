@@ -508,6 +508,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
             // richTextBox2
             // 
             this.richTextBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.richTextBox2.Enabled = false;
             this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.richTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.richTextBox2.Location = new System.Drawing.Point(228, 89);
@@ -515,7 +516,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
             this.richTextBox2.ReadOnly = true;
             this.richTextBox2.Size = new System.Drawing.Size(1008, 85);
             this.richTextBox2.TabIndex = 84;
-            this.richTextBox2.Text = "❗ IMPORTANT:\n\n⚫  In this panel, adding students is done.\n⚫  Please make sure to f" + "ill out the parent information completely.";
+            this.richTextBox2.Text = "❗ IMPORTANT:\n\n⚫  In this panel, updating students is done.\n⚫  Please make sure to" + " fill out the parent information completely.";
             // 
             // addParentalInfosBtn
             // 
@@ -526,7 +527,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
             this.addParentalInfosBtn.Name = "addParentalInfosBtn";
             this.addParentalInfosBtn.Size = new System.Drawing.Size(260, 61);
             this.addParentalInfosBtn.TabIndex = 7;
-            this.addParentalInfosBtn.Text = "ADD PARENTAL\r\n   INFORMATIONS  >";
+            this.addParentalInfosBtn.Text = "UPDATE PARENTAL\r\n   INFORMATIONS  >";
             this.addParentalInfosBtn.UseVisualStyleBackColor = false;
             this.addParentalInfosBtn.Click += new System.EventHandler(this.addParentalInfosBtn_Click);
             // 
@@ -727,6 +728,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1264, 561);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.richTextBox2);

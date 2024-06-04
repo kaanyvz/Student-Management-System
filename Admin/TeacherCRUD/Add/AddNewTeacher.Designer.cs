@@ -55,7 +55,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Add
             this.label9 = new System.Windows.Forms.Label();
             this.headClass = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.teacherBirthDatePicker = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -302,6 +302,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Add
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.richTextBox1.Enabled = false;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.richTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.richTextBox1.Location = new System.Drawing.Point(228, 107);
@@ -352,16 +353,16 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Add
             this.label8.TabIndex = 60;
             this.label8.Text = "Birthdate:";
             // 
-            // dateTimePicker1
+            // teacherBirthDatePicker
             // 
-            this.dateTimePicker1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimePicker1.Location = new System.Drawing.Point(799, 341);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2006, 1, 3, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(1940, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(260, 20);
-            this.dateTimePicker1.TabIndex = 9;
-            this.dateTimePicker1.Value = new System.DateTime(1990, 1, 3, 0, 0, 0, 0);
+            this.teacherBirthDatePicker.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.teacherBirthDatePicker.Location = new System.Drawing.Point(799, 341);
+            this.teacherBirthDatePicker.MaxDate = new System.DateTime(2006, 1, 3, 0, 0, 0, 0);
+            this.teacherBirthDatePicker.MinDate = new System.DateTime(1940, 1, 1, 0, 0, 0, 0);
+            this.teacherBirthDatePicker.Name = "teacherBirthDatePicker";
+            this.teacherBirthDatePicker.Size = new System.Drawing.Size(260, 20);
+            this.teacherBirthDatePicker.TabIndex = 9;
+            this.teacherBirthDatePicker.Value = new System.DateTime(1990, 1, 3, 0, 0, 0, 0);
             // 
             // label6
             // 
@@ -489,7 +490,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Add
             this.Controls.Add(this.majorDropdown);
             this.Controls.Add(this.headClass);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.teacherBirthDatePicker);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -502,6 +503,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Add
             this.Controls.Add(this.teacherName);
             this.Controls.Add(this.studentManagementSystemPanel);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddNewTeacher";
             this.Text = "AddNewTeacher";
             this.studentManagementSystemPanel.ResumeLayout(false);
@@ -530,7 +532,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Add
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox headClass;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker teacherBirthDatePicker;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;

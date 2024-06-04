@@ -197,12 +197,26 @@ namespace schoolManagementSystem.Admin.StudentCRUD
 
             // Your database connection string
 
+            // Your SQL query to retrieve schoolId
+            string schoolIdQuery = "SELECT id FROM School WHERE schoolName = @schoolName";
+
+            int schoolId;
+            using (SqlConnection connection = new SqlConnection(DatabaseConnection.ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(schoolIdQuery, connection);
+                command.Parameters.AddWithValue("@schoolName", schoolName);
+                connection.Open();
+
+                schoolId = (int)command.ExecuteScalar();
+            }
+
             // Your SQL query to retrieve student classes count
-            string query = "SELECT c.className, COUNT(*) FROM Student s INNER JOIN Class c ON s.classId = c.id GROUP BY c.className";
+            string query = "SELECT c.className, COUNT(*) FROM Student s INNER JOIN Class c ON s.classId = c.id WHERE c.schoolId = @schoolId GROUP BY c.className";
 
             using (SqlConnection connection = new SqlConnection(DatabaseConnection.ConnectionString))
             {
                 SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@schoolId", schoolId);
                 connection.Open();
 
                 SqlDataReader reader = command.ExecuteReader();

@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
+using schoolManagementSystem.Admin.CardCRUD.Add;
+using schoolManagementSystem.Admin.CardCRUD.Details;
 
 namespace schoolManagementSystem.Admin.CardCRUD.Update
 {
@@ -113,6 +116,59 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             {
                 Application.Exit();
             }
+        }
+
+        private void cardDetailsBtn_MouseEnter(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+            {
+                button.BackColor = Color.FromArgb(55, 55, 70); 
+            }
+        }
+
+        private void cardDetailsBtn_MouseLeave(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+            {
+                button.BackColor = Color.FromArgb(35, 35, 50); 
+            }
+        }
+
+        private void cardDetailsBtn_Click(object sender, EventArgs e)
+        {
+            StudentCardDetails studentCardDetails = new StudentCardDetails(adminUsername, schoolName);
+            studentCardDetails.StartPosition = FormStartPosition.Manual;
+            studentCardDetails.Location = this.Location;
+            this.Hide();
+            studentCardDetails.ShowDialog();
+            this.Close();
+            
+        }
+
+        private void addNewCardBtn_MouseEnter(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+            {
+                button.BackColor = Color.FromArgb(55, 55, 70); 
+            }
+        }
+
+        private void addNewCardBtn_MouseLeave(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+            {
+                button.BackColor = Color.FromArgb(35, 35, 50); 
+            }
+        }
+
+        private void addNewCardBtn_Click(object sender, EventArgs e)
+        {
+            AddNewCard addNewCard = new AddNewCard(adminUsername, schoolName);
+            addNewCard.StartPosition = FormStartPosition.Manual;
+            addNewCard.Location = this.Location;
+            this.Hide();
+            addNewCard.ShowDialog();
+            this.Close();
         }
     }
 }

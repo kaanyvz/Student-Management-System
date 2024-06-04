@@ -285,6 +285,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
             this.richTextBoxInside.BackColor = System.Drawing.SystemColors.ControlLight;
             this.richTextBoxInside.Location = new System.Drawing.Point(418, 322);
             this.richTextBoxInside.Name = "richTextBoxInside";
+            this.richTextBoxInside.ReadOnly = true;
             this.richTextBoxInside.Size = new System.Drawing.Size(659, 105);
             this.richTextBoxInside.TabIndex = 14;
             this.richTextBoxInside.Text = "";

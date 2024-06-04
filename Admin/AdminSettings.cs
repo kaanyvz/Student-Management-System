@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using schoolManagementSystem.Admin.CardCRUD;
+using schoolManagementSystem.Admin.CardCRUD.Add;
 using schoolManagementSystem.Admin.StudentCRUD;
 using schoolManagementSystem.Admin.TeacherCRUD;
 
@@ -24,24 +25,12 @@ namespace schoolManagementSystem.Admin
         
         private void AdminDashboardForm_Load(object sender, EventArgs e)
         {
-            Timer timer = new Timer();
-            timer.Interval = 1000; 
-            timer.Tick += Timer_Tick;
-            timer.Start();
-
-            UpdateTimeLabel();
             UpdateInformationRichText();
         }
         
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            UpdateTimeLabel();
-        }
+        
 
-        private void UpdateTimeLabel()
-        {
-            labelTime.Text = DateTime.Now.ToString("dd.MM.yyyy HH:mm");
-        }
+        
         
         private void UpdateInformationRichText()
         {
@@ -132,11 +121,11 @@ namespace schoolManagementSystem.Admin
 
         private void cardSettingsBtn_Click(object sender, EventArgs e)
         {
-            CardSettings cardSettings = new CardSettings(adminUsername, schoolName);
-            cardSettings.StartPosition = FormStartPosition.Manual;
-            cardSettings.Location = this.Location;
+            AddNewCard addNewCard = new AddNewCard(adminUsername, schoolName);
+            addNewCard.StartPosition = FormStartPosition.Manual;
+            addNewCard.Location = this.Location;
             this.Hide();
-            cardSettings.ShowDialog();
+            addNewCard.ShowDialog();
             this.Close();
         }
 

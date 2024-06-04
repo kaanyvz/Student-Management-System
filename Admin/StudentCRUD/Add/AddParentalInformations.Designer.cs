@@ -405,7 +405,8 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
             // 
             // richTextBox1
             // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.richTextBox1.Enabled = false;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.richTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.richTextBox1.Location = new System.Drawing.Point(227, 89);
@@ -461,7 +462,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
             this.parentBirthdate1.MinDate = new System.DateTime(1940, 1, 1, 0, 0, 0, 0);
             this.parentBirthdate1.Name = "parentBirthdate1";
             this.parentBirthdate1.Size = new System.Drawing.Size(260, 20);
-            this.parentBirthdate1.TabIndex = 64;
+            this.parentBirthdate1.TabIndex = 6;
             this.parentBirthdate1.Value = new System.DateTime(2002, 12, 31, 0, 0, 0, 0);
             // 
             // AddParentalInformations

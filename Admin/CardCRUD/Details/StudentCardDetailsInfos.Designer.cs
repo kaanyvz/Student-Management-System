@@ -33,6 +33,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentCardDetailsInfos));
             this.studentManagementSystemPanel = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
             this.adminDashboardTurnOffButton = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -84,7 +85,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.label19 = new System.Windows.Forms.Label();
             this.periodDropdown = new System.Windows.Forms.ComboBox();
-            this.label22 = new System.Windows.Forms.Label();
             this.studentManagementSystemPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDashboardTurnOffButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -109,6 +109,16 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             this.studentManagementSystemPanel.Name = "studentManagementSystemPanel";
             this.studentManagementSystemPanel.Size = new System.Drawing.Size(1263, 83);
             this.studentManagementSystemPanel.TabIndex = 106;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Cascadia Code", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label22.Location = new System.Drawing.Point(141, 29);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(312, 28);
+            this.label22.TabIndex = 8;
+            this.label22.Text = "STUDENT MANAGEMENT SYSTEM";
             // 
             // adminDashboardTurnOffButton
             // 
@@ -173,7 +183,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label21.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label21.Location = new System.Drawing.Point(81, 17);
+            this.label21.Location = new System.Drawing.Point(82, 10);
             this.label21.Name = "label21";
             this.label21.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
             this.label21.Size = new System.Drawing.Size(106, 54);
@@ -223,6 +233,9 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             this.addNewCardButton.TabIndex = 2;
             this.addNewCardButton.Text = "Add New Card";
             this.addNewCardButton.UseVisualStyleBackColor = false;
+            this.addNewCardButton.Click += new System.EventHandler(this.addNewCardButton_Click);
+            this.addNewCardButton.MouseEnter += new System.EventHandler(this.addNewCardButton_MouseEnter);
+            this.addNewCardButton.MouseLeave += new System.EventHandler(this.addNewCardButton_MouseLeave);
             // 
             // panel9
             // 
@@ -246,6 +259,9 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             this.updateCardButton.TabIndex = 2;
             this.updateCardButton.Text = "Update Card";
             this.updateCardButton.UseVisualStyleBackColor = false;
+            this.updateCardButton.Click += new System.EventHandler(this.updateCardButton_Click);
+            this.updateCardButton.MouseEnter += new System.EventHandler(this.updateCardButton_MouseEnter);
+            this.updateCardButton.MouseLeave += new System.EventHandler(this.updateCardButton_MouseLeave);
             // 
             // panel11
             // 
@@ -288,9 +304,11 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             // 
             this.nameSurnameRichBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.nameSurnameRichBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nameSurnameRichBox.Enabled = false;
             this.nameSurnameRichBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.nameSurnameRichBox.Location = new System.Drawing.Point(229, 347);
             this.nameSurnameRichBox.Name = "nameSurnameRichBox";
+            this.nameSurnameRichBox.ReadOnly = true;
             this.nameSurnameRichBox.Size = new System.Drawing.Size(224, 38);
             this.nameSurnameRichBox.TabIndex = 125;
             this.nameSurnameRichBox.Text = "";
@@ -676,16 +694,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             this.periodDropdown.Size = new System.Drawing.Size(164, 21);
             this.periodDropdown.TabIndex = 127;
             // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Cascadia Code", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label22.Location = new System.Drawing.Point(141, 29);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(312, 28);
-            this.label22.TabIndex = 8;
-            this.label22.Text = "STUDENT MANAGEMENT SYSTEM";
-            // 
             // StudentCardDetailsInfos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -730,8 +738,10 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.studentManagementSystemPanel);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(15, 15);
             this.Name = "StudentCardDetailsInfos";
+            this.Text = "Student Management System";
             this.Load += new System.EventHandler(this.StudentCardDetailsInfos_Load);
             this.studentManagementSystemPanel.ResumeLayout(false);
             this.studentManagementSystemPanel.PerformLayout();

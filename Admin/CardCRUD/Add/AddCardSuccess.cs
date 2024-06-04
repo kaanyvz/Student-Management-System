@@ -19,11 +19,11 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            CardSettings cardSettings = new CardSettings(adminUsername, schoolName);
-            cardSettings.StartPosition = FormStartPosition.Manual;
-            cardSettings.Location = this.Location;
+            AddNewCard addNewCard = new AddNewCard(adminUsername, schoolName);
+            addNewCard.StartPosition = FormStartPosition.Manual;
+            addNewCard.Location = this.Location;
             this.Hide();
-            cardSettings.ShowDialog();
+            addNewCard.ShowDialog();
             this.Close();
         }
 

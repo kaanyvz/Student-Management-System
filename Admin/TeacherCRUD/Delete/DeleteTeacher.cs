@@ -157,7 +157,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Delete
                             LEFT JOIN Class c ON t.id = c.headTeacherId
                             INNER JOIN School s ON t.schoolId = s.id
                         WHERE
-                            t.schoolId = 1
+                            t.schoolId = @schoolId
                         ORDER BY t.id";
 
                     using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))

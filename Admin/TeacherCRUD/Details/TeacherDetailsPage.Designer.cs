@@ -51,7 +51,6 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Details
             this.teacherDetailsBtn = new System.Windows.Forms.Button();
             this.backIcon = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.nameSurnameRichBox = new System.Windows.Forms.RichTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.teacherBirthdate = new System.Windows.Forms.DateTimePicker();
@@ -311,17 +310,6 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Details
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
             // 
-            // nameSurnameRichBox
-            // 
-            this.nameSurnameRichBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.nameSurnameRichBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nameSurnameRichBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.nameSurnameRichBox.Location = new System.Drawing.Point(220, 474);
-            this.nameSurnameRichBox.Name = "nameSurnameRichBox";
-            this.nameSurnameRichBox.Size = new System.Drawing.Size(236, 38);
-            this.nameSurnameRichBox.TabIndex = 126;
-            this.nameSurnameRichBox.Text = "";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -570,6 +558,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Details
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.richTextBox1.Enabled = false;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.richTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.richTextBox1.Location = new System.Drawing.Point(220, 107);
@@ -608,7 +597,6 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Details
             this.Controls.Add(this.classCapacity);
             this.Controls.Add(this.className);
             this.Controls.Add(this.teacherName);
-            this.Controls.Add(this.nameSurnameRichBox);
             this.Controls.Add(this.studentManagementSystemPanel);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.pictureBox3);
@@ -670,8 +658,6 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Details
         private System.Windows.Forms.TextBox studentTC;
         private System.Windows.Forms.TextBox studentSurname;
         private System.Windows.Forms.TextBox studentName;
-
-        private System.Windows.Forms.RichTextBox nameSurnameRichBox;
 
         private System.Windows.Forms.PictureBox pictureBox3;
 

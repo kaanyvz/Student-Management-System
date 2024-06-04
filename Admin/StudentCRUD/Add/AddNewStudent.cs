@@ -88,8 +88,17 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
             using (SqlConnection connection = new SqlConnection(DatabaseConnection.ConnectionString))
             {
                 connection.Open();
-                SqlCommand cmd = new SqlCommand("SELECT className, capacity FROM Class", connection);
-                SqlDataReader reader = cmd.ExecuteReader();
+
+                // Get the schoolId from the School table using the schoolName
+                SqlCommand schoolCmd = new SqlCommand("SELECT id FROM School WHERE SchoolName = @SchoolName", connection);
+                schoolCmd.Parameters.AddWithValue("@SchoolName", schoolName);
+                int schoolId = (int)schoolCmd.ExecuteScalar();
+
+                // Use the schoolId to filter the classes from the Class table
+                SqlCommand classCmd = new SqlCommand("SELECT className, capacity FROM Class WHERE schoolId = @SchoolId", connection);
+                classCmd.Parameters.AddWithValue("@SchoolId", schoolId);
+                SqlDataReader reader = classCmd.ExecuteReader();
+
                 while (reader.Read())
                 {
                     string className = reader["className"].ToString();

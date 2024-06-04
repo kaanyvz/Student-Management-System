@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using schoolManagementSystem.Admin.TeacherCRUD.Delete;
+using schoolManagementSystem.Admin.TeacherCRUD.Details;
 using schoolManagementSystem.Admin.TeacherCRUD.Update;
 
 namespace schoolManagementSystem.Admin.TeacherCRUD.Add
@@ -56,13 +57,16 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Add
         {
             headClass.Items.Clear();
 
+            int schoolId = GetSchoolId();
+
             using (SqlConnection sqlConnection = new SqlConnection(DatabaseConnection.ConnectionString))
             {
                 sqlConnection.Open();
 
-                string query = "SELECT DISTINCT classname FROM Class WHERE headTeacherId IS NULL";
+                string query = "SELECT DISTINCT classname FROM Class WHERE headTeacherId IS NULL AND schoolId = @schoolId";
                 using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
                 {
+                    sqlCommand.Parameters.AddWithValue("@schoolId", schoolId);
                     using (SqlDataReader reader = sqlCommand.ExecuteReader())
                     {
                         while (reader.Read())
@@ -73,6 +77,29 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Add
                     }
                 }
             }
+        }
+        
+        private int GetSchoolId()
+        {
+            int schoolId = 0;
+
+            using (SqlConnection sqlConnection = new SqlConnection(DatabaseConnection.ConnectionString))
+            {
+                sqlConnection.Open();
+
+                string schoolIdQuery = "SELECT id FROM School WHERE schoolName = @schoolName";
+                using (SqlCommand schoolIdCommand = new SqlCommand(schoolIdQuery, sqlConnection))
+                {
+                    schoolIdCommand.Parameters.AddWithValue("@schoolName", schoolName);
+                    object result = schoolIdCommand.ExecuteScalar();
+                    if (result != null)
+                    {
+                        schoolId = Convert.ToInt32(result);
+                    }
+                }
+            }
+
+            return schoolId;
         }
 
         private void addTeacherBtn_Click(object sender, EventArgs e)
@@ -86,7 +113,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Add
                 Email = teacherMail.Text,
                 Phone = teacherPhone.Text,
                 TCNumber = teacherTC.Text,
-                BirthDate = dateTimePicker1.Value,
+                BirthDate = teacherBirthDatePicker.Value,
                 Major = majorDropdown.SelectedItem.ToString(),
                 Password = password
             };
@@ -217,7 +244,12 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Add
 
         private void teacherDetailsBtn_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            TeacherDetails teacherDetails = new TeacherDetails(adminUsername, schoolName);
+            teacherDetails.StartPosition = FormStartPosition.Manual;
+            teacherDetails.Location = this.Location;
+            this.Hide();
+            teacherDetails.ShowDialog();
+            this.Close();
         }
 
         private void backIcon_Click(object sender, EventArgs e)

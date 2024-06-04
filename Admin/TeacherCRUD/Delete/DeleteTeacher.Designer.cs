@@ -43,6 +43,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Delete
             this.nameFilter = new System.Windows.Forms.TextBox();
             this.surnameFilter = new System.Windows.Forms.TextBox();
             this.studentManagementSystemPanel = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.adminDashboardTurnOffButton = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -60,6 +61,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Delete
             this.teacherDetailsBtn = new System.Windows.Forms.Button();
             this.backIcon = new System.Windows.Forms.PictureBox();
             this.studentManagementSystemPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminDashboardTurnOffButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -75,10 +77,12 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Delete
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.richTextBox1.Enabled = false;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.richTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.richTextBox1.Location = new System.Drawing.Point(227, 89);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(451, 50);
             this.richTextBox1.TabIndex = 102;
             this.richTextBox1.Text = "⚫  You can select one of the teachers to be deleted.\n⚫  The first 50 teachers add" + "ed to the system are listed.\n⚫  You can also filter teachers by first name, last" + " name, major or class.";
@@ -187,6 +191,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Delete
             // studentManagementSystemPanel
             // 
             this.studentManagementSystemPanel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.studentManagementSystemPanel.Controls.Add(this.pictureBox3);
             this.studentManagementSystemPanel.Controls.Add(this.adminDashboardTurnOffButton);
             this.studentManagementSystemPanel.Controls.Add(this.label3);
             this.studentManagementSystemPanel.Controls.Add(this.pictureBox1);
@@ -194,6 +199,18 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Delete
             this.studentManagementSystemPanel.Name = "studentManagementSystemPanel";
             this.studentManagementSystemPanel.Size = new System.Drawing.Size(1265, 83);
             this.studentManagementSystemPanel.TabIndex = 92;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(606, 18);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(52, 47);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 7;
+            this.pictureBox3.TabStop = false;
             // 
             // adminDashboardTurnOffButton
             // 
@@ -413,6 +430,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Delete
             this.Text = "DeleteTeacher";
             this.studentManagementSystemPanel.ResumeLayout(false);
             this.studentManagementSystemPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminDashboardTurnOffButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -427,6 +445,8 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Delete
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.PictureBox pictureBox3;
 
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label2;

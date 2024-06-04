@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 using schoolManagementSystem.Admin.CardCRUD.Add;
+using schoolManagementSystem.Admin.CardCRUD.Details;
 
 namespace schoolManagementSystem.Admin.CardCRUD.Update
 {
@@ -39,6 +40,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this._dataGridView.RowTemplate.Height = 40;
             this._dataGridView.AllowUserToResizeRows = false;
             this._dataGridView.AllowUserToAddRows = false;
+            
         }
         
         
@@ -381,6 +383,16 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             {
                 Application.Exit();
             }
+        }
+
+        private void cardDetailsButton_Click(object sender, EventArgs e)
+        {
+            StudentCardDetails studentCardDetails = new StudentCardDetails(adminUsername, schoolName);
+            studentCardDetails.StartPosition = FormStartPosition.Manual;
+            studentCardDetails.Location = this.Location;
+            this.Hide();
+            studentCardDetails.ShowDialog();
+            this.Close();
         }
     }
 }

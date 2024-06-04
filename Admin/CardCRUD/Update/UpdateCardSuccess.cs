@@ -19,11 +19,11 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            CardSettings cardSettings = new CardSettings(adminUsername, schoolName);
-            cardSettings.StartPosition = FormStartPosition.Manual;
-            cardSettings.Location = this.Location;
+            AddNewCard addNewCard = new AddNewCard(adminUsername, schoolName);
+            addNewCard.StartPosition = FormStartPosition.Manual;
+            addNewCard.Location = this.Location;
             this.Hide();
-            cardSettings.ShowDialog();
+            addNewCard.ShowDialog();
             this.Close();
         }
 
@@ -41,16 +41,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             {
                 button.BackColor = Color.FromArgb(35, 35, 45); 
             }
-        }
-
-        private void addNewCardButton_Click(object sender, EventArgs e)
-        {
-            AddNewCard addNewCard = new AddNewCard(adminUsername, schoolName);
-            addNewCard.StartPosition = FormStartPosition.Manual;
-            addNewCard.Location = this.Location;
-            this.Hide();
-            addNewCard.ShowDialog();
-            this.Close();
         }
 
         private void deleteStudentCardButton_MouseEnter(object sender, EventArgs e)

@@ -20,6 +20,8 @@ namespace schoolManagementSystem.Admin.TeacherCRUD
         {
             this.adminUsername = adminUsername;
             this.schoolName = schoolName;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.StartPosition = FormStartPosition.CenterScreen; // Add this line
             InitializeComponent();
         }
 
@@ -71,12 +73,26 @@ namespace schoolManagementSystem.Admin.TeacherCRUD
 
             // Your database connection string
 
+            // Your SQL query to retrieve schoolId
+            string schoolIdQuery = "SELECT id FROM School WHERE schoolName = @schoolName";
+
+            int schoolId;
+            using (SqlConnection connection = new SqlConnection(DatabaseConnection.ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(schoolIdQuery, connection);
+                command.Parameters.AddWithValue("@schoolName", schoolName);
+                connection.Open();
+
+                schoolId = (int)command.ExecuteScalar();
+            }
+
             // Your SQL query to retrieve teacher majors count
-            string query = "SELECT Major, COUNT(*) FROM Teacher GROUP BY Major";
+            string query = "SELECT Major, COUNT(*) FROM Teacher WHERE schoolId = @schoolId GROUP BY Major";
 
             using (SqlConnection connection = new SqlConnection(DatabaseConnection.ConnectionString))
             {
                 SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@schoolId", schoolId);
                 connection.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -94,7 +110,6 @@ namespace schoolManagementSystem.Admin.TeacherCRUD
 
             return teacherMajorsCount;
         }
-
 
         private void addNewTeacherBtn_MouseEnter(object sender, EventArgs e)
         {

@@ -34,7 +34,6 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Details
             this.nameFilter.Height = 40;
             
             
-            // Handle the CellContentClick event
             this._dataGridView.CellContentClick += _dataGridView_CellContentClick;
             this._dataGridView.RowPrePaint += _dataGridView_RowPrePaint;
             this._dataGridView.RowHeadersVisible = false;

@@ -124,10 +124,8 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
 
         private void LoadTeacherData()
         {
-            
             using (SqlConnection sqlConnection = new SqlConnection(DatabaseConnection.ConnectionString))
             {
-                
                 sqlConnection.Open();
 
                 string schoolIdQuery = "SELECT id FROM School WHERE schoolName = @schoolName";
@@ -143,22 +141,22 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
                     int schoolId = Convert.ToInt32(result);
 
                     string query = @"
-                            SELECT
-                            t.id as Id,
-                            t.firstname as Name,
-                            t.lastname as Surname,
-                            t.email as Email,
-                            t.major as Major,
-                            YEAR(GETDATE()) - YEAR(t.birthDate) as Age,
-                            COALESCE(c.classname, '----') as ClassName,
-                            s.schoolName as School
-                        FROM
-                            Teacher t
-                            LEFT JOIN Class c ON t.id = c.headTeacherId
-                            INNER JOIN School s ON t.schoolId = s.id
-                        WHERE
-                            t.schoolId = 1
-                        ORDER BY t.id";
+                    SELECT
+                    t.id as Id,
+                    t.firstname as Name,
+                    t.lastname as Surname,
+                    t.email as Email,
+                    t.major as Major,
+                    YEAR(GETDATE()) - YEAR(t.birthDate) as Age,
+                    COALESCE(c.classname, '----') as ClassName,
+                    s.schoolName as School
+                FROM
+                    Teacher t
+                    LEFT JOIN Class c ON t.id = c.headTeacherId
+                    INNER JOIN School s ON t.schoolId = s.id
+                WHERE
+                    t.schoolId = @schoolId
+                ORDER BY t.id";
 
                     using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
                     {
@@ -168,7 +166,6 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
                         {
                             DataTable dataTable = new DataTable();
                             sqlDataAdapter.Fill(dataTable);
-                            
 
                             _dataGridView.DataSource = dataTable;
                             AdjustColumnWidths();
@@ -315,16 +312,29 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
             {
                 sqlConnection.Open();
 
-                string query = "SELECT DISTINCT classname FROM Class WHERE schoolId = @schoolId";
-                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                string schoolIdQuery = "SELECT id FROM School WHERE schoolName = @schoolName";
+                using (SqlCommand schoolIdCommand = new SqlCommand(schoolIdQuery, sqlConnection))
                 {
-                    sqlCommand.Parameters.AddWithValue("@schoolId", GetSchoolId());
-                    using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                    schoolIdCommand.Parameters.AddWithValue("@schoolName", schoolName);
+                    object result = schoolIdCommand.ExecuteScalar();
+                    if (result == null)
                     {
-                        while (reader.Read())
+                        MessageBox.Show("No school found with the provided name.");
+                        return;
+                    }
+                    int schoolId = Convert.ToInt32(result);
+
+                    string query = "SELECT DISTINCT classname FROM Class WHERE schoolId = @schoolId";
+                    using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                    {
+                        sqlCommand.Parameters.AddWithValue("@schoolId", schoolId);
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
                         {
-                            string className = reader["classname"].ToString();
-                            classFilter.Items.Add(className);
+                            while (reader.Read())
+                            {
+                                string className = reader["classname"].ToString();
+                                classFilter.Items.Add(className);
+                            }
                         }
                     }
                 }

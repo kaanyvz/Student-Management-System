@@ -82,9 +82,11 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Add
             // richTextBoxInside
             // 
             this.richTextBoxInside.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.richTextBoxInside.Enabled = false;
             this.richTextBoxInside.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.richTextBoxInside.Location = new System.Drawing.Point(412, 315);
             this.richTextBoxInside.Name = "richTextBoxInside";
+            this.richTextBoxInside.ReadOnly = true;
             this.richTextBoxInside.Size = new System.Drawing.Size(659, 105);
             this.richTextBoxInside.TabIndex = 19;
             this.richTextBoxInside.Text = "  * Teacher has added to system successfully.\n  * You can go back to main menu.\n";
@@ -92,10 +94,12 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Add
             // successTextBox
             // 
             this.successTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.successTextBox.Enabled = false;
             this.successTextBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.successTextBox.ForeColor = System.Drawing.Color.ForestGreen;
             this.successTextBox.Location = new System.Drawing.Point(648, 268);
             this.successTextBox.Name = "successTextBox";
+            this.successTextBox.ReadOnly = true;
             this.successTextBox.Size = new System.Drawing.Size(145, 35);
             this.successTextBox.TabIndex = 18;
             this.successTextBox.Text = "  SUCCESS!";

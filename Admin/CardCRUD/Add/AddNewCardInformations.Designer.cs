@@ -41,11 +41,11 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.addStudentButton = new System.Windows.Forms.Button();
+            this.addNewCardBtn = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.updateStudentButton = new System.Windows.Forms.Button();
+            this.updateCardBtn = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.studentDetailsBtn = new System.Windows.Forms.Button();
+            this.cardActivityDetailsBtn = new System.Windows.Forms.Button();
             this.backIcon = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -147,49 +147,55 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             // 
             resources.ApplyResources(this.panel7, "panel7");
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel7.Controls.Add(this.addStudentButton);
+            this.panel7.Controls.Add(this.addNewCardBtn);
             this.panel7.Name = "panel7";
             // 
-            // addStudentButton
+            // addNewCardBtn
             // 
-            resources.ApplyResources(this.addStudentButton, "addStudentButton");
-            this.addStudentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            this.addStudentButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addStudentButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.addStudentButton.Name = "addStudentButton";
-            this.addStudentButton.UseVisualStyleBackColor = false;
+            resources.ApplyResources(this.addNewCardBtn, "addNewCardBtn");
+            this.addNewCardBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
+            this.addNewCardBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addNewCardBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.addNewCardBtn.Name = "addNewCardBtn";
+            this.addNewCardBtn.UseVisualStyleBackColor = false;
             // 
             // panel9
             // 
             resources.ApplyResources(this.panel9, "panel9");
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel9.Controls.Add(this.updateStudentButton);
+            this.panel9.Controls.Add(this.updateCardBtn);
             this.panel9.Name = "panel9";
             // 
-            // updateStudentButton
+            // updateCardBtn
             // 
-            resources.ApplyResources(this.updateStudentButton, "updateStudentButton");
-            this.updateStudentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(45)))));
-            this.updateStudentButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.updateStudentButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.updateStudentButton.Name = "updateStudentButton";
-            this.updateStudentButton.UseVisualStyleBackColor = false;
+            resources.ApplyResources(this.updateCardBtn, "updateCardBtn");
+            this.updateCardBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(45)))));
+            this.updateCardBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.updateCardBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.updateCardBtn.Name = "updateCardBtn";
+            this.updateCardBtn.UseVisualStyleBackColor = false;
+            this.updateCardBtn.Click += new System.EventHandler(this.updateCardBtn_Click);
+            this.updateCardBtn.MouseEnter += new System.EventHandler(this.updateCardBtn_MouseEnter);
+            this.updateCardBtn.MouseLeave += new System.EventHandler(this.updateCardBtn_MouseLeave);
             // 
             // panel11
             // 
             resources.ApplyResources(this.panel11, "panel11");
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel11.Controls.Add(this.studentDetailsBtn);
+            this.panel11.Controls.Add(this.cardActivityDetailsBtn);
             this.panel11.Name = "panel11";
             // 
-            // studentDetailsBtn
+            // cardActivityDetailsBtn
             // 
-            resources.ApplyResources(this.studentDetailsBtn, "studentDetailsBtn");
-            this.studentDetailsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(45)))));
-            this.studentDetailsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.studentDetailsBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.studentDetailsBtn.Name = "studentDetailsBtn";
-            this.studentDetailsBtn.UseVisualStyleBackColor = false;
+            resources.ApplyResources(this.cardActivityDetailsBtn, "cardActivityDetailsBtn");
+            this.cardActivityDetailsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(45)))));
+            this.cardActivityDetailsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cardActivityDetailsBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.cardActivityDetailsBtn.Name = "cardActivityDetailsBtn";
+            this.cardActivityDetailsBtn.UseVisualStyleBackColor = false;
+            this.cardActivityDetailsBtn.Click += new System.EventHandler(this.cardActivityDetailsBtn_Click);
+            this.cardActivityDetailsBtn.MouseEnter += new System.EventHandler(this.cardActivityDetailsBtn_MouseEnter);
+            this.cardActivityDetailsBtn.MouseLeave += new System.EventHandler(this.cardActivityDetailsBtn_MouseLeave);
             // 
             // backIcon
             // 
@@ -433,11 +439,11 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Button addStudentButton;
+        private System.Windows.Forms.Button addNewCardBtn;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Button updateStudentButton;
+        private System.Windows.Forms.Button updateCardBtn;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Button studentDetailsBtn;
+        private System.Windows.Forms.Button cardActivityDetailsBtn;
 
         #endregion
     }

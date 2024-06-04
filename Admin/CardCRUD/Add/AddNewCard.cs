@@ -4,7 +4,11 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
+using schoolManagementSystem.Admin.CardCRUD.Details;
+using schoolManagementSystem.Admin.CardCRUD.Update;
 using schoolManagementSystem.Admin.StudentCRUD;
+using schoolManagementSystem.Admin.StudentCRUD.Details;
+using schoolManagementSystem.Admin.StudentCRUD.Update;
 
 namespace schoolManagementSystem.Admin.CardCRUD.Add
 {
@@ -360,6 +364,69 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             {
                 Application.Exit();
             }
+        }
+
+        private void updateStudentButton_MouseEnter(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+            {
+                button.BackColor = Color.FromArgb(55, 55, 70); 
+            }
+        }
+
+        private void updateStudentButton_MouseLeave(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+            {
+                button.BackColor = Color.FromArgb(35, 35, 45); 
+            }
+        }
+
+        private void updateStudentButton_Click(object sender, EventArgs e)
+        {
+            UpdateCard updateCard = new UpdateCard(adminUsername, schoolName);
+            updateCard.StartPosition = FormStartPosition.Manual;
+            updateCard.Location = this.Location;
+            this.Hide();
+            updateCard.ShowDialog();
+            this.Close();
+            
+        }
+
+        private void studentDetailsBtn_MouseEnter(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+            {
+                button.BackColor = Color.FromArgb(55, 55, 70); 
+            }
+        }
+
+        private void studentDetailsBtn_MouseLeave(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+            {
+                button.BackColor = Color.FromArgb(35, 35, 45); 
+            }
+        }
+
+        private void studentDetailsBtn_Click(object sender, EventArgs e)
+        {
+            StudentCardDetails studentCardDetails = new StudentCardDetails(adminUsername, schoolName);
+            studentCardDetails.StartPosition = FormStartPosition.Manual;
+            studentCardDetails.Location = this.Location;
+            this.Hide();
+            studentCardDetails.ShowDialog();
+            this.Close();
+        }
+
+        private void clearFiltersBtn_Click(object sender, EventArgs e)
+        {
+            nameFilter.Text = "";
+            surnameFilter.Text = "";
+            numberFilter.Text = "";
+            classFilter.SelectedIndex = -1;
+
+            FilterStudents();
         }
     }
 }
