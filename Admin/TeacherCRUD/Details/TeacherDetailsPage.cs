@@ -30,55 +30,64 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Details
         }
 
         private void TeacherDetailsPage_Load(object sender, EventArgs e)
-{
-    using (SqlConnection sqlConnection = new SqlConnection(DatabaseConnection.ConnectionString))
-    {
-        sqlConnection.Open();
-
-        // Fetch teacher's information
-        string teacherQuery = "SELECT * FROM Teacher WHERE id = @TeacherId";
-        using (SqlCommand teacherCommand = new SqlCommand(teacherQuery, sqlConnection))
         {
-            teacherCommand.Parameters.AddWithValue("@TeacherId", teacherId);
-            using (SqlDataReader reader = teacherCommand.ExecuteReader())
+            using (SqlConnection sqlConnection = new SqlConnection(DatabaseConnection.ConnectionString))
             {
-                if (reader.Read())
+                sqlConnection.Open();
+
+                // Fetch teacher's information
+                string teacherQuery = "SELECT * FROM Teacher WHERE id = @TeacherId";
+                using (SqlCommand teacherCommand = new SqlCommand(teacherQuery, sqlConnection))
                 {
-                    teacherName.Text = reader["Firstname"].ToString();
-                    teacherSurname.Text = reader["Lastname"].ToString();
-                    teacherTC.Text = reader["TCNumber"].ToString();
-                    teacherPhone.Text = reader["Phone"].ToString();
-                    teacherMail.Text = reader["Email"].ToString();
-                    teacherMajor.Text = reader["Major"].ToString();
-                    teacherBirthdate.Value = Convert.ToDateTime(reader["BirthDate"]);
+                    teacherCommand.Parameters.AddWithValue("@TeacherId", teacherId);
+                    using (SqlDataReader reader = teacherCommand.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            teacherName.Text = reader["Firstname"].ToString();
+                            teacherSurname.Text = reader["Lastname"].ToString();
+                            teacherTC.Text = reader["TCNumber"].ToString();
+                            teacherPhone.Text = reader["Phone"].ToString();
+                            teacherMail.Text = reader["Email"].ToString();
+                            teacherMajor.Text = reader["Major"].ToString();
+                            teacherBirthdate.Value = Convert.ToDateTime(reader["BirthDate"]);
+                        }
+                    }
                 }
+
+                // Fetch class information
+                string classQuery = "SELECT * FROM Class WHERE headTeacherId = @TeacherId";
+                using (SqlCommand classCommand = new SqlCommand(classQuery, sqlConnection))
+                {
+                    classCommand.Parameters.AddWithValue("@TeacherId", teacherId);
+                    using (SqlDataReader reader = classCommand.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            className.Text = reader["classname"].ToString();
+                            classCapacity.Text = reader["capacity"].ToString();
+                            classSchoolName.Text = schoolName;
+                        }
+                        else
+                        {
+                            className.Text = "NO INFORMATION";
+                            classCapacity.Text = "NO INFORMATION";
+                            classSchoolName.Text = schoolName;
+                        }
+                    }
+                }
+
+                sqlConnection.Close();
             }
         }
-
-        // Fetch class information
-        string classQuery = "SELECT * FROM Class WHERE headTeacherId = @TeacherId";
-        using (SqlCommand classCommand = new SqlCommand(classQuery, sqlConnection))
+        
+        private void adminDashboardTurnOffButton_Click(object sender, EventArgs e)
         {
-            classCommand.Parameters.AddWithValue("@TeacherId", teacherId);
-            using (SqlDataReader reader = classCommand.ExecuteReader())
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to exit the application?", "Exit Application", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
             {
-                if (reader.Read())
-                {
-                    className.Text = reader["classname"].ToString();
-                    classCapacity.Text = reader["capacity"].ToString();
-                    classSchoolName.Text = schoolName;
-                }
-                else
-                {
-                    className.Text = "NO INFORMATION";
-                    classCapacity.Text = "NO INFORMATION";
-                    classSchoolName.Text = schoolName;
-                }
+                Application.Exit();
             }
         }
-
-        sqlConnection.Close();
-    }
-}
     }
 }

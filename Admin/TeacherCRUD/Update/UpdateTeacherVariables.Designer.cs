@@ -103,6 +103,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
             this.adminDashboardTurnOffButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.adminDashboardTurnOffButton.TabIndex = 6;
             this.adminDashboardTurnOffButton.TabStop = false;
+            this.adminDashboardTurnOffButton.Click += new System.EventHandler(this.adminDashboardTurnOffButton_Click);
             // 
             // label3
             // 
@@ -165,7 +166,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(87, 17);
+            this.label1.Location = new System.Drawing.Point(87, 10);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
             this.label1.Size = new System.Drawing.Size(67, 54);

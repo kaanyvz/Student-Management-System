@@ -38,6 +38,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.studentSettingsPanel = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -83,6 +84,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.label19 = new System.Windows.Forms.Label();
             this.periodDropdown = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.studentManagementSystemPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDashboardTurnOffButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -99,6 +101,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             // studentManagementSystemPanel
             // 
             this.studentManagementSystemPanel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.studentManagementSystemPanel.Controls.Add(this.label22);
             this.studentManagementSystemPanel.Controls.Add(this.adminDashboardTurnOffButton);
             this.studentManagementSystemPanel.Controls.Add(this.label3);
             this.studentManagementSystemPanel.Controls.Add(this.pictureBox1);
@@ -157,12 +160,25 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             // studentSettingsPanel
             // 
             this.studentSettingsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.studentSettingsPanel.Controls.Add(this.label21);
             this.studentSettingsPanel.Controls.Add(this.pictureBox2);
             this.studentSettingsPanel.Controls.Add(this.label1);
             this.studentSettingsPanel.Location = new System.Drawing.Point(3, 3);
             this.studentSettingsPanel.Name = "studentSettingsPanel";
             this.studentSettingsPanel.Size = new System.Drawing.Size(189, 80);
             this.studentSettingsPanel.TabIndex = 6;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label21.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label21.Location = new System.Drawing.Point(81, 17);
+            this.label21.Name = "label21";
+            this.label21.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
+            this.label21.Size = new System.Drawing.Size(106, 54);
+            this.label21.TabIndex = 7;
+            this.label21.Text = "Card Activity\r\nDetails";
             // 
             // pictureBox2
             // 
@@ -660,6 +676,16 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             this.periodDropdown.Size = new System.Drawing.Size(164, 21);
             this.periodDropdown.TabIndex = 127;
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Cascadia Code", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label22.Location = new System.Drawing.Point(141, 29);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(312, 28);
+            this.label22.TabIndex = 8;
+            this.label22.Text = "STUDENT MANAGEMENT SYSTEM";
+            // 
             // StudentCardDetailsInfos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -723,6 +749,10 @@ namespace schoolManagementSystem.Admin.CardCRUD.Details
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Label label22;
+
+        private System.Windows.Forms.Label label21;
 
         private System.Windows.Forms.TextBox balanceBox;
         private System.Windows.Forms.TextBox statusBox;

@@ -98,6 +98,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Add
             this.adminDashboardTurnOffButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.adminDashboardTurnOffButton.Name = "adminDashboardTurnOffButton";
             this.adminDashboardTurnOffButton.TabStop = false;
+            this.adminDashboardTurnOffButton.Click += new System.EventHandler(this.adminDashboardTurnOffButton_Click);
             // 
             // label3
             // 

@@ -351,9 +351,6 @@
   <data name="&gt;&gt;deleteStudentButton.Name" xml:space="preserve">
     <value>deleteStudentButton</value>
   </data>
-  <data name="&gt;&gt;usernameLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
     <value>51</value>
   </data>
@@ -368,6 +365,9 @@
   </data>
   <data name="dateTimePicker1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Black, 9pt, style=Bold, Italic</value>
@@ -407,6 +407,9 @@
   </data>
   <data name="&gt;&gt;updateStudentButton.Parent" xml:space="preserve">
     <value>panel9</value>
+  </data>
+  <data name="&gt;&gt;panel7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="studentDetailsBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 83</value>
@@ -619,6 +622,9 @@
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
   </data>
+  <data name="addStudentButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 9.75pt, style=Bold, Italic</value>
+  </data>
   <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
@@ -686,8 +692,8 @@ Settings</value>
   <data name="pictureBox2.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
   </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="studentName.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
   </data>
   <data name="studentDetailsBtn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Black, 9.75pt, style=Bold, Italic</value>
@@ -1703,9 +1709,6 @@ Settings</value>
   <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Black, 9pt, style=Bold, Italic</value>
   </data>
-  <data name="studentName.TabIndex" type="System.Int32, mscorlib">
-    <value>44</value>
-  </data>
   <data name="&gt;&gt;studentClassname.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
@@ -2637,9 +2640,6 @@ Settings</value>
   <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;cardNumberBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Mail Address:</value>
   </data>
@@ -2709,8 +2709,8 @@ Settings</value>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 15</value>
   </data>
-  <data name="addStudentButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Black, 9.75pt, style=Bold, Italic</value>
+  <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>799, 438</value>
   </data>
   <data name="usernameLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>243, 243</value>
@@ -2718,8 +2718,8 @@ Settings</value>
   <data name="&gt;&gt;studentSurname.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;studentMail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label4.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2757,8 +2757,8 @@ Settings</value>
   <data name="studentName.MaxLength" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
-  <data name="&gt;&gt;studentMail.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;usernameLabel.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;panel10.Name" xml:space="preserve">
     <value>panel10</value>
@@ -3771,8 +3771,8 @@ Settings</value>
   <data name="&gt;&gt;label6.Name" xml:space="preserve">
     <value>label6</value>
   </data>
-  <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>799, 438</value>
+  <data name="&gt;&gt;cardNumberBox.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>55</value>

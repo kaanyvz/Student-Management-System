@@ -259,6 +259,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD
             this.adminDashboardTurnOffButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.adminDashboardTurnOffButton.TabIndex = 6;
             this.adminDashboardTurnOffButton.TabStop = false;
+            this.adminDashboardTurnOffButton.Click += new System.EventHandler(this.adminDashboardTurnOffButton_Click);
             // 
             // studentManagementSystemPanel
             // 

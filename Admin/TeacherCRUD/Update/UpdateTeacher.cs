@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using schoolManagementSystem.Admin.StudentCRUD;
 using schoolManagementSystem.Admin.TeacherCRUD.Add;
 using schoolManagementSystem.Admin.TeacherCRUD.Delete;
+using schoolManagementSystem.Admin.TeacherCRUD.Details;
 
 namespace schoolManagementSystem.Admin.TeacherCRUD.Update
 {
@@ -468,7 +469,21 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
 
         private void teacherDetailsBtn_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            TeacherDetails teacherDetails = new TeacherDetails(adminUsername, schoolName);
+            teacherDetails.StartPosition = FormStartPosition.Manual;
+            teacherDetails.Location = this.Location;
+            this.Hide();
+            teacherDetails.ShowDialog();
+            this.Close();
+        }
+
+        private void adminDashboardTurnOffButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to exit the application?", "Exit Application", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

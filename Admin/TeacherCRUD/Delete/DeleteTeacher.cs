@@ -514,5 +514,14 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Delete
         {
             throw new System.NotImplementedException();
         }
+
+        private void adminDashboardTurnOffButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to exit the application?", "Exit Application", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

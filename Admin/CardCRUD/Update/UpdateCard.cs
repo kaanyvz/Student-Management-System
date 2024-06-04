@@ -5,9 +5,6 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 using schoolManagementSystem.Admin.CardCRUD.Add;
-using schoolManagementSystem.Admin.StudentCRUD;
-using schoolManagementSystem.Admin.StudentCRUD.Add;
-using schoolManagementSystem.Admin.StudentCRUD.Update;
 
 namespace schoolManagementSystem.Admin.CardCRUD.Update
 {
@@ -375,6 +372,15 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             cardNumberFilter.Text = "";
 
             FilterStudents();
+        }
+
+        private void adminDashboardTurnOffButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to exit the application?", "Exit Application", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

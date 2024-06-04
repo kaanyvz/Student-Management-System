@@ -33,6 +33,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Details
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeacherDetailsPage));
             this.studentManagementSystemPanel = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.adminDashboardTurnOffButton = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -75,6 +76,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Details
             this.label7 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.studentManagementSystemPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminDashboardTurnOffButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -91,6 +93,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Details
             // studentManagementSystemPanel
             // 
             this.studentManagementSystemPanel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.studentManagementSystemPanel.Controls.Add(this.pictureBox4);
             this.studentManagementSystemPanel.Controls.Add(this.adminDashboardTurnOffButton);
             this.studentManagementSystemPanel.Controls.Add(this.label3);
             this.studentManagementSystemPanel.Controls.Add(this.pictureBox1);
@@ -98,6 +101,19 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Details
             this.studentManagementSystemPanel.Name = "studentManagementSystemPanel";
             this.studentManagementSystemPanel.Size = new System.Drawing.Size(1266, 83);
             this.studentManagementSystemPanel.TabIndex = 44;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(1002, 21);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(52, 47);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 7;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.adminDashboardTurnOffButton_Click);
             // 
             // adminDashboardTurnOffButton
             // 
@@ -601,6 +617,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Details
             this.Load += new System.EventHandler(this.TeacherDetailsPage_Load);
             this.studentManagementSystemPanel.ResumeLayout(false);
             this.studentManagementSystemPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminDashboardTurnOffButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -616,6 +633,8 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Details
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.PictureBox pictureBox4;
 
         private System.Windows.Forms.RichTextBox richTextBox1;
 

@@ -200,12 +200,13 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Delete
             this.adminDashboardTurnOffButton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.adminDashboardTurnOffButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.adminDashboardTurnOffButton.Image = ((System.Drawing.Image)(resources.GetObject("adminDashboardTurnOffButton.Image")));
-            this.adminDashboardTurnOffButton.Location = new System.Drawing.Point(1202, 21);
+            this.adminDashboardTurnOffButton.Location = new System.Drawing.Point(1201, 21);
             this.adminDashboardTurnOffButton.Name = "adminDashboardTurnOffButton";
             this.adminDashboardTurnOffButton.Size = new System.Drawing.Size(52, 47);
             this.adminDashboardTurnOffButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.adminDashboardTurnOffButton.TabIndex = 6;
             this.adminDashboardTurnOffButton.TabStop = false;
+            this.adminDashboardTurnOffButton.Click += new System.EventHandler(this.adminDashboardTurnOffButton_Click);
             // 
             // label3
             // 

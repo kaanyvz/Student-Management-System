@@ -88,6 +88,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
             this.adminDashboardTurnOffButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.adminDashboardTurnOffButton.TabIndex = 6;
             this.adminDashboardTurnOffButton.TabStop = false;
+            this.adminDashboardTurnOffButton.Click += new System.EventHandler(this.adminDashboardTurnOffButton_Click);
             // 
             // label3
             // 
@@ -152,9 +153,9 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
             this.label1.Location = new System.Drawing.Point(75, 10);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
-            this.label1.Size = new System.Drawing.Size(77, 54);
+            this.label1.Size = new System.Drawing.Size(67, 54);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Add New\r\nTeacher";
+            this.label1.Text = "Update\r\nTeacher";
             // 
             // panel7
             // 
@@ -167,7 +168,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
             // 
             // addNewTeacherBtn
             // 
-            this.addNewTeacherBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
+            this.addNewTeacherBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
             this.addNewTeacherBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addNewTeacherBtn.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.addNewTeacherBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -190,7 +191,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
             // 
             // updateTeacherBtn
             // 
-            this.updateTeacherBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
+            this.updateTeacherBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
             this.updateTeacherBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.updateTeacherBtn.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.updateTeacherBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
