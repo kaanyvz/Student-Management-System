@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Net;
+using System.Net.Mail;
 using System.Windows.Forms;
+using schoolManagementSystem.Canteen.Add;
 
 namespace schoolManagementSystem.Canteen.Sale
 {
@@ -118,6 +121,32 @@ namespace schoolManagementSystem.Canteen.Sale
             int studentId = GetStudentId(studentNumber.Text);
             int parentId = GetParentId(studentId);
 
+            decimal totalSum = 0;
+
+            for (int i = 0; i < productNameBoxes.Count; i++)
+            {
+                string productName = productNameBoxes[i].SelectedItem.ToString();
+                int productCount = int.Parse(productCountBoxes[i].SelectedItem.ToString());
+
+                decimal productPrice = GetProductPrice(productName);
+                decimal lineTotal = productCount * productPrice;
+                totalSum += lineTotal;
+            }
+
+            (decimal cardBalance, bool isCardBlocked) = GetCardBalanceAndBlockedStatus(studentId);
+            
+            if (isCardBlocked)
+            {
+                MessageBox.Show("This card is blocked.");
+                return;
+            }
+
+            if (cardBalance < totalSum)
+            {
+                MessageBox.Show("Not enough balance for this purchase in student's card.");
+                return;
+            }
+
             for (int i = 0; i < productNameBoxes.Count; i++)
             {
                 string productName = productNameBoxes[i].SelectedItem.ToString();
@@ -140,7 +169,89 @@ namespace schoolManagementSystem.Canteen.Sale
 
                 InsertPurchase(studentId, productId, productCount);
                 DecreaseProductStock(productId, productCount);
+                DecreaseCardBalance(studentId, productCount * GetProductPrice(productName));
                 MessageBox.Show($"Successfully purchased.");
+            }
+            string parentEmail = GetParentEmail(studentId);
+            string receiptContent = receiptRichTextBox.Text;
+            SendEmail(parentEmail, receiptContent);
+        }
+        
+        private string GetParentEmail(int studentId)
+        {
+            using (SqlConnection connection = new SqlConnection(DatabaseConnection.ConnectionString))
+            {
+                connection.Open();
+
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT P.email " +
+                    "FROM Parent P " +
+                    "INNER JOIN StudentParents SP ON P.id = SP.parentId " +
+                    "WHERE SP.studentId = @StudentId",
+                    connection);
+
+                cmd.Parameters.AddWithValue("@StudentId", studentId);
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return reader.GetString(0);
+                    }
+                    else
+                    {
+                        throw new Exception($"Parent for student with ID {studentId} not found in the database.");
+                    }
+                }
+            }
+        }
+        
+        private (decimal, bool) GetCardBalanceAndBlockedStatus(int studentId)
+        {
+            using (SqlConnection connection = new SqlConnection(DatabaseConnection.ConnectionString))
+            {
+                connection.Open();
+
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT SC.balance, SC.isBlocked " +
+                    "FROM StudentCard SC " +
+                    "WHERE SC.studentId = @StudentId",
+                    connection);
+
+                cmd.Parameters.AddWithValue("@StudentId", studentId);
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        decimal balance = reader.GetDecimal(0);
+                        bool isBlocked = reader.GetBoolean(1);
+                        return (balance, isBlocked);
+                    }
+                    else
+                    {
+                        throw new Exception($"Card for student with ID {studentId} not found in the database.");
+                    }
+                }
+            }
+        }
+
+        private void DecreaseCardBalance(int studentId, decimal amount)
+        {
+            using (SqlConnection connection = new SqlConnection(DatabaseConnection.ConnectionString))
+            {
+                connection.Open();
+
+                SqlCommand cmd = new SqlCommand(
+                    "UPDATE StudentCard " +
+                    "SET balance = balance - @Amount " +
+                    "WHERE studentId = @StudentId",
+                    connection);
+
+                cmd.Parameters.AddWithValue("@StudentId", studentId);
+                cmd.Parameters.AddWithValue("@Amount", amount);
+
+                cmd.ExecuteNonQuery();
             }
         }
 
@@ -361,6 +472,77 @@ namespace schoolManagementSystem.Canteen.Sale
                         throw new Exception($"Product {productName} not found in the database.");
                     }
                 }
+            }
+        }
+        
+        private void SendEmail(string parentMail, string receiptContent)
+        {
+            try
+            {
+                MailMessage mail = new MailMessage();
+                SmtpClient client = new SmtpClient("smtp.gmail.com");
+
+                mail.From = new MailAddress("kaanyvvz@gmail.com");
+                mail.To.Add("kaanyvvz@gmail.com");
+                mail.Subject = "Canteen Purchase";
+                mail.Body = "Your child shopped at our school cafeteria. Here are the items purchased:\n\n" + receiptContent + "\n\nThank you for choosing us!";
+            
+                client.Port = 587;
+                client.Credentials = new NetworkCredential("kaanyvvz@gmail.com", "pdar mfdb rrhl voht");
+                client.EnableSsl = true;
+                client.Send(mail);
+                MessageBox.Show("Mail Sent to Parent!");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            
+        }
+
+
+        private void backIcon_Click(object sender, EventArgs e)
+        {
+            CanteenSettings canteenSettings = new CanteenSettings(canteenName, schoolName);
+            canteenSettings.StartPosition = FormStartPosition.Manual;
+            canteenSettings.Location = this.Location;
+            this.Hide();
+            canteenSettings.ShowDialog();
+            this.Close();
+        }
+
+        private void addNewProductBtn_MouseEnter(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+            {
+                button.BackColor = Color.MediumSeaGreen;
+            }
+        }
+
+        private void addNewProductBtn_MouseLeave(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+            {
+                button.BackColor = Color.SeaGreen;
+            }
+        }
+
+        private void addNewProductBtn_Click(object sender, EventArgs e)
+        {
+            AddProduct addProduct = new AddProduct(canteenName, schoolName);
+            addProduct.StartPosition = FormStartPosition.Manual;
+            addProduct.Location = this.Location;
+            this.Hide();
+            addProduct.ShowDialog();
+            this.Close();
+        }
+
+        private void adminDashboardTurnOffButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to exit the application?", "Exit Application", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
             }
         }
     }

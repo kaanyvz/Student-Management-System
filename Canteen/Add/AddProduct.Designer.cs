@@ -45,10 +45,6 @@ namespace schoolManagementSystem.Canteen.Add
             this.panel9 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.addNewProductBtn = new System.Windows.Forms.Button();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.deleteProductBtn = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.productListBtn = new System.Windows.Forms.Button();
             this.backIcon = new System.Windows.Forms.PictureBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.productPrice = new System.Windows.Forms.TextBox();
@@ -66,8 +62,6 @@ namespace schoolManagementSystem.Canteen.Add
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.backIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,6 +87,7 @@ namespace schoolManagementSystem.Canteen.Add
             this.adminDashboardTurnOffButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.adminDashboardTurnOffButton.TabIndex = 6;
             this.adminDashboardTurnOffButton.TabStop = false;
+            this.adminDashboardTurnOffButton.Click += new System.EventHandler(this.adminDashboardTurnOffButton_Click);
             // 
             // label3
             // 
@@ -120,8 +115,6 @@ namespace schoolManagementSystem.Canteen.Add
             this.flowLayoutPanel1.Controls.Add(this.studentSettingsPanel);
             this.flowLayoutPanel1.Controls.Add(this.panel7);
             this.flowLayoutPanel1.Controls.Add(this.panel9);
-            this.flowLayoutPanel1.Controls.Add(this.panel11);
-            this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Controls.Add(this.backIcon);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -226,65 +219,13 @@ namespace schoolManagementSystem.Canteen.Add
             this.addNewProductBtn.Text = "Add New Product";
             this.addNewProductBtn.UseVisualStyleBackColor = false;
             // 
-            // panel11
-            // 
-            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel11.Controls.Add(this.deleteProductBtn);
-            this.panel11.Location = new System.Drawing.Point(3, 221);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(189, 60);
-            this.panel11.TabIndex = 0;
-            // 
-            // deleteProductBtn
-            // 
-            this.deleteProductBtn.BackColor = System.Drawing.Color.SeaGreen;
-            this.deleteProductBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.deleteProductBtn.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.deleteProductBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.deleteProductBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.deleteProductBtn.Location = new System.Drawing.Point(-26, -14);
-            this.deleteProductBtn.Name = "deleteProductBtn";
-            this.deleteProductBtn.Size = new System.Drawing.Size(236, 83);
-            this.deleteProductBtn.TabIndex = 2;
-            this.deleteProductBtn.Text = "Delete Product";
-            this.deleteProductBtn.UseVisualStyleBackColor = false;
-            this.deleteProductBtn.Click += new System.EventHandler(this.deleteProductBtn_Click);
-            this.deleteProductBtn.MouseEnter += new System.EventHandler(this.deleteProductBtn_MouseEnter);
-            this.deleteProductBtn.MouseLeave += new System.EventHandler(this.deleteProductBtn_MouseLeave);
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.productListBtn);
-            this.panel1.Location = new System.Drawing.Point(3, 287);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(189, 60);
-            this.panel1.TabIndex = 0;
-            // 
-            // productListBtn
-            // 
-            this.productListBtn.BackColor = System.Drawing.Color.SeaGreen;
-            this.productListBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.productListBtn.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.productListBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.productListBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.productListBtn.Location = new System.Drawing.Point(-26, -14);
-            this.productListBtn.Name = "productListBtn";
-            this.productListBtn.Size = new System.Drawing.Size(236, 83);
-            this.productListBtn.TabIndex = 2;
-            this.productListBtn.Text = "Product List";
-            this.productListBtn.UseVisualStyleBackColor = false;
-            this.productListBtn.Click += new System.EventHandler(this.productListBtn_Click);
-            this.productListBtn.MouseEnter += new System.EventHandler(this.productListBtn_MouseEnter);
-            this.productListBtn.MouseLeave += new System.EventHandler(this.productListBtn_MouseLeave);
-            // 
             // backIcon
             // 
             this.backIcon.BackColor = System.Drawing.Color.SeaGreen;
             this.backIcon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.backIcon.Image = ((System.Drawing.Image)(resources.GetObject("backIcon.Image")));
             this.backIcon.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.backIcon.Location = new System.Drawing.Point(3, 353);
+            this.backIcon.Location = new System.Drawing.Point(3, 221);
             this.backIcon.Name = "backIcon";
             this.backIcon.Size = new System.Drawing.Size(39, 37);
             this.backIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -402,8 +343,6 @@ namespace schoolManagementSystem.Canteen.Add
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.backIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -434,10 +373,6 @@ namespace schoolManagementSystem.Canteen.Add
         private System.Windows.Forms.Button makeSaleBtn;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button addNewProductBtn;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Button deleteProductBtn;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button productListBtn;
         private System.Windows.Forms.PictureBox backIcon;
 
         #endregion

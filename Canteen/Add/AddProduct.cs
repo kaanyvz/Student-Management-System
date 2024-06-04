@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
+using schoolManagementSystem.Canteen.Sale;
 
 namespace schoolManagementSystem.Canteen.Add
 {
@@ -61,57 +62,20 @@ namespace schoolManagementSystem.Canteen.Add
                 button.BackColor = Color.SeaGreen;
             }
         }
-
-        private void deleteProductBtn_MouseEnter(object sender, EventArgs e)
-        {
-            if (sender is Button button)
-            {
-                button.BackColor = Color.MediumSeaGreen;
-            }
-        }
-
-        private void deleteProductBtn_MouseLeave(object sender, EventArgs e)
-        {
-            if (sender is Button button)
-            {
-                button.BackColor = Color.SeaGreen;
-            }
-        }
         
-
-        private void productListBtn_MouseEnter(object sender, EventArgs e)
-        {
-            if (sender is Button button)
-            {
-                button.BackColor = Color.MediumSeaGreen;
-            }
-        }
-
-        private void productListBtn_MouseLeave(object sender, EventArgs e)
-        {
-            if (sender is Button button)
-            {
-                button.BackColor = Color.SeaGreen;
-            }
-        }
-
         
 
         private void makeSaleBtn_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            MakeSale makeSale = new MakeSale(canteenName, schoolName);
+            makeSale.StartPosition = FormStartPosition.Manual;
+            makeSale.Location = this.Location;
+            this.Hide();
+            makeSale.ShowDialog();
+            this.Close();
         }
 
         
-        private void deleteProductBtn_Click(object sender, EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        private void productListBtn_Click(object sender, EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
 
         private void backIcon_Click(object sender, EventArgs e)
         {
@@ -121,6 +85,15 @@ namespace schoolManagementSystem.Canteen.Add
             this.Hide();
             canteenSettings.ShowDialog();
             this.Close();
+        }
+
+        private void adminDashboardTurnOffButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to exit the application?", "Exit Application", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

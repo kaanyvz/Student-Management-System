@@ -2835,6 +2835,14 @@
         QmCC
 </value>
   </data>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>❗ IMPORTANT:
+
+⚫  Canteen sales are carried out on this panel.
+⚫  Please make sure to fill out the product informations completely.
+⚫  The student card status and balance will be checked and the transaction will be made. 
+⚫ At the end of this transaction, an e-mail will be sent to the student's parent regarding which product they purchased.</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAAN0AAAEAIADIjwMAFgAAACgAAAAAAQAAugEAAAEAIAAAAAAAAHQDABILAAASCwAAAAAAAAAA

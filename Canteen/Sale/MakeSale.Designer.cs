@@ -44,10 +44,6 @@ namespace schoolManagementSystem.Canteen.Sale
             this.makeSaleBtn = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.addNewProductBtn = new System.Windows.Forms.Button();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.deleteProductBtn = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.productListBtn = new System.Windows.Forms.Button();
             this.backIcon = new System.Windows.Forms.PictureBox();
             this.purchaseBtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -69,8 +65,6 @@ namespace schoolManagementSystem.Canteen.Sale
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.backIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,6 +90,7 @@ namespace schoolManagementSystem.Canteen.Sale
             this.adminDashboardTurnOffButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.adminDashboardTurnOffButton.TabIndex = 6;
             this.adminDashboardTurnOffButton.TabStop = false;
+            this.adminDashboardTurnOffButton.Click += new System.EventHandler(this.adminDashboardTurnOffButton_Click);
             // 
             // label3
             // 
@@ -123,8 +118,6 @@ namespace schoolManagementSystem.Canteen.Sale
             this.flowLayoutPanel1.Controls.Add(this.studentSettingsPanel);
             this.flowLayoutPanel1.Controls.Add(this.panel7);
             this.flowLayoutPanel1.Controls.Add(this.panel9);
-            this.flowLayoutPanel1.Controls.Add(this.panel11);
-            this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Controls.Add(this.backIcon);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -210,52 +203,9 @@ namespace schoolManagementSystem.Canteen.Sale
             this.addNewProductBtn.TabIndex = 2;
             this.addNewProductBtn.Text = "Add New Product";
             this.addNewProductBtn.UseVisualStyleBackColor = false;
-            // 
-            // panel11
-            // 
-            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel11.Controls.Add(this.deleteProductBtn);
-            this.panel11.Location = new System.Drawing.Point(3, 221);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(189, 60);
-            this.panel11.TabIndex = 0;
-            // 
-            // deleteProductBtn
-            // 
-            this.deleteProductBtn.BackColor = System.Drawing.Color.SeaGreen;
-            this.deleteProductBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.deleteProductBtn.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.deleteProductBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.deleteProductBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.deleteProductBtn.Location = new System.Drawing.Point(-26, -14);
-            this.deleteProductBtn.Name = "deleteProductBtn";
-            this.deleteProductBtn.Size = new System.Drawing.Size(236, 83);
-            this.deleteProductBtn.TabIndex = 2;
-            this.deleteProductBtn.Text = "Delete Product";
-            this.deleteProductBtn.UseVisualStyleBackColor = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.productListBtn);
-            this.panel1.Location = new System.Drawing.Point(3, 287);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(189, 60);
-            this.panel1.TabIndex = 0;
-            // 
-            // productListBtn
-            // 
-            this.productListBtn.BackColor = System.Drawing.Color.SeaGreen;
-            this.productListBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.productListBtn.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.productListBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.productListBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.productListBtn.Location = new System.Drawing.Point(-26, -14);
-            this.productListBtn.Name = "productListBtn";
-            this.productListBtn.Size = new System.Drawing.Size(236, 83);
-            this.productListBtn.TabIndex = 2;
-            this.productListBtn.Text = "Product List";
-            this.productListBtn.UseVisualStyleBackColor = false;
+            this.addNewProductBtn.Click += new System.EventHandler(this.addNewProductBtn_Click);
+            this.addNewProductBtn.MouseEnter += new System.EventHandler(this.addNewProductBtn_MouseEnter);
+            this.addNewProductBtn.MouseLeave += new System.EventHandler(this.addNewProductBtn_MouseLeave);
             // 
             // backIcon
             // 
@@ -263,12 +213,13 @@ namespace schoolManagementSystem.Canteen.Sale
             this.backIcon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.backIcon.Image = ((System.Drawing.Image)(resources.GetObject("backIcon.Image")));
             this.backIcon.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.backIcon.Location = new System.Drawing.Point(3, 353);
+            this.backIcon.Location = new System.Drawing.Point(3, 221);
             this.backIcon.Name = "backIcon";
             this.backIcon.Size = new System.Drawing.Size(39, 37);
             this.backIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.backIcon.TabIndex = 41;
             this.backIcon.TabStop = false;
+            this.backIcon.Click += new System.EventHandler(this.backIcon_Click);
             // 
             // purchaseBtn
             // 
@@ -287,7 +238,7 @@ namespace schoolManagementSystem.Canteen.Sale
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Black", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(570, 248);
+            this.label4.Location = new System.Drawing.Point(570, 264);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 15);
             this.label4.TabIndex = 71;
@@ -297,7 +248,7 @@ namespace schoolManagementSystem.Canteen.Sale
             // 
             this.usernameLabel.AutoSize = true;
             this.usernameLabel.Font = new System.Drawing.Font("Segoe UI Black", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.usernameLabel.Location = new System.Drawing.Point(224, 196);
+            this.usernameLabel.Location = new System.Drawing.Point(224, 212);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(111, 15);
             this.usernameLabel.TabIndex = 72;
@@ -311,14 +262,14 @@ namespace schoolManagementSystem.Canteen.Sale
             this.richTextBox1.Location = new System.Drawing.Point(228, 89);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(1008, 85);
+            this.richTextBox1.Size = new System.Drawing.Size(1008, 114);
             this.richTextBox1.TabIndex = 69;
-            this.richTextBox1.Text = "❗ IMPORTANT:\n\n⚫  In this panel, adding products to canteen is done\n⚫  Please make" + " sure to fill out the product informations completely.";
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
             // studentNumber
             // 
             this.studentNumber.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.studentNumber.Location = new System.Drawing.Point(341, 193);
+            this.studentNumber.Location = new System.Drawing.Point(341, 209);
             this.studentNumber.MaxLength = 50;
             this.studentNumber.Name = "studentNumber";
             this.studentNumber.Size = new System.Drawing.Size(260, 22);
@@ -327,7 +278,7 @@ namespace schoolManagementSystem.Canteen.Sale
             // countDropdown
             // 
             this.countDropdown.FormattingEnabled = true;
-            this.countDropdown.Location = new System.Drawing.Point(623, 242);
+            this.countDropdown.Location = new System.Drawing.Point(623, 258);
             this.countDropdown.Name = "countDropdown";
             this.countDropdown.Size = new System.Drawing.Size(124, 21);
             this.countDropdown.TabIndex = 74;
@@ -336,7 +287,7 @@ namespace schoolManagementSystem.Canteen.Sale
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Black", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(311, 246);
+            this.label2.Location = new System.Drawing.Point(311, 262);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 15);
             this.label2.TabIndex = 72;
@@ -348,7 +299,7 @@ namespace schoolManagementSystem.Canteen.Sale
             this.addButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addButton.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.addButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.addButton.Location = new System.Drawing.Point(763, 239);
+            this.addButton.Location = new System.Drawing.Point(763, 255);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(70, 22);
             this.addButton.TabIndex = 73;
@@ -363,7 +314,7 @@ namespace schoolManagementSystem.Canteen.Sale
             this.removeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.removeButton.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.removeButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.removeButton.Location = new System.Drawing.Point(221, 242);
+            this.removeButton.Location = new System.Drawing.Point(221, 258);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(70, 22);
             this.removeButton.TabIndex = 73;
@@ -375,7 +326,7 @@ namespace schoolManagementSystem.Canteen.Sale
             // productDropdown
             // 
             this.productDropdown.FormattingEnabled = true;
-            this.productDropdown.Location = new System.Drawing.Point(414, 243);
+            this.productDropdown.Location = new System.Drawing.Point(414, 259);
             this.productDropdown.Name = "productDropdown";
             this.productDropdown.Size = new System.Drawing.Size(124, 21);
             this.productDropdown.TabIndex = 74;
@@ -433,8 +384,6 @@ namespace schoolManagementSystem.Canteen.Sale
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.backIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -470,10 +419,6 @@ namespace schoolManagementSystem.Canteen.Sale
         private System.Windows.Forms.Button makeSaleBtn;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button addNewProductBtn;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Button deleteProductBtn;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button productListBtn;
         private System.Windows.Forms.PictureBox backIcon;
 
         #endregion
