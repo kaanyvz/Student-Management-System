@@ -325,8 +325,9 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.Controls.Add(this.successTextBox);
             this.Controls.Add(this.successPictureBox);
             this.Controls.Add(this.richTextBoxOutside);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UpdateCardSuccess";
-            this.Text = "UpdateCardSuccess";
+            this.Text = "Student Management System";
             this.studentManagementSystemPanel.ResumeLayout(false);
             this.studentManagementSystemPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDashboardTurnOffButton)).EndInit();

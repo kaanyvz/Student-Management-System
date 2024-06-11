@@ -23,10 +23,9 @@ namespace schoolManagementSystem.Teacher
             InitializeComponent();
             this.schoolName = schoolName;
             this.teacherEmail = teacherEmail;
-        this._dataGridView = new DataGridView();
+            this._dataGridView = new DataGridView();
             this.Controls.Add(this._dataGridView);
             this.Load += StudentDetails_Load;
-            this.StartPosition = FormStartPosition.Manual;
             
             this._dataGridView.Location = new Point(229, 221);
             this._dataGridView.Size = new Size(1223, 487);
@@ -42,6 +41,8 @@ namespace schoolManagementSystem.Teacher
             this._dataGridView.RowTemplate.Height = 40;
             this._dataGridView.AllowUserToResizeRows = false;
             this._dataGridView.AllowUserToAddRows = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.StartPosition = FormStartPosition.CenterScreen; // Add this line
             
             
             
@@ -56,21 +57,7 @@ namespace schoolManagementSystem.Teacher
             checkBoxColumn.Name = "checkBoxColumn";
             checkBoxColumn.HeaderText = "Absence";
             this._dataGridView.Columns.Add(checkBoxColumn);
-            MessageBox.Show(checkBoxColumn.Name);
-            
         }
-        
-        /*private void _dataGridView_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (e.RowIndex >= 0 && this._dataGridView.Columns.Contains("checkBoxColumn") && e.ColumnIndex == this._dataGridView.Columns["checkBoxColumn"].Index)
-            {
-                Cursor.Current = Cursors.Hand;
-            }
-            else
-            {
-                Cursor.Current = Cursors.Default;
-            }
-        }*/
 
         
         private void _dataGridView_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
@@ -108,19 +95,7 @@ namespace schoolManagementSystem.Teacher
                 }
             }
         }
-        /*
-        
-        private void _dataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-            if (e.RowIndex >= 0 && this._dataGridView.Columns.Contains("checkBoxColumn") && e.ColumnIndex == this._dataGridView.Columns["checkBoxColumn"].Index)
-            {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-
-                TextRenderer.DrawText(e.Graphics, "Absence", e.CellStyle.Font, e.CellBounds, e.CellStyle.ForeColor, TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter);
-
-                e.Handled = true;
-            }
-        }*/
+      
         
         private void _dataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {

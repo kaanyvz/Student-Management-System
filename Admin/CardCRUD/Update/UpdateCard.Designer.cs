@@ -53,10 +53,10 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.updateCardButton = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
             this.cardDetailsButton = new System.Windows.Forms.Button();
+            this.backIcon = new System.Windows.Forms.PictureBox();
             this.clearFiltersBtn = new System.Windows.Forms.Button();
             this.cardNumberFilter = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.backIcon = new System.Windows.Forms.PictureBox();
             this.studentManagementSystemPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDashboardTurnOffButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -80,7 +80,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(451, 50);
             this.richTextBox1.TabIndex = 101;
-            this.richTextBox1.Text = "⚫  You can select one of the students to be updated.\n⚫  The first 50 students add" + "ed to the system are listed.\n⚫  You can also filter students by first name, last" + " name, number or class.";
+            this.richTextBox1.Text = "⚫  You can select one of the students to be updated.\n⚫  The first 50 students add" + "ed to the system are listed.\n⚫  You can also filter students by first name, last" + " name, number or card number.";
             // 
             // label2
             // 
@@ -121,7 +121,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.numberFilter.Location = new System.Drawing.Point(1152, 89);
             this.numberFilter.Name = "numberFilter";
             this.numberFilter.Size = new System.Drawing.Size(179, 22);
-            this.numberFilter.TabIndex = 95;
+            this.numberFilter.TabIndex = 2;
             this.numberFilter.TextChanged += new System.EventHandler(this.numberFilter_TextChanged);
             // 
             // surnameFilter
@@ -133,7 +133,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.surnameFilter.Location = new System.Drawing.Point(867, 118);
             this.surnameFilter.Name = "surnameFilter";
             this.surnameFilter.Size = new System.Drawing.Size(179, 22);
-            this.surnameFilter.TabIndex = 94;
+            this.surnameFilter.TabIndex = 3;
             this.surnameFilter.TextChanged += new System.EventHandler(this.surnameFilter_TextChanged);
             // 
             // nameFilter
@@ -145,7 +145,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.nameFilter.Location = new System.Drawing.Point(867, 89);
             this.nameFilter.Name = "nameFilter";
             this.nameFilter.Size = new System.Drawing.Size(179, 22);
-            this.nameFilter.TabIndex = 93;
+            this.nameFilter.TabIndex = 1;
             this.nameFilter.TextChanged += new System.EventHandler(this.nameFilter_TextChanged);
             // 
             // studentManagementSystemPanel
@@ -314,6 +314,19 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.cardDetailsButton.MouseEnter += new System.EventHandler(this.cardDetailsButton_MouseEnter);
             this.cardDetailsButton.MouseLeave += new System.EventHandler(this.cardDetailsButton_MouseLeave);
             // 
+            // backIcon
+            // 
+            this.backIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
+            this.backIcon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.backIcon.Image = ((System.Drawing.Image)(resources.GetObject("backIcon.Image")));
+            this.backIcon.Location = new System.Drawing.Point(3, 287);
+            this.backIcon.Name = "backIcon";
+            this.backIcon.Size = new System.Drawing.Size(39, 37);
+            this.backIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.backIcon.TabIndex = 103;
+            this.backIcon.TabStop = false;
+            this.backIcon.Click += new System.EventHandler(this.backIcon_Click);
+            // 
             // clearFiltersBtn
             // 
             this.clearFiltersBtn.BackColor = System.Drawing.Color.BlanchedAlmond;
@@ -324,7 +337,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.clearFiltersBtn.Location = new System.Drawing.Point(1342, 114);
             this.clearFiltersBtn.Name = "clearFiltersBtn";
             this.clearFiltersBtn.Size = new System.Drawing.Size(111, 25);
-            this.clearFiltersBtn.TabIndex = 102;
+            this.clearFiltersBtn.TabIndex = 5;
             this.clearFiltersBtn.Text = "Clear Filters";
             this.clearFiltersBtn.UseVisualStyleBackColor = false;
             this.clearFiltersBtn.Click += new System.EventHandler(this.clearFiltersBtn_Click);
@@ -338,7 +351,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.cardNumberFilter.Location = new System.Drawing.Point(1152, 117);
             this.cardNumberFilter.Name = "cardNumberFilter";
             this.cardNumberFilter.Size = new System.Drawing.Size(179, 22);
-            this.cardNumberFilter.TabIndex = 95;
+            this.cardNumberFilter.TabIndex = 4;
             this.cardNumberFilter.TextChanged += new System.EventHandler(this.cardNumberFilter_TextChanged);
             // 
             // label5
@@ -350,19 +363,6 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.label5.Size = new System.Drawing.Size(92, 15);
             this.label5.TabIndex = 99;
             this.label5.Text = "Card Number:";
-            // 
-            // backIcon
-            // 
-            this.backIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
-            this.backIcon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.backIcon.Image = ((System.Drawing.Image)(resources.GetObject("backIcon.Image")));
-            this.backIcon.Location = new System.Drawing.Point(3, 287);
-            this.backIcon.Name = "backIcon";
-            this.backIcon.Size = new System.Drawing.Size(39, 37);
-            this.backIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.backIcon.TabIndex = 103;
-            this.backIcon.TabStop = false;
-            this.backIcon.Click += new System.EventHandler(this.backIcon_Click);
             // 
             // UpdateCard
             // 
@@ -382,8 +382,9 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.Controls.Add(this.nameFilter);
             this.Controls.Add(this.studentManagementSystemPanel);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UpdateCard";
-            this.Text = "UpdateCard";
+            this.Text = "Student Management System";
             this.studentManagementSystemPanel.ResumeLayout(false);
             this.studentManagementSystemPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDashboardTurnOffButton)).EndInit();

@@ -32,6 +32,9 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Details
             this._dataGridView.AllowUserToResizeRows = false;
             this._dataGridView.RowHeadersVisible = false;
             this._dataGridView.AllowUserToAddRows = false;
+            this._dataGridView.AllowUserToDeleteRows = false;
+            this._dataGridView.ReadOnly = true;
+            
         }
 
 

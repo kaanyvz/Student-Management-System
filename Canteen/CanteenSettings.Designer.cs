@@ -254,8 +254,9 @@ namespace schoolManagementSystem.Canteen
             this.Controls.Add(this.periodDropdown);
             this.Controls.Add(this.studentManagementSystemPanel);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CanteenSettings";
-            this.Text = "CanteenSettings";
+            this.Text = "Student Management System";
             this.Load += new System.EventHandler(this.CanteenSettings_Load);
             this.studentManagementSystemPanel.ResumeLayout(false);
             this.studentManagementSystemPanel.PerformLayout();

@@ -149,6 +149,16 @@ namespace schoolManagementSystem.Admin
                 Application.Exit();
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            EntranceTracking entranceTracking = new EntranceTracking();
+            entranceTracking.StartPosition = FormStartPosition.Manual;
+            entranceTracking.Location = this.Location;
+            this.Hide();
+            entranceTracking.ShowDialog();
+            this.Close();
+        }
     }
 }
 

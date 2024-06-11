@@ -203,6 +203,7 @@ namespace schoolManagementSystem.Teacher
             // richTextBox2
             // 
             this.richTextBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.richTextBox2.Enabled = false;
             this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.richTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.richTextBox2.Location = new System.Drawing.Point(226, 89);
@@ -262,7 +263,7 @@ namespace schoolManagementSystem.Teacher
             this.clearFiltersBtn.Location = new System.Drawing.Point(553, 189);
             this.clearFiltersBtn.Name = "clearFiltersBtn";
             this.clearFiltersBtn.Size = new System.Drawing.Size(245, 25);
-            this.clearFiltersBtn.TabIndex = 150;
+            this.clearFiltersBtn.TabIndex = 4;
             this.clearFiltersBtn.Text = "Clear Filters";
             this.clearFiltersBtn.UseVisualStyleBackColor = false;
             // 
@@ -285,7 +286,7 @@ namespace schoolManagementSystem.Teacher
             this.surnameFilter.Location = new System.Drawing.Point(351, 192);
             this.surnameFilter.Name = "surnameFilter";
             this.surnameFilter.Size = new System.Drawing.Size(179, 22);
-            this.surnameFilter.TabIndex = 147;
+            this.surnameFilter.TabIndex = 3;
             // 
             // nameFilter
             // 
@@ -296,7 +297,7 @@ namespace schoolManagementSystem.Teacher
             this.nameFilter.Location = new System.Drawing.Point(351, 164);
             this.nameFilter.Name = "nameFilter";
             this.nameFilter.Size = new System.Drawing.Size(179, 22);
-            this.nameFilter.TabIndex = 146;
+            this.nameFilter.TabIndex = 1;
             // 
             // numberFilter
             // 
@@ -307,7 +308,7 @@ namespace schoolManagementSystem.Teacher
             this.numberFilter.Location = new System.Drawing.Point(619, 164);
             this.numberFilter.Name = "numberFilter";
             this.numberFilter.Size = new System.Drawing.Size(179, 22);
-            this.numberFilter.TabIndex = 148;
+            this.numberFilter.TabIndex = 2;
             // 
             // classNameTextBox
             // 
@@ -372,8 +373,9 @@ namespace schoolManagementSystem.Teacher
             this.Controls.Add(this.studentManagementSystemPanel);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TeacherLoginSettings";
-            this.Text = "TeacherSettings";
+            this.Text = "Student Management System";
             this.studentManagementSystemPanel.ResumeLayout(false);
             this.studentManagementSystemPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDashboardTurnOffButton)).EndInit();

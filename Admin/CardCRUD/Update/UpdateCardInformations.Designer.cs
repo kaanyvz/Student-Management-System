@@ -95,7 +95,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(1008, 85);
             this.richTextBox1.TabIndex = 112;
-            this.richTextBox1.Text = "❗ IMPORTANT:\n\n⚫  In this panel, adding students is done.\n⚫  Please make sure to f" + "ill out the parent information completely.";
+            this.richTextBox1.Text = "❗ IMPORTANT:\n\n⚫  In this panel, updating students\' cards is done.\n⚫  Please make " + "sure the values ​​ you want to update are correct before confirming the action.";
             // 
             // studentManagementSystemPanel
             // 
@@ -321,7 +321,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.studentBirthDateBox.MinDate = new System.DateTime(2005, 1, 1, 0, 0, 0, 0);
             this.studentBirthDateBox.Name = "studentBirthDateBox";
             this.studentBirthDateBox.Size = new System.Drawing.Size(260, 20);
-            this.studentBirthDateBox.TabIndex = 70;
+            this.studentBirthDateBox.TabIndex = 6;
             this.studentBirthDateBox.Value = new System.DateTime(2006, 1, 4, 0, 0, 0, 0);
             // 
             // label7
@@ -415,11 +415,11 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             // cardBalanceBox
             // 
             this.cardBalanceBox.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.cardBalanceBox.Cursor = System.Windows.Forms.Cursors.No;
+            this.cardBalanceBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.cardBalanceBox.Location = new System.Drawing.Point(842, 376);
             this.cardBalanceBox.Name = "cardBalanceBox";
             this.cardBalanceBox.Size = new System.Drawing.Size(260, 20);
-            this.cardBalanceBox.TabIndex = 72;
+            this.cardBalanceBox.TabIndex = 10;
             // 
             // studentMail
             // 
@@ -430,7 +430,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.studentMail.Name = "studentMail";
             this.studentMail.ReadOnly = true;
             this.studentMail.Size = new System.Drawing.Size(260, 20);
-            this.studentMail.TabIndex = 67;
+            this.studentMail.TabIndex = 5;
             // 
             // cardNumberBox
             // 
@@ -441,7 +441,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.cardNumberBox.Name = "cardNumberBox";
             this.cardNumberBox.ReadOnly = true;
             this.cardNumberBox.Size = new System.Drawing.Size(260, 20);
-            this.cardNumberBox.TabIndex = 71;
+            this.cardNumberBox.TabIndex = 9;
             // 
             // studentSchoolNumber
             // 
@@ -452,7 +452,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.studentSchoolNumber.Name = "studentSchoolNumber";
             this.studentSchoolNumber.ReadOnly = true;
             this.studentSchoolNumber.Size = new System.Drawing.Size(260, 20);
-            this.studentSchoolNumber.TabIndex = 66;
+            this.studentSchoolNumber.TabIndex = 4;
             // 
             // studentTC
             // 
@@ -463,7 +463,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.studentTC.Name = "studentTC";
             this.studentTC.ReadOnly = true;
             this.studentTC.Size = new System.Drawing.Size(260, 20);
-            this.studentTC.TabIndex = 65;
+            this.studentTC.TabIndex = 3;
             // 
             // studentClassname
             // 
@@ -474,7 +474,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.studentClassname.Name = "studentClassname";
             this.studentClassname.ReadOnly = true;
             this.studentClassname.Size = new System.Drawing.Size(260, 20);
-            this.studentClassname.TabIndex = 69;
+            this.studentClassname.TabIndex = 8;
             // 
             // studentSurname
             // 
@@ -485,7 +485,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.studentSurname.Name = "studentSurname";
             this.studentSurname.ReadOnly = true;
             this.studentSurname.Size = new System.Drawing.Size(260, 20);
-            this.studentSurname.TabIndex = 64;
+            this.studentSurname.TabIndex = 2;
             // 
             // studentGender
             // 
@@ -496,7 +496,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.studentGender.Name = "studentGender";
             this.studentGender.ReadOnly = true;
             this.studentGender.Size = new System.Drawing.Size(260, 20);
-            this.studentGender.TabIndex = 68;
+            this.studentGender.TabIndex = 7;
             // 
             // studentName
             // 
@@ -507,7 +507,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.studentName.Name = "studentName";
             this.studentName.ReadOnly = true;
             this.studentName.Size = new System.Drawing.Size(260, 20);
-            this.studentName.TabIndex = 63;
+            this.studentName.TabIndex = 1;
             // 
             // updateCardBtn
             // 
@@ -518,7 +518,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.updateCardBtn.Location = new System.Drawing.Point(842, 488);
             this.updateCardBtn.Name = "updateCardBtn";
             this.updateCardBtn.Size = new System.Drawing.Size(260, 61);
-            this.updateCardBtn.TabIndex = 116;
+            this.updateCardBtn.TabIndex = 13;
             this.updateCardBtn.Text = "UPDATE";
             this.updateCardBtn.UseVisualStyleBackColor = false;
             this.updateCardBtn.Click += new System.EventHandler(this.updateCardBtn_Click);
@@ -540,7 +540,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.blockedCheckBox.Location = new System.Drawing.Point(842, 421);
             this.blockedCheckBox.Name = "blockedCheckBox";
             this.blockedCheckBox.Size = new System.Drawing.Size(99, 18);
-            this.blockedCheckBox.TabIndex = 118;
+            this.blockedCheckBox.TabIndex = 11;
             this.blockedCheckBox.Text = "Blocked";
             this.blockedCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -550,7 +550,7 @@ namespace schoolManagementSystem.Admin.CardCRUD.Update
             this.notBlockedCheckBox.Location = new System.Drawing.Point(984, 421);
             this.notBlockedCheckBox.Name = "notBlockedCheckBox";
             this.notBlockedCheckBox.Size = new System.Drawing.Size(118, 18);
-            this.notBlockedCheckBox.TabIndex = 118;
+            this.notBlockedCheckBox.TabIndex = 12;
             this.notBlockedCheckBox.Text = "Not Blocked";
             this.notBlockedCheckBox.UseVisualStyleBackColor = true;
             // 

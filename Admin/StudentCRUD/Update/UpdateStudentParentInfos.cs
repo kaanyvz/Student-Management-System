@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using schoolManagementSystem.Admin.StudentCRUD.Add;
+using schoolManagementSystem.Admin.StudentCRUD.Delete;
+using schoolManagementSystem.Admin.StudentCRUD.Details;
 using schoolManagementSystem.Model;
 
 namespace schoolManagementSystem.Admin.StudentCRUD.Update
@@ -19,10 +22,28 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
             this.adminUsername = adminUsername;
             this.schoolName = schoolName;
             this.student = student;
+            
+            this.parentGender1.FormattingEnabled = true;
+            this.parentGender1.Items.AddRange(new object[] {
+                "Male", 
+                "Female" 
+            });
+            this.parentTC1.KeyPress += new KeyPressEventHandler(parentTC_KeyPress_1);
+            this.parentPhone1.KeyPress += new KeyPressEventHandler(parentTC_KeyPress_1);
         }
+        
+        private void parentTC_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
 
         private void UpdateStudentParentInfos_Load(object sender, EventArgs e)
         {
+            MessageBox.Show(student.ClassName);
             using (SqlConnection connection = new SqlConnection(DatabaseConnection.ConnectionString))
             {
                 connection.Open();
@@ -86,9 +107,20 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
             using (SqlConnection connection = new SqlConnection(DatabaseConnection.ConnectionString))
             {
                 connection.Open();
+                
+                
+                // Fetch the classId from the Class table using the className and schoolId
+                SqlCommand classCmd = new SqlCommand("SELECT id FROM Class WHERE className = @ClassName AND schoolId = (SELECT id FROM School WHERE SchoolName = @SchoolName)", connection);
+                classCmd.Parameters.AddWithValue("@ClassName", student.ClassName.Split(' ')[0]); // Get the className part from the format '9D - 32'
+                classCmd.Parameters.AddWithValue("@SchoolName", schoolName);
+                int classId = (int)classCmd.ExecuteScalar();
+                
+                UpdateClassCapacity(studentId, schoolName);
+
+                
                 // Update the student information
                 string updateStudentQuery =
-                    "UPDATE Student SET firstname = @firstname, lastname = @lastname, gender = @gender, email = @email, studentNumber = @studentNumber, TCNumber = @TCNumber, birthDate = @birthDate WHERE id = @studentId";
+                    "UPDATE Student SET firstname = @firstname, lastname = @lastname, gender = @gender, email = @email, studentNumber = @studentNumber, TCNumber = @TCNumber, birthDate = @birthDate, classId = @classId WHERE id = @studentId";
                 using (SqlCommand updateStudentCommand = new SqlCommand(updateStudentQuery, connection))
                 {
                     updateStudentCommand.Parameters.AddWithValue("@firstname", student.Firstname);
@@ -98,6 +130,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
                     updateStudentCommand.Parameters.AddWithValue("@studentNumber", student.StudentNumber);
                     updateStudentCommand.Parameters.AddWithValue("@TCNumber", student.TCNumber);
                     updateStudentCommand.Parameters.AddWithValue("@birthDate", student.BirthDate);
+                    updateStudentCommand.Parameters.AddWithValue("@classId", classId); // Update the classId
                     updateStudentCommand.Parameters.AddWithValue("@studentId", studentId);
 
                     int rowsAffected = updateStudentCommand.ExecuteNonQuery();
@@ -144,6 +177,35 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
                 }
             }
         }
+        
+        private void UpdateClassCapacity(int studentId, string schoolName)
+        {
+            using (SqlConnection connection = new SqlConnection(DatabaseConnection.ConnectionString))
+            {
+                connection.Open();
+
+                // Fetch the old classId from the Student table
+                SqlCommand oldClassCmd = new SqlCommand("SELECT classId FROM Student WHERE id = @StudentId", connection);
+                oldClassCmd.Parameters.AddWithValue("@StudentId", studentId);
+                int oldClassId = (int)oldClassCmd.ExecuteScalar();
+
+                // Fetch the new classId from the Class table
+                SqlCommand newClassCmd = new SqlCommand("SELECT id FROM Class WHERE className = @ClassName AND schoolId = (SELECT id FROM School WHERE SchoolName = @SchoolName)", connection);
+                newClassCmd.Parameters.AddWithValue("@ClassName", student.ClassName.Split(' ')[0]); // Get the className part from the format '9D - 32'
+                newClassCmd.Parameters.AddWithValue("@SchoolName", schoolName);
+                int newClassId = (int)newClassCmd.ExecuteScalar();
+
+                // Decrease the capacity of the new class
+                SqlCommand decreaseCmd = new SqlCommand("UPDATE Class SET capacity = capacity - 1 WHERE id = @ClassId", connection);
+                decreaseCmd.Parameters.AddWithValue("@ClassId", newClassId);
+                decreaseCmd.ExecuteNonQuery();
+
+                // Increase the capacity of the previous class
+                SqlCommand increaseCmd = new SqlCommand("UPDATE Class SET capacity = capacity + 1 WHERE id = @ClassId", connection);
+                increaseCmd.Parameters.AddWithValue("@ClassId", oldClassId);
+                increaseCmd.ExecuteNonQuery();
+            }
+        }
 
         private void adminDashboardTurnOffButton_Click(object sender, EventArgs e)
         {
@@ -152,6 +214,37 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
             {
                 Application.Exit();
             }
+        }
+
+        private void addStudentButton_Click(object sender, EventArgs e)
+        {
+            AddNewStudent addNewStudent = new AddNewStudent(adminUsername, schoolName);
+            addNewStudent.StartPosition = FormStartPosition.Manual;
+            addNewStudent.Location = this.Location;
+            this.Hide();
+            addNewStudent.ShowDialog();
+            this.Close();
+        }
+
+        private void deleteStudentButton_Click(object sender, EventArgs e)
+        {
+            DeleteStudent deleteStudent = new DeleteStudent(adminUsername, schoolName);
+            deleteStudent.StartPosition = FormStartPosition.Manual;
+            deleteStudent.Location = this.Location;
+            
+            this.Hide();
+            deleteStudent.ShowDialog();
+            this.Close();
+        }
+
+        private void studentDetailsBtn_Click(object sender, EventArgs e)
+        {
+            StudentDetails studentDetails = new StudentDetails(adminUsername, schoolName);
+            studentDetails.StartPosition = FormStartPosition.Manual;
+            studentDetails.Location = this.Location;
+            this.Hide();
+            studentDetails.ShowDialog();
+            this.Close();
         }
     }
 }

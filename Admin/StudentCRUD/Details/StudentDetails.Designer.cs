@@ -162,7 +162,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Details
             this.label1.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
             this.label1.Size = new System.Drawing.Size(72, 54);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Student \r\nSettings";
+            this.label1.Text = "Student \r\nDetails";
             // 
             // panel7
             // 
@@ -281,10 +281,12 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Details
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.richTextBox1.Enabled = false;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.richTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.richTextBox1.Location = new System.Drawing.Point(272, 90);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(451, 50);
             this.richTextBox1.TabIndex = 90;
             this.richTextBox1.Text = "⚫  You can access student details here.\n⚫  The first 50 students added to the sys" + "tem are listed.\n⚫  You can also filter students by first name, last name, number" + " or class.";
@@ -339,7 +341,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Details
             this.clearFiltersBtn.Location = new System.Drawing.Point(1341, 115);
             this.clearFiltersBtn.Name = "clearFiltersBtn";
             this.clearFiltersBtn.Size = new System.Drawing.Size(111, 25);
-            this.clearFiltersBtn.TabIndex = 85;
+            this.clearFiltersBtn.TabIndex = 5;
             this.clearFiltersBtn.Text = "Clear Filters";
             this.clearFiltersBtn.UseVisualStyleBackColor = false;
             this.clearFiltersBtn.Click += new System.EventHandler(this.clearFiltersBtn_Click);
@@ -352,7 +354,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Details
             this.classFilter.Location = new System.Drawing.Point(1146, 117);
             this.classFilter.Name = "classFilter";
             this.classFilter.Size = new System.Drawing.Size(179, 23);
-            this.classFilter.TabIndex = 84;
+            this.classFilter.TabIndex = 4;
             this.classFilter.SelectedIndexChanged += new System.EventHandler(this.classFilter_SelectedIndexChanged);
             // 
             // numberFilter
@@ -364,7 +366,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Details
             this.numberFilter.Location = new System.Drawing.Point(1146, 90);
             this.numberFilter.Name = "numberFilter";
             this.numberFilter.Size = new System.Drawing.Size(179, 22);
-            this.numberFilter.TabIndex = 83;
+            this.numberFilter.TabIndex = 2;
             this.numberFilter.TextChanged += new System.EventHandler(this.numberFilter_TextChanged);
             // 
             // surnameFilter
@@ -376,7 +378,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Details
             this.surnameFilter.Location = new System.Drawing.Point(884, 118);
             this.surnameFilter.Name = "surnameFilter";
             this.surnameFilter.Size = new System.Drawing.Size(179, 22);
-            this.surnameFilter.TabIndex = 82;
+            this.surnameFilter.TabIndex = 3;
             this.surnameFilter.TextChanged += new System.EventHandler(this.surnameFilter_TextChanged);
             // 
             // nameFilter
@@ -388,7 +390,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Details
             this.nameFilter.Location = new System.Drawing.Point(884, 89);
             this.nameFilter.Name = "nameFilter";
             this.nameFilter.Size = new System.Drawing.Size(179, 22);
-            this.nameFilter.TabIndex = 81;
+            this.nameFilter.TabIndex = 1;
             this.nameFilter.TextChanged += new System.EventHandler(this.nameFilter_TextChanged);
             // 
             // StudentDetails

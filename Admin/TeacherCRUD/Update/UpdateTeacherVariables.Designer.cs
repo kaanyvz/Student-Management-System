@@ -333,7 +333,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(1008, 85);
             this.richTextBox1.TabIndex = 110;
-            this.richTextBox1.Text = "❗ IMPORTANT:\n\n⚫  In this panel, adding students is done.\n⚫  Please make sure to f" + "ill out the parent information completely.";
+            this.richTextBox1.Text = "❗ IMPORTANT:\n\n⚫  In this panel, updating teachers is done.\n⚫  Please make sure to" + " fill out the parent information completely.";
             // 
             // label9
             // 
@@ -502,8 +502,9 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
             this.Controls.Add(this.teacherName);
             this.Controls.Add(this.studentManagementSystemPanel);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UpdateTeacherVariables";
-            this.Text = "UpdateTeacherVariables";
+            this.Text = "Student Management System";
             this.Load += new System.EventHandler(this.UpdateTeacherVariables_Load);
             this.studentManagementSystemPanel.ResumeLayout(false);
             this.studentManagementSystemPanel.PerformLayout();

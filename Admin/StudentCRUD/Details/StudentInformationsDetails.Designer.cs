@@ -914,6 +914,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Details
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.studentManagementSystemPanel);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StudentInformationsDetails";
             this.Text = "StudentInformationsDetails";
             this.studentManagementSystemPanel.ResumeLayout(false);

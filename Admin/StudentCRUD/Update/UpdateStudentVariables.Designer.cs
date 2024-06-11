@@ -508,6 +508,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
             // richTextBox2
             // 
             this.richTextBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.richTextBox2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.richTextBox2.Enabled = false;
             this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.richTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));

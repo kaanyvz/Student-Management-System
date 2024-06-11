@@ -290,7 +290,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(451, 50);
             this.richTextBox1.TabIndex = 90;
-            this.richTextBox1.Text = "⚫  You can select one of the students to be updated.\n⚫  The first 50 students add" + "ed to the system are listed.\n⚫  You can also filter students by first name, last" + " name, number or class.";
+            this.richTextBox1.Text = "⚫  You can select one of the teachers to be updated.\n⚫  Teachers added to the sys" + "tem are listed.\n⚫  You can also filter students by first name, last name, number" + " or class.";
             // 
             // label2
             // 
@@ -342,7 +342,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
             this.clearFiltersBtn.Location = new System.Drawing.Point(1296, 114);
             this.clearFiltersBtn.Name = "clearFiltersBtn";
             this.clearFiltersBtn.Size = new System.Drawing.Size(111, 25);
-            this.clearFiltersBtn.TabIndex = 85;
+            this.clearFiltersBtn.TabIndex = 5;
             this.clearFiltersBtn.Text = "Clear Filters";
             this.clearFiltersBtn.UseVisualStyleBackColor = false;
             this.clearFiltersBtn.Click += new System.EventHandler(this.clearFiltersBtn_Click);
@@ -355,7 +355,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
             this.classFilter.Location = new System.Drawing.Point(1100, 116);
             this.classFilter.Name = "classFilter";
             this.classFilter.Size = new System.Drawing.Size(179, 23);
-            this.classFilter.TabIndex = 84;
+            this.classFilter.TabIndex = 4;
             this.classFilter.SelectedIndexChanged += new System.EventHandler(this.classFilter_SelectedIndexChanged);
             // 
             // surnameFilter
@@ -367,7 +367,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
             this.surnameFilter.Location = new System.Drawing.Point(838, 117);
             this.surnameFilter.Name = "surnameFilter";
             this.surnameFilter.Size = new System.Drawing.Size(179, 22);
-            this.surnameFilter.TabIndex = 82;
+            this.surnameFilter.TabIndex = 3;
             this.surnameFilter.TextChanged += new System.EventHandler(this.surnameFilter_TextChanged);
             // 
             // majorFilter
@@ -378,7 +378,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
             this.majorFilter.Location = new System.Drawing.Point(1100, 87);
             this.majorFilter.Name = "majorFilter";
             this.majorFilter.Size = new System.Drawing.Size(179, 23);
-            this.majorFilter.TabIndex = 84;
+            this.majorFilter.TabIndex = 2;
             this.majorFilter.SelectedIndexChanged += new System.EventHandler(this.majorFilter_SelectedIndexChanged);
             // 
             // nameFilter
@@ -390,7 +390,7 @@ namespace schoolManagementSystem.Admin.TeacherCRUD.Update
             this.nameFilter.Location = new System.Drawing.Point(838, 87);
             this.nameFilter.Name = "nameFilter";
             this.nameFilter.Size = new System.Drawing.Size(179, 22);
-            this.nameFilter.TabIndex = 82;
+            this.nameFilter.TabIndex = 1;
             this.nameFilter.TextChanged += new System.EventHandler(this.nameFilter_TextChanged);
             // 
             // UpdateTeacher

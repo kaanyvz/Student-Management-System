@@ -94,7 +94,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
             this.parentMail1.Location = new System.Drawing.Point(616, 427);
             this.parentMail1.Name = "parentMail1";
             this.parentMail1.Size = new System.Drawing.Size(260, 20);
-            this.parentMail1.TabIndex = 64;
+            this.parentMail1.TabIndex = 7;
             // 
             // updateStudentBtn
             // 
@@ -115,7 +115,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
             this.parentName1.Location = new System.Drawing.Point(616, 217);
             this.parentName1.Name = "parentName1";
             this.parentName1.Size = new System.Drawing.Size(260, 20);
-            this.parentName1.TabIndex = 58;
+            this.parentName1.TabIndex = 1;
             // 
             // richTextBox1
             // 
@@ -148,7 +148,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
             this.parentBirthdate1.MinDate = new System.DateTime(1940, 1, 1, 0, 0, 0, 0);
             this.parentBirthdate1.Name = "parentBirthdate1";
             this.parentBirthdate1.Size = new System.Drawing.Size(260, 20);
-            this.parentBirthdate1.TabIndex = 63;
+            this.parentBirthdate1.TabIndex = 6;
             this.parentBirthdate1.Value = new System.DateTime(2002, 12, 31, 0, 0, 0, 0);
             // 
             // label5
@@ -167,7 +167,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
             this.parentGender1.Location = new System.Drawing.Point(616, 353);
             this.parentGender1.Name = "parentGender1";
             this.parentGender1.Size = new System.Drawing.Size(260, 21);
-            this.parentGender1.TabIndex = 62;
+            this.parentGender1.TabIndex = 5;
             // 
             // label7
             // 
@@ -226,7 +226,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
             this.parentPhone1.MaxLength = 11;
             this.parentPhone1.Name = "parentPhone1";
             this.parentPhone1.Size = new System.Drawing.Size(260, 20);
-            this.parentPhone1.TabIndex = 61;
+            this.parentPhone1.TabIndex = 4;
             // 
             // parentTC1
             // 
@@ -234,14 +234,14 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
             this.parentTC1.MaxLength = 11;
             this.parentTC1.Name = "parentTC1";
             this.parentTC1.Size = new System.Drawing.Size(260, 20);
-            this.parentTC1.TabIndex = 60;
+            this.parentTC1.TabIndex = 3;
             // 
             // parentSurname1
             // 
             this.parentSurname1.Location = new System.Drawing.Point(616, 252);
             this.parentSurname1.Name = "parentSurname1";
             this.parentSurname1.Size = new System.Drawing.Size(260, 20);
-            this.parentSurname1.TabIndex = 59;
+            this.parentSurname1.TabIndex = 2;
             // 
             // studentManagementSystemPanel
             // 
@@ -357,6 +357,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
             this.addStudentButton.TabIndex = 2;
             this.addStudentButton.Text = "Add New Student";
             this.addStudentButton.UseVisualStyleBackColor = false;
+            this.addStudentButton.Click += new System.EventHandler(this.addStudentButton_Click);
             // 
             // panel9
             // 
@@ -403,6 +404,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
             this.deleteStudentButton.TabIndex = 2;
             this.deleteStudentButton.Text = "Delete Student";
             this.deleteStudentButton.UseVisualStyleBackColor = false;
+            this.deleteStudentButton.Click += new System.EventHandler(this.deleteStudentButton_Click);
             // 
             // panel11
             // 
@@ -426,6 +428,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
             this.studentDetailsBtn.TabIndex = 2;
             this.studentDetailsBtn.Text = "Student Details";
             this.studentDetailsBtn.UseVisualStyleBackColor = false;
+            this.studentDetailsBtn.Click += new System.EventHandler(this.studentDetailsBtn_Click);
             // 
             // backIcon1
             // 

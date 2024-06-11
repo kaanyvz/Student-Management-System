@@ -2656,6 +2656,9 @@ Card
   <data name="cardActivityDetailsBtn.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
+  <data name="cardActivityDetailsBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-26, -13</value>
+  </data>
   <data name="cardActivityDetailsBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 83</value>
   </data>
@@ -2892,6 +2895,10 @@ Card
   <data name="backIcon.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="richTextBox1.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="richTextBox1.Text" xml:space="preserve">
     <value>❗ IMPORTANT:
 
@@ -2899,7 +2906,7 @@ Card
 ⚫  Please make sure that students informations are correct.</value>
   </data>
   <data name="addCardBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>588, 488</value>
+    <value>579, 477</value>
   </data>
   <data name="addCardBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 61</value>
@@ -2907,7 +2914,6 @@ Card
   <data name="addCardBtn.Text" xml:space="preserve">
     <value>ADD CARD</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="studentBirthDateBox.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>

@@ -62,3 +62,5 @@ C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSys
 C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.canteenTemplate.resources
 C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Canteen.Add.AddProduct.resources
 C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.Canteen.Sale.MakeSale.resources
+C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.EntranceTracking.resources
+C:\Users\kaan_\source\repos\schoolManagementSystem\obj\Debug\schoolManagementSystem.ExitTracking.resources

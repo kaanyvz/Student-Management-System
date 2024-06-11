@@ -167,7 +167,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label18.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label18.Location = new System.Drawing.Point(81, 17);
+            this.label18.Location = new System.Drawing.Point(81, 10);
             this.label18.Name = "label18";
             this.label18.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
             this.label18.Size = new System.Drawing.Size(77, 54);
@@ -493,6 +493,7 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Add
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(15, 15);
             this.Name = "AddParentalInformations";
+            this.Text = "Student Management System";
             this.studentManagementSystemPanel.ResumeLayout(false);
             this.studentManagementSystemPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDashboardTurnOffButton)).EndInit();

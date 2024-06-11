@@ -288,6 +288,18 @@
       <DependentUpon>cardTemplate.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseConnection.cs" />
+    <Compile Include="EntranceTracking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EntranceTracking.Designer.cs">
+      <DependentUpon>EntranceTracking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExitTracking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExitTracking.Designer.cs">
+      <DependentUpon>ExitTracking.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Card.cs" />
     <Compile Include="Model\Parent.cs" />
     <Compile Include="Model\Student.cs" />
@@ -437,6 +449,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="cardTemplate.resx">
       <DependentUpon>cardTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EntranceTracking.resx">
+      <DependentUpon>EntranceTracking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExitTracking.resx">
+      <DependentUpon>ExitTracking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

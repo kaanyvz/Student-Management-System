@@ -20,6 +20,23 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
             this.adminUsername = adminUsername;
             this.schoolName = schoolName;
             InitializeComponent();
+            
+            this.studentGenderBox.FormattingEnabled = true;
+            this.studentGenderBox.Items.AddRange(new object[] {
+                "Male", 
+                "Female" 
+            });
+            this.studentTCBox.KeyPress += new KeyPressEventHandler(studentTC_KeyPress_1);
+            PopulateClassDropdown();
+            
+        }
+        
+        private void studentTC_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
         
         
@@ -35,6 +52,8 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
 
         private void UpdateStudentVariables_Load_1(object sender, EventArgs e)
         {
+            
+            
             string studentQuery = "SELECT firstname, studentNumber, lastname, gender, email, birthDate, TCNumber, classId FROM student WHERE id = @studentId";
 
             using (SqlConnection connection = new SqlConnection(DatabaseConnection.ConnectionString))
@@ -73,6 +92,31 @@ namespace schoolManagementSystem.Admin.StudentCRUD.Update
                             classReader.Close();
                         }
                     }
+                }
+            }
+        }
+        
+        private void PopulateClassDropdown()
+        {
+            using (SqlConnection connection = new SqlConnection(DatabaseConnection.ConnectionString))
+            {
+                connection.Open();
+
+                // Get the schoolId from the School table using the schoolName
+                SqlCommand schoolCmd = new SqlCommand("SELECT id FROM School WHERE SchoolName = @SchoolName", connection);
+                schoolCmd.Parameters.AddWithValue("@SchoolName", schoolName);
+                int schoolId = (int)schoolCmd.ExecuteScalar();
+
+                // Use the schoolId to filter the classes from the Class table
+                SqlCommand classCmd = new SqlCommand("SELECT className, capacity FROM Class WHERE schoolId = @SchoolId", connection);
+                classCmd.Parameters.AddWithValue("@SchoolId", schoolId);
+                SqlDataReader reader = classCmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string className = reader["className"].ToString();
+                    int capacity = Convert.ToInt32(reader["capacity"]);
+                    studentClassBox.Items.Add($"{className} - {capacity}");
                 }
             }
         }
